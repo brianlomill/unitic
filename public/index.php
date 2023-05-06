@@ -231,7 +231,7 @@
 
   <footer>
     <?php
-      include('../assets/footer.php');
+      include('../templates/footer.php');
     ?>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
