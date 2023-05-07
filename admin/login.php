@@ -87,9 +87,7 @@
                                     </div>
 
                                     <div class="d-grid">
-                                        <!-- <a href="index.php">
-                                            <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Ingresar</button>
-                                        </a> -->
+                                        <!-- <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button> -->
                                          <a name="" id="" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="index.php" role="button">Ingresar</a>
                                         <div class="text-center">
                                             <a class="small" href="#">Olvidó su contraseña ?</a>
