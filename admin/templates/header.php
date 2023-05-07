@@ -1,8 +1,11 @@
+<?php 
+$url_base ="http://localhost/unitic/admin/"
+ ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Administrador</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +23,43 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">Administrador</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-warning" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/proyectos/">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/productos/">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/integrantes/">Integrantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/desarrollo/">Desarrollo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/articulos/">Articulos</a>
+                    </li>
+                </ul>
+                <a href="<?php echo $url_base;?>login.php">
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Cerrar sesion</button>
+                </a>
+                    
+            </div>
+      </div>
+    </nav>
+    
+    <!-- <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="../img/logo2.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
@@ -55,6 +94,6 @@
               <button class="btn btn-outline-warning text-black" type="submit" data-bs-toggle="modal" data-bs-target="#login">Cerrar sesion</button>
           </div>
         </div>
-      </nav>
+      </nav> -->
   </header>
   <main class="container">
