@@ -1,6 +1,10 @@
   </main>
   <footer>
-  
+      <!-- Copyright -->
+  <div class="text-center p-3 text-white" style="background-color: #0A4D68;">
+    © 2022 Copyright: Semillero Unitic
+  </div>
+  <!-- Copyright -->
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

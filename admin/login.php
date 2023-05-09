@@ -1,5 +1,5 @@
 <?php
-    require("./bd.php");
+    require("./clases/Conexion.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,77 +23,40 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <!-- <br/><br/><br/>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-
+    <div class="container-fluid ps-md-0">
+        <div class="row g-0">
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        Login
-                    </div>
-                    <div class="card-body">
-                        <form action="" method="post">
-                            <div class="mb-3">
-                              <label for="usuario" class="form-label">Usuario</label>
-                              <input type="email"
-                                class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Correo educativo">
-                            </div>
-
-                            <div class="mb-3">
-                              <label for="contrasena" class="form-label">Contraseña</label>
-                              <input type="password"
-                                class="form-control" name="contrasena" id="contrasena" aria-describedby="helpId" placeholder="Contraseña">
-                            </div>
-
-                            <a name="" id="" class="btn btn-primary" href="index.php" role="button">Ingresar</a>
-
-                        </form>
-                    </div>
-                    <div class="card-footer text-muted">
-                      
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div> -->
-<div class="container-fluid ps-md-0">
-    <div class="row g-0">
-        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-                <div class="col-md-8 col-lg-6">
-                    <div class="login d-flex align-items-center py-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-9 col-lg-8 mx-auto">
-                                    <h3 class="login-heading mb-4 text-body bold">Bienvenido Administrador!</h3>
-                                        <form method="post" action="">
-                                        <div class="form-floating mb-3 text-secondary">
-                                            <input type="email" class="form-control" id="floatingInput"  placeholder="name@example.com">
-                                            <label for="floatingInput">Correo universitario</label>
-                                        </div>
+            <div class="col-md-8 col-lg-6">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <h3 class="login-heading mb-4 text-body bold">Bienvenido Administrador!</h3>
+                                <form method="post" action="servidor/logear.php">
                                     <div class="form-floating mb-3 text-secondary">
-                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                        <label for="floatingPassword">Password</label>
+                                        <input type="email" class="form-control" id="admin" name="admin" placeholder="name@example.com" required autofocus>
+                                        <label for="admin">Correo universitario</label>
+                                    </div>
+                                    <div class="form-floating mb-3 text-secondary">
+                                        <input type="password" class="form-control" name="password" id="contrasena" placeholder="Password" required>
+                                        <label for="contrasena">Password</label>
                                     </div>
 
                                     <div class="form-check mb-3 text-secondary">
                                         <input class="form-check-input" type="checkbox" value=""    id="rememberPasswordCheck">
                                         <label class="form-check-label" for="rememberPasswordCheck">
-                                            <em>Remember password</em>
+                                            <em>Recordar contraseña</em>
                                         </label>
                                     </div>
-
-                                    <div class="d-grid">
-                                        <!-- <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button> -->
-                                         <a name="" id="" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="index.php" role="button">Ingresar</a>
-                                        <div class="text-center">
-                                            <a class="small" href="#">Olvidó su contraseña ?</a>
-                                        </div>
+                            
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                        <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                                        <button class="btn btn-lg btn-danger btn-login text-uppercase fw-bold mb-2" type="return" onclick="history.back()">Volver</button>
                                     </div>
-        
+                                    <div class="text-center">
+                                        <a class="small" href="#">Olvidó su contraseña ?</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -102,7 +65,7 @@
             </div>
         </div>
     </div>
-  </main>
+</main>
   <footer>
     <!-- place footer here -->
   </footer>

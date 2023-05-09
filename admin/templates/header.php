@@ -33,7 +33,7 @@ $url_base ="http://localhost/unitic/admin/"
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-warning" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                        <a class="nav-link active text-warning" href="<?php echo $url_base;?>index.php" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/proyectos/">Proyectos</a>
@@ -97,3 +97,4 @@ $url_base ="http://localhost/unitic/admin/"
       </nav> -->
   </header>
   <main class="container">
+  <br>

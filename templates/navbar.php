@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav m-auto" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link active text-warning" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#container-info">Quienes somos</a>
