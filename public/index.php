@@ -36,15 +36,15 @@
           <div class="butt">
             <div class="row">
               <div class="col-lg-3">
-                <a href="#"><i class="bi bi-soundwave" style="font-size: 2rem; color: #ffc000;"></i></a>
+                <a href="ponencias.php"><i class="bi bi-soundwave" style="font-size: 2rem; color: #ffc000;"></i></a>
                 <p class="fw-normal">Ponencias</p>
               </div>
               <div class="col-lg-3">
-                <a href="#"><i class="bi bi-file-text" style="font-size: 2rem; color: #ffc000;"></i></a>
+                <a href="monografias.php"><i class="bi bi-file-text" style="font-size: 2rem; color: #ffc000;"></i></a>
                 <p class="fw-normal">Monografias</p>
               </div>
               <div class="col-lg-3">
-                <a href="#"><i class="bi bi-file-earmark-image" style="font-size: 2rem; color: #ffc000;"></i></i></a>
+                <a href="posters.php"><i class="bi bi-file-earmark-image" style="font-size: 2rem; color: #ffc000;"></i></i></a>
                 <p class="fw-normal">Poster</p>
               </div>
               <div class="col-lg-3">
@@ -97,11 +97,11 @@
                     <h3 class="card-title">2020</h3><br>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
                     <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in 
-                    <cite title="Source Title">Source Title</cite>
-                    <br>
-                    <br>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-          </figcaption>
+                      <cite title="Source Title">Source Title</cite>
+                      <br>
+                      <br>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </figcaption>
                 </div>
             </div>
         </div>     
@@ -135,6 +135,11 @@
                 </div>
             </div>
         </div>     
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+      <a href="proyectos.php">
+          <button class="btn btn-dark my-2 my-sm-0" type="submit">Ver más</button>
+      </a>
     </div>
 </div>
 
