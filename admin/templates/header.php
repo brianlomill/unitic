@@ -51,7 +51,7 @@ $url_base ="http://localhost/unitic/admin/"
                         <a class="nav-link" aria-current="page" href="<?php echo $url_base;?>modulos/articulos/">Articulos</a>
                     </li>
                 </ul>
-                <a href="<?php echo $url_base;?>login.php">
+                <a href="<?php echo $url_base;?>servidor/cerrar_sesion.php">
                     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Cerrar sesion</button>
                 </a>
                     

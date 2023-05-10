@@ -11,7 +11,7 @@ if($Auth->logear($admin, $password)){
     header("location: ../index.php");
 }else{
     echo "Error";
-    header("location: ../login.php");
+    header("location: ../login.php?fallo=true");
 }
 
 
