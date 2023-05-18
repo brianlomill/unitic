@@ -1,18 +1,19 @@
 <?php session_start();
-if(!isset($_SESSION['administrador'])){
-  header("location: ../../index.php");
-}?>
+if (!isset($_SESSION['administrador'])) {
+    header("location: ../../index.php");
+} ?>
 <?php include("../../templates/header.php") ?>
 
 <div class="titulo">
-<h3>Proyectos</h3>
+    <h3>Proyectos</h3>
 </div><br>
 
 <div class="card">
     <div class="card-header fs-3 mb-3">
-        <a name="" id="" class="btn btn-primary " href="#" role="button">Agregar proyectos 
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar">
+            Agregar proyectos
             <i class="bi bi-plus-circle"></i>
-        </a>
+        </button>
     </div>
     <div class="card-body">
         <div class="table-responsive-sm">
@@ -39,9 +40,9 @@ if(!isset($_SESSION['administrador'])){
                     </tr>
                 </tbody>
             </table>
-        </div>  
+        </div>
     </div>
 </div><br>
-<footer>
+
 <?php include("../../templates/footer.php") ?>
-</footer>
+<?php include("crear.php") ?>
