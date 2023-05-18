@@ -1,9 +1,8 @@
-<!--?php
+<?php
     include 'Conexion.php';
 
-class Integrantes extends Conexion
-{
-    public function Ingresar(
+    class Integrantes extends Conexion{
+        public function ingresarIntegrantes(
         $nombres,
         $apellidos,
         $email,
@@ -17,7 +16,7 @@ class Integrantes extends Conexion
         $sql = "INSERT INTO integrantes (nombres, apellidos, email, foto, cvlac, linkedln, fecha_ingreso, roles_id ) 
             VALUES (?,?,?,?,?,?,?,?)";
         $query = $conexion->prepare($sql);
-        $query->bind_param( $nombres,
+        $query->bind_param("sssssssi", $nombres,
         $apellidos,
         $email,
         $foto,
@@ -29,5 +28,6 @@ class Integrantes extends Conexion
         return $query->execute();
 
     }
-}
+
+    }
 ?>
