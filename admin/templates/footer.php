@@ -1,4 +1,4 @@
-  </main>
+  </main><br><br><br><br>
   <footer>
       <!-- Copyright -->
   <div class="fixed-bottom text-center p-3 text-white" style="background-color: #0A4D68;">

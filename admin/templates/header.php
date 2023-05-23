@@ -60,43 +60,6 @@ $url_base ="http://localhost/unitic/admin/"
             </div>
       </div>
     </nav>
-    
-    <!-- <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../img/logo2.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
-                <img src="../img/unitic-estandar.png" alt="" width="150" height="50" class="d-inline-block align-text-top">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarScroll">
-              <ul class="navbar-nav m-auto" style="--bs-scroll-height: 100px;">
-                  <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="#">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="./modulos/articulos/index.php">Proyectos</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="./modulos/productos/index.php">Productos</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="./modulos/integrantes/index.php">Integrantes</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="./modulos/desarrollo/index.php">Desarrollo</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active text-black" aria-current="page" href="./modulos/articulos/index.php">Articulos</a>
-                  </li>
-              </ul>
-              <button class="btn btn-outline-warning text-black" type="submit" data-bs-toggle="modal" data-bs-target="#login">Cerrar sesion</button>
-          </div>
-        </div>
-      </nav> -->
   </header>
   <main class="container">
   <br>

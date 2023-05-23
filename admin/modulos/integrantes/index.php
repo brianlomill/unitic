@@ -1,11 +1,26 @@
 <?php session_start();
-if(!isset($_SESSION['administrador'])){
-  header("location: ../../index.php");
-}?>
-<?php include("../../templates/header.php") ?>
+if (!isset($_SESSION['administrador'])) {
+    header("location: ../../index.php");
+}
+
+include("../../templates/header.php");
+include("../../clases/Conexion.php");
+
+// Crear una instancia de la clase Conexion
+$conexion = new Conexion();
+
+// Realizar la conexión a la base de datos
+$conn = $conexion->conectar();
+
+// Verificar la conexión
+if (!$conn) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+
+?>
 
 <div class="titulo">
-<h3>Integrantes</h3>
+    <h3>Integrantes</h3>
 </div><br>
 
 <div class="card">
@@ -21,28 +36,57 @@ if(!isset($_SESSION['administrador'])){
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Foto</th>
                         <th scope="col">Nombres</th>
-                        <th scope="col">Programa</th>
+                        <th scope="col">Correo</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <td scope="row">1</td>
-                        <td>Item</td>
-                        <td>Edwin Reinel Perdomo Sedano</td>
-                        <td>ISUM</td>
-                        <td>Activo</td>
-                        <td>
-                            <a name="editar" id="editar" class="btn btn-primary btn-sm" href="#" role="button">Editar</a>
-                        </td>
-                    </tr>
+                    <?php
+                    $No = 1;
+                    $sql = "SELECT * FROM integrantes";
+                    $resultado = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($resultado) > 0) {
+                        // Iterar sobre los registros y hacer algo con ellos
+                        while ($fila = mysqli_fetch_assoc($resultado)) {
+                            if ($fila['estado'] == 1) {
+                                $estado = "Activo";
+                            } else {
+                                $estado = "Inactivo";
+                            }
+                            $foto = $fila['foto'];
+                            $ruta_archivo = "../../../archivos/integrantes/" . $foto;
+
+                    ?>
+
+                            <tr class="text-center">
+                                <td scope="row"><?php echo $No; ?></td>
+                                <!-- <td><!?php echo "<img src='" . $ruta_archivo . "' alt='Foto de usuario' width='100' height='100'>"; ?></td> -->
+                                <td><?php $Nombres = $fila['nombres'] . ' ' . $fila['apellidos'];
+                                    echo $Nombres ?></td>
+                                <td><?php echo $fila['email']; ?></td>
+                                <td><?php echo $estado ?></td>
+                                <td>
+                                    <a href="editar.php?id=<?php echo $fila['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                </td>
+
+                            </tr>
+                    <?php
+                            $No += 1;
+                        }
+                    } else {
+                        echo "No se encontraron registros.";
+                    }
+
+                    // Cerrar la conexión
+                    mysqli_close($conn);
+                    ?>
+
                 </tbody>
             </table>
-        </div>  
+        </div>
     </div>
 </div><br>
-<?php include("crear.php") ?>
-<?php include("../../templates/footer.php") ?>
+<?php include("crear.php"); ?>
+<?php include("../../templates/footer.php"); ?>

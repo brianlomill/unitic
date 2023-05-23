@@ -10,6 +10,7 @@ $linkedin = $_POST['linkedin'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 $foto = basename($_FILES["foto"]["name"]);
 $rol = "2";
+$estado = "1";
 
 
 //Ruta para guardar las imagenes localmente
@@ -29,7 +30,8 @@ if($tipo_imagen == "png" || $tipo_imagen == "jpg" || $tipo_imagen == "jpeg"){
     $cvlac,
     $linkedin,
     $fecha_ingreso,
-    $rol
+    $rol,
+    $estado
 )){
     // carga la imagen a la carpeta archivos
     move_uploaded_file($_FILES["foto"]["tmp_name"], $carpeta_destino . $foto);
