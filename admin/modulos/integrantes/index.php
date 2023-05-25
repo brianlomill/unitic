@@ -66,7 +66,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="editar.php?id=<?php echo $fila['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                <a href="editar.php?id=<?php echo $integrante['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
                             </td>
                         </tr>
                          <?php endforeach; ?>

@@ -3,7 +3,7 @@
 
     class Auth extends Conexion{
         public function logear($admin, $password){
-            $conexion = parent::conectar();
+            $conexion = $this->obtenerConexion();
             $password_existente = "";
             $sql = "Select * from administrador
                     where email = '$admin'";
