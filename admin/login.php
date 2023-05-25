@@ -1,5 +1,5 @@
 <?php
-    require("./clases/Conexion.php");
+    require('../clases/Conexion.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-md-9 col-lg-8 mx-auto">
                                 <h3 class="login-heading mb-4 text-body bold">Bienvenido Administrador!</h3>
-                                <form method="post" action="servidor/logear.php" class="needs-validation" novalidate>
+                                <form method="post" action="../servidor/logear.php" class="needs-validation" novalidate>
                                     <div class="form-floating mb-3 text-secondary">
                                         <input type="email" class="form-control" id="admin" name="admin" placeholder="name@example.com" required autofocus>
                                         <label for="admin">Correo universitario</label>
