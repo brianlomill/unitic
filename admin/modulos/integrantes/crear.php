@@ -7,7 +7,7 @@
         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../../servidor/integrantes/agrear_integrantes.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form action="../../../servidor/integrantes/agrear_integrantes.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
           <div class="row">
             <div class="col-sm-6">

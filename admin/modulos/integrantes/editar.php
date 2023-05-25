@@ -1,9 +1,17 @@
-<?php session_start();
+<?php 
+session_start();
+
+if (isset($_SESSION['error_message'])) {
+    echo "<div class='alert alert-danger'>" . $_SESSION['error_message'] . "</div>";
+    unset($_SESSION['error_message']); // Limpiar el mensaje de error almacenado en la sesión
+}
+
+
 if (!isset($_SESSION['administrador'])) {
   header("location: ../../index.php");
 }
 include("../../templates/header.php");
-include("../../clases/Conexion.php");
+include("../../../clases/Conexion.php");
 
 // Crear una instancia de la clase Conexion
 $conexion = new Conexion();
@@ -31,7 +39,7 @@ $fila = mysqli_fetch_assoc($resultado);
     <h5><?php echo $fila['nombres'] . ' ' . $fila['apellidos'] ?></h5>
   </div>
   <div class="card-body">
-    <form class="row g-3"  method="post" action="../../servidor/integrantes/editar_integrantes.php">
+    <form class="row g-3"  method="post" action="../../../servidor/integrantes/editar_integrantes.php">
       <div class="col-md-6">
         <label for="id" class="form-label">id</label>
         <input type="text" name="id" class="form-control" id="id" value="<?php echo $fila['id'] ?>" readonly>
@@ -54,7 +62,7 @@ $fila = mysqli_fetch_assoc($resultado);
       </div>
       <div class="col-md-6">
         <label for="linkedln" class="form-label">Linkedln</label>
-        <input type="text" class="form-control" id="linkedln" name="linkedln" placeholder="Ingrese link de linkedln" value="<?php echo $fila['linkedln'] ?>">
+        <input type="text" class="form-control" id="linkedln" name="linkedin" placeholder="Ingrese link de linkedln" value="<?php echo $fila['linkedln'] ?>">
       </div>
       <div class="col-md-6">
         <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
@@ -86,7 +94,7 @@ $fila = mysqli_fetch_assoc($resultado);
       </div>
       <!-- <div class="col-md-6">
         <label for="foto" class="form-label">Subir foto</label>
-        <input type="file" name="foto" id="foto" class="form-control" value="<?php echo $fila['foto'] ?>">
+        <input type="file" name="foto" id="foto" class="form-control" value="<!?php echo $fila['foto'] ?>">
       </div> -->
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Actualizar</button>

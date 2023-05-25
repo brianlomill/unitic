@@ -1,8 +1,13 @@
 <?php
 include 'Conexion.php';
 
+// Clase Integrantes
 class Integrantes extends Conexion
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function ingresarIntegrantes(
         $nombres,
@@ -15,11 +20,17 @@ class Integrantes extends Conexion
         $rol,
         $estado
     ) {
-        $conexion = parent::conectar();
-        $sql = "INSERT INTO integrantes (nombres, apellidos, email, foto, cvlac, linkedln, fecha_ingreso, roles_id, estado ) 
-            VALUES (?,?,?,?,?,?,?,?,?)";
-        $query = $conexion->prepare($sql);
-        $query->bind_param(
+        $conexion = $this->obtenerConexion();
+        $sql = "INSERT INTO integrantes (nombres, apellidos, email, foto, cvlac, linkedln, fecha_ingreso, roles_id, estado) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = mysqli_prepare($conexion, $sql);
+
+        if (!$query) {
+            throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
+        }
+
+        mysqli_stmt_bind_param(
+            $query,
             "sssssssii",
             $nombres,
             $apellidos,
@@ -32,7 +43,13 @@ class Integrantes extends Conexion
             $estado
         );
 
-        return $query->execute();
+        if (!mysqli_stmt_execute($query)) {
+            throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
+        }
+
+        mysqli_stmt_close($query);
+
+        return true;
     }
 
     public function editarIntegrantes(
@@ -47,11 +64,17 @@ class Integrantes extends Conexion
         $rol,
         $estado
     ) {
-        $conexion = parent::conectar();
-        $sql = "UPDATE integrantes SET nombres=?, apellidos=?, email=?, cvlac=?, linkedln=?, fecha_ingreso=?, fecha_retiro=?, roles_id=?, estado=? WHERE id=$id";
-        $query = $conexion->prepare($sql);
-        $query->bind_param(
-            "sssssssii",
+        $conexion = $this->obtenerConexion();
+        $sql = "UPDATE integrantes SET nombres=?, apellidos=?, email=?, cvlac=?, linkedln=?, fecha_ingreso=?, fecha_retiro=?, roles_id=?, estado=? WHERE id=?";
+        $query = mysqli_prepare($conexion, $sql);
+
+        if (!$query) {
+            throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
+        }
+
+        mysqli_stmt_bind_param(
+            $query,
+            "sssssssiii",
             $nombres,
             $apellidos,
             $email,
@@ -61,8 +84,33 @@ class Integrantes extends Conexion
             $fecha_retiro,
             $rol,
             $estado,
+            $id
         );
 
-        return $query->execute();
+        if (!mysqli_stmt_execute($query)) {
+            throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
+        }
+
+        mysqli_stmt_close($query);
+
+        return true;
+    }
+
+    public function obtenerIntegrantes()
+    {
+        $conexion = $this->obtenerConexion();
+        $sql = "SELECT * FROM integrantes";
+        $result = mysqli_query($conexion, $sql);
+        $integrantes = array();
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $integrantes[] = $row;
+        }
+
+        mysqli_free_result($result);
+
+        return $integrantes;
     }
 }
+
+?>

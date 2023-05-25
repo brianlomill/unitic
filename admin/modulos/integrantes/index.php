@@ -1,21 +1,26 @@
-<?php session_start();
+<?php
+session_start();
+
 if (!isset($_SESSION['administrador'])) {
     header("location: ../../index.php");
 }
 
 include("../../templates/header.php");
-include("../../clases/Conexion.php");
+include("../../../clases/Integrantes.php");
 
-// Crear una instancia de la clase Conexion
-$conexion = new Conexion();
-
-// Realizar la conexión a la base de datos
-$conn = $conexion->conectar();
-
-// Verificar la conexión
-if (!$conn) {
-    die("Error de conexión: " . mysqli_connect_error());
+if (isset($_SESSION['success_message'])) {
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+    echo $_SESSION['success_message'];
+    echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+    echo '</div>';
+    unset($_SESSION['success_message']);
 }
+
+//instancia de la clase Integrantes
+$integrantes = new Integrantes();
+
+// Obtener los integrantes
+$listaIntegrantes = $integrantes->obtenerIntegrantes();
 
 ?>
 
@@ -32,6 +37,9 @@ if (!$conn) {
     </div>
     <div class="card-body">
         <div class="table-responsive-sm">
+             <?php if (empty($listaIntegrantes)) : ?>
+                <p>No hay integrantes registrados.</p>
+             <?php else : ?>
             <table class="table table-bordered table-primary text-center">
                 <thead>
                     <tr>
@@ -43,48 +51,28 @@ if (!$conn) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    $No = 1;
-                    $sql = "SELECT * FROM integrantes";
-                    $resultado = mysqli_query($conn, $sql);
-                    if (mysqli_num_rows($resultado) > 0) {
-                        // Iterar sobre los registros y hacer algo con ellos
-                        while ($fila = mysqli_fetch_assoc($resultado)) {
-                            if ($fila['estado'] == 1) {
-                                $estado = "Activo";
-                            } else {
-                                $estado = "Inactivo";
-                            }
-                            $foto = $fila['foto'];
-                            $ruta_archivo = "../../../archivos/integrantes/" . $foto;
-
-                    ?>
-
-                            <tr class="text-center">
-                                <td scope="row"><?php echo $No; ?></td>
-                                <!-- <td><!?php echo "<img src='" . $ruta_archivo . "' alt='Foto de usuario' width='100' height='100'>"; ?></td> -->
-                                <td><?php $Nombres = $fila['nombres'] . ' ' . $fila['apellidos'];
-                                    echo $Nombres ?></td>
-                                <td><?php echo $fila['email']; ?></td>
-                                <td><?php echo $estado ?></td>
-                                <td>
-                                    <a href="editar.php?id=<?php echo $fila['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
-                                </td>
-
-                            </tr>
-                    <?php
-                            $No += 1;
-                        }
-                    } else {
-                        echo "No se encontraron registros.";
-                    }
-
-                    // Cerrar la conexión
-                    mysqli_close($conn);
-                    ?>
-
+                   <?php foreach ($listaIntegrantes as $integrante) : ?>
+            
+                        <tr class="text-center">
+                            <td scope="row"><?php echo $integrante['id']; ?></td>
+                            <td><?php $Nombres = $integrante['nombres'] . ' ' . $integrante['apellidos'];
+                                echo $Nombres ?></td>
+                            <td><?php echo $integrante['email']; ?></td>
+                            <td>
+                                <?php if ($integrante['estado'] == 1) : ?>
+                                    Activo
+                                <?php else : ?>
+                                    Inactivo
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <a href="editar.php?id=<?php echo $fila['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                            </td>
+                        </tr>
+                         <?php endforeach; ?>
                 </tbody>
             </table>
+            <?php endif; ?>
         </div>
     </div>
 </div><br>

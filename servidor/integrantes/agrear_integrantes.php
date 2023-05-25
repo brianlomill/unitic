@@ -12,42 +12,39 @@ $foto = basename($_FILES["foto"]["name"]);
 $rol = "2";
 $estado = "1";
 
+// Ruta para guardar las imágenes localmente
+$carpeta_destino = "../../archivos/integrantes/";
 
-//Ruta para guardar las imagenes localmente
-$carpeta_destino = "../../../archivos/integrantes/";
-
-//conocer el tipo de extencion del archivo
+// Conocer el tipo de extensión del archivo
 $tipo_imagen = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
 
 $Integrantes = new Integrantes();
 
-if($tipo_imagen == "png" || $tipo_imagen == "jpg" || $tipo_imagen == "jpeg"){
+if ($tipo_imagen == "png" || $tipo_imagen == "jpg" || $tipo_imagen == "jpeg") {
     if ($Integrantes->ingresarIntegrantes(
-    $nombres,
-    $apellidos,
-    $email,
-    $foto,
-    $cvlac,
-    $linkedin,
-    $fecha_ingreso,
-    $rol,
-    $estado
-)){
-    // carga la imagen a la carpeta archivos
-    move_uploaded_file($_FILES["foto"]["tmp_name"], $carpeta_destino . $foto);
-    header("location: ../../modulos/integrantes/index.php");
-}else{
-    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-   Debes verificar algunos de esos campos a continuación.
-  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-</div>";
-header("location: ../../modulos/integrantes/index.php");
-}
-}else{
-     echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-   Debes verificar algunos de esos campos a continuación.
-  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-</div>";
-header("location: ../../modulos/integrantes/index.php");
+        $nombres,
+        $apellidos,
+        $email,
+        $foto,
+        $cvlac,
+        $linkedin,
+        $fecha_ingreso,
+        $rol,
+        $estado
+    )) {
+        // Cargar la imagen a la carpeta archivos
+        move_uploaded_file($_FILES["foto"]["tmp_name"], $carpeta_destino . $foto);
+        $_SESSION['success_message'] = "El integrante se ha agregado correctamente.";
+        header("location: ../../admin/modulos/integrantes/index.php");
+        exit;
+    } else {
+        $_SESSION['error_message'] = "Hubo un error al agregar el integrante.";
+        header("location: ../../admin/modulos/integrantes/index.php");
+        exit;
+    }
+} else {
+    $_SESSION['error_message'] = "El formato de imagen no es válido. Solo se permiten archivos PNG, JPG y JPEG.";
+    header("location: ../../admin/modulos/integrantes/index.php");
+    exit;
 }
 ?>

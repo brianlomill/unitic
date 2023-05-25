@@ -1,5 +1,3 @@
-
-
 <?php
 include '../../clases/Integrantes.php';
 session_start();
@@ -9,7 +7,7 @@ $nombres = $_POST['nombres'];
 $apellidos = $_POST['apellidos'];
 $email = $_POST['email'];
 $cvlac = $_POST['cvlac'];
-$linkedin = $_POST['linkedln'];
+$linkedin = $_POST['linkedin'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 $fecha_retiro = $_POST['fecha_retiro'];
 $rol = "2";
@@ -17,24 +15,38 @@ $estado = $_POST['estado'];
 
 $Integrantes = new Integrantes();
 
-if ($Integrantes->editarIntegrantes(
-    $id,
-    $nombres,
-    $apellidos,
-    $email,
-    $cvlac,
-    $linkedin,
-    $fecha_ingreso,
-    $fecha_retiro,
-    $rol,
-    $estado
-)){
-    header("location: ../../modulos/integrantes/index.php");
-}else{
-    echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-   Debes verificar algunos de esos campos a continuación.
-  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-</div>";
+// Validar campos obligatorios
+if (empty($nombres) || empty($apellidos) || empty($email) || empty($fecha_ingreso) || empty($rol)) {
+    $_SESSION['error_message'] = "Debes completar todos los campos obligatorios.";
+    header("location: ../../admin/modulos/integrantes/index.php");
+    exit;
+}
+
+// Realizar la edición del integrante
+try {
+    if ($Integrantes->editarIntegrantes(
+        $id,
+        $nombres,
+        $apellidos,
+        $email,
+        $cvlac,
+        $linkedin,
+        $fecha_ingreso,
+        $fecha_retiro,
+        $rol,
+        $estado
+    )) {
+        header("location: ../../admin/modulos/integrantes/index.php");
+        exit;
+    } else {
+        $_SESSION['error_message'] = "Hubo un error al editar el integrante.";
+        header("location: ../../admin/modulos/integrantes/index.php");
+        exit;
+    }
+} catch (Exception $e) {
+    $_SESSION['error_message'] = "Error: " . $e->getMessage();
+    header("location: ../../admin/modulos/integrantes/index.php");
+    exit;
 }
 ?>
 
