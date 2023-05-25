@@ -173,7 +173,7 @@
         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
       </ul>
     </div>
-    <div class="integrantes">
+    <!-- <div class="integrantes">
       <div class="wrapper">
         <a href="#">
           <img src="../img/integrante-foto2.jpg" alt="">
@@ -228,7 +228,7 @@
         <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
       </ul>
-    </div>
+    </div> -->
 
     <!-- <a href="servidor/cerrar_sesion.php">
       <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Ver más <i class="bi bi-arrow-right"></i></button>

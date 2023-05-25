@@ -142,10 +142,10 @@ body{
 
 /* SECCION INTEGRANTES */
 
-.btn-ver{
+/* .btn-ver{
   display: flex;
   width: 100vh;
-}
+} */
 .section-integrantes{
   display: flex;
   justify-content: space-evenly;
@@ -155,20 +155,20 @@ body{
 }
 
 .integrantes {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 400px;
   background: linear-gradient(45deg, #ffc000, #00135b);
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 10%;
   position: relative;
   transition: all 0.5s ease-in-out;
 }
 
-.integrantes:hover {
+/* .integrantes:hover {
   width: 350px;
   height: 470px;
   border-radius: 10px;
-}
+} */
 
 .integrantes .wrapper img {
   width: 200px;
@@ -248,14 +248,14 @@ body{
   margin-left: -100px;
   transition: all 0.5s ease;
 }
-.integrantes:hover .icons li {
+.integrantes .icons li {
   opacity: 1;
   margin-left: 7px;
 }
-.integrantes:hover .icons li:nth-child(2) {
+.integrantes .icons li:nth-child(2) {
   transition-delay: 0.2s;
 }
-.integrantes:hover .icons li:nth-child(3) {
+.integrantes .icons li:nth-child(3) {
   transition-delay: 0.4s;
 }
 .integrantes .icons li a {
