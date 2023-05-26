@@ -173,20 +173,12 @@
                 </a>
                 <div class="text">
                   <h1 class="name">Estudiante</h1>
-                  <p class="place"><?php echo $nombres ?></p>
+                  <p class="contenido"><?php echo $nombres ?></p>
                 </div>
               </div>
-              <div class="content">
+              <div class="contenido">
                 <p>Frontend developer and <br>
                   Programmer</p>
-                <div class="buttons">
-                  <div class="btn">
-                    <button>Mensaje</button>
-                  </div>
-                  <div class="btn">
-                    <button>Seguir</button>
-                  </div>
-                </div>
               </div>
               <ul class="icons">
                 <li><a href="#"><i class="fab fa-github"></i></a></li>
