@@ -111,6 +111,35 @@ class Integrantes extends Conexion
 
         return $integrantes;
     }
+
+    public function obtenerPrimerosIntegrantes()
+{
+    $cantidad = 3; // Obtener solo 3 integrantes
+    $conexion = $this->obtenerConexion();
+    $sql = "SELECT * FROM integrantes LIMIT ?";
+    $query = mysqli_prepare($conexion, $sql);
+
+    if (!$query) {
+        throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
+    }
+
+    mysqli_stmt_bind_param($query, "i", $cantidad);
+
+    if (!mysqli_stmt_execute($query)) {
+        throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
+    }
+
+    $result = mysqli_stmt_get_result($query);
+    $integrantes = array();
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $integrantes[] = $row;
+    }
+
+    mysqli_stmt_close($query);
+
+    return $integrantes;
+}
 }
 
 ?>

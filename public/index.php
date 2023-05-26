@@ -82,7 +82,7 @@
     </div>
   </div>
 
-  <div class="proyects" id="proyectos">
+  <div class="section" id="proyectos">
     <div class="tittle">
       <h2>Proyectos</h2>
     </div>
@@ -134,105 +134,71 @@
           </div>
         </div>
       </div>
-      <!-- <a href="proyectos.php">
-        <button class="btn btn-outline-dark" type="submit">Ver más <i class="bi bi-arrow-right"></i></button>
-      </a> -->
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a name="" id="" class="btn btn-outline-primary me-md-2" href="#" role="button">Ver Más</a>
+      </div>
     </div>
   </div>
 
-  <div class="tittle" id="integrantes">
-    <h2>Integrantes</h2>
+  <div class="section" id="integrantes">
+    <div class="tittle">
+      <h2>Integrantes</h2>
+    </div>
+    <div class="container py-2">
+      <div class="row">
+        <?php
+        $url_base = "../archivos/integrantes/";
+        include '../clases/Integrantes.php';
+
+        // Crear una instancia de la clase Integrantes
+        $integrantes = new Integrantes();
+
+        // Obtener los primeros 3 integrantes
+        $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
+        ?>
+
+
+
+        <div class="section-integrantes">
+          <?php
+          // Generar las cards de Bootstrap para los integrantes obtenidos
+          foreach ($integrantesList as $integrante) {
+            $nombres = $integrante["nombres"] . ' ' . $integrante["apellidos"];
+            $foto = $integrante["foto"];
+          ?>
+            <div class="integrantes">
+              <div class="wrapper">
+                <a href="#">
+                  <img src="<?php echo $url_base . $integrante['foto']; ?>" alt="">
+                </a>
+                <div class="text">
+                  <h1 class="name">Estudiante</h1>
+                  <p class="place"><?php echo $nombres ?></p>
+                </div>
+              </div>
+              <div class="content">
+                <p>Frontend developer and <br>
+                  Programmer</p>
+                <div class="buttons">
+                  <div class="btn">
+                    <button>Mensaje</button>
+                  </div>
+                  <div class="btn">
+                    <button>Seguir</button>
+                  </div>
+                </div>
+              </div>
+              <ul class="icons">
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          <?php } ?>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="section-integrantes">
-    <div class="integrantes">
-      <div class="wrapper">
-        <a href="#">
-          <img src="../img/integrante-foto.avif" alt="">
-        </a>
-        <div class="text">
-          <h1 class="name">Estudiante</h1>
-          <p class="place">Nellore, Andhra Pradesh.</p>
-        </div>
-      </div>
-      <div class="content">
-        <p>Frontend developer and <br>
-          Programmer</p>
-        <div class="buttons">
-          <div class="btn">
-            <button>Mensaje</button>
-          </div>
-          <div class="btn">
-            <button>Seguir</button>
-          </div>
-        </div>
-      </div>
-      <ul class="icons">
-        <li><a href="#"><i class="fab fa-github"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      </ul>
-    </div>
-    <!-- <div class="integrantes">
-      <div class="wrapper">
-        <a href="#">
-          <img src="../img/integrante-foto2.jpg" alt="">
-        </a>
-        <div class="text">
-          <h1 class="name">Estudiante</h1>
-          <p class="place">Nellore, Andhra Pradesh.</p>
-        </div>
-      </div>
-      <div class="contenido">
-        <p>Frontend developer and <br>
-          Programmer</p>
-        <div class="buttons">
-          <div class="btn">
-            <button>Mensaje</button>
-          </div>
-          <div class="btn">
-            <button>Seguir</button>
-          </div>
-        </div>
-      </div>
-      <ul class="icons">
-        <li><a href="#"><i class="fab fa-github"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      </ul>
-    </div>
-    <div class="integrantes">
-      <div class="wrapper">
-        <a href="#">
-          <img src="../img/integrante-foto1.avif" alt="">
-        </a>
-        <div class="text">
-          <h1 class="name">Estudiante</h1>
-          <p class="place">Nellore, Andhra Pradesh.</p>
-        </div>
-      </div>
-      <div class="content">
-        <p>Frontend developer and <br>
-          Programmer</p>
-        <div class="buttons">
-          <div class="btn">
-            <button>Mensaje</button>
-          </div>
-          <div class="btn">
-            <button>Seguir</button>
-          </div>
-        </div>
-      </div>
-      <ul class="icons">
-        <li><a href="#"><i class="fab fa-github"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      </ul>
-    </div> -->
-
-    <!-- <a href="servidor/cerrar_sesion.php">
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Ver más <i class="bi bi-arrow-right"></i></button>
-    </a> -->
   </div>
 
   <footer>

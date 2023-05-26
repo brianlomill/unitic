@@ -8,14 +8,6 @@ if (!isset($_SESSION['administrador'])) {
 include("../../templates/header.php");
 include("../../../clases/Integrantes.php");
 
-if (isset($_SESSION['success_message'])) {
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
-    echo $_SESSION['success_message'];
-    echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
-    echo '</div>';
-    unset($_SESSION['success_message']);
-}
-
 //instancia de la clase Integrantes
 $integrantes = new Integrantes();
 

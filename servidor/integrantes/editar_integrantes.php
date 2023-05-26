@@ -18,7 +18,7 @@ $Integrantes = new Integrantes();
 // Validar campos obligatorios
 if (empty($nombres) || empty($apellidos) || empty($email) || empty($fecha_ingreso) || empty($rol)) {
     $_SESSION['error_message'] = "Debes completar todos los campos obligatorios.";
-    header("location: ../../admin/modulos/integrantes/index.php");
+    header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
     exit;
 }
 
@@ -36,19 +36,21 @@ try {
         $rol,
         $estado
     )) {
+        $_SESSION['success_message'] = "El integrante ha sido editado exitosamente.";
         header("location: ../../admin/modulos/integrantes/index.php");
         exit;
     } else {
         $_SESSION['error_message'] = "Hubo un error al editar el integrante.";
-        header("location: ../../admin/modulos/integrantes/index.php");
+        header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
         exit;
     }
 } catch (Exception $e) {
     $_SESSION['error_message'] = "Error: " . $e->getMessage();
-    header("location: ../../admin/modulos/integrantes/index.php");
+    header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
     exit;
 }
 ?>
+
 
 
 
