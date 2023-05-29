@@ -181,9 +181,9 @@
                   Programmer</p>
               </div>
               <ul class="icons">
-                <li><a href="#"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+                <li><a href="<?php echo $integrante['linkedln'];?>" target="_blank" title="Linkedln"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#" target="_blank" title="Cvlac"><i class="bi bi-box-arrow-up-right"></i></a></li>
               </ul>
             </div>
           <?php } ?>
