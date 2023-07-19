@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2023 a las 18:04:08
+-- Tiempo de generación: 30-05-2023 a las 01:04:30
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -92,14 +92,11 @@ CREATE TABLE `integrantes` (
 --
 
 INSERT INTO `integrantes` (`id`, `nombres`, `apellidos`, `email`, `foto`, `cvlac`, `linkedln`, `fecha_ingreso`, `fecha_retiro`, `roles_id`, `estado`, `update_at`, `created_at`) VALUES
-(1, 'brian', 'lozano guarin', 'lozanodavid10@hotmail.com', 'IMG_20220930_072210.jpg', 'scsdcsdfd', 'dvsdvsdf', '2023-05-03', '0000-00-00', 2, 1, NULL, '2023-05-26 04:14:40'),
-(2, 'Edwin Reinel ', 'perdomo Sedano ', 'blozanoguar@uniminuto.edu.co', '20170522_212128__1646453399_190.109.9.108.jpg', 'nfgbfgn', 'lkl.jk', '2023-05-03', '0000-00-00', 2, 1, NULL, '2023-05-25 23:14:27'),
-(3, 'brian', 'juana', 'lozanodavid10@hotmail.com', 'estudiante1.jpg', 'sxascS', 'bfgvdfvdfvds', '2023-05-02', '0000-00-00', 2, 1, NULL, '2023-05-25 23:14:32'),
-(4, 'brian', 'lozano', 'lozanodavid10@hotmail.com', 'estudiante3.jpg', 'bgfbfgnf', 'ngfnbdfg', '2023-05-02', NULL, 2, 1, NULL, '2023-05-25 15:16:36'),
-(5, 'gdgbdf', 'ghgfhfgh', 'admin@sistematiozacion.com', 'integrante-foto2.jpg', 'htgftgrg', 'csdcsd', '2023-05-02', '0000-00-00', 2, 1, NULL, '2023-05-26 04:11:15'),
-(6, 'leandro', 'cubillos', 'lozanodavid10@hotmail.com', 'estudiante1.jpg', 'bgfbfgnf', 'ngfnbdfg', '2023-05-03', NULL, 2, 1, NULL, '2023-05-25 15:54:34'),
-(7, 'dcscs', 'dscsdvdsfv', 'lozanodavid10@hotmail.com', 'estudiante3.jpg', 'zxczsdvdv', 'vdcsdc', '2023-05-03', NULL, 2, 1, NULL, '2023-05-25 18:25:47'),
-(8, 'camila', 'andrea', 'lozanodavid10@hotmail.com', 'estudiante1.jpg', 'bgfbfgnf', 'ngfnbdfg', '2023-05-02', '0000-00-00', 2, 2, NULL, '2023-05-25 19:28:20');
+(1, 'Juan Andres', 'Lopez Garcia', 'lozanodavid10@hotmail.com', 'estudiante3.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-02-22', '0000-00-00', 2, 1, NULL, '2023-05-29 16:56:40'),
+(2, 'Luisa', 'Cardenas Ortega', 'blozanoguar@uniminuto.edu.co', 'estudiante1.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2022-02-16', NULL, 2, 1, NULL, '2023-05-29 16:29:23'),
+(3, 'Luis Andres', 'Trujillo Sandoval', 'admin@sistematiozacion.com', 'integrante-foto2.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-03-16', NULL, 2, 1, NULL, '2023-05-29 16:30:05'),
+(4, 'bccvn', 'juana', 'blozanoguar@uniminuto.edu.co', 'estudiante1.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-03', NULL, 2, 1, NULL, '2023-05-29 22:30:42'),
+(5, 'manuel', 'perez', 'jivanhernandez1994@gmail.com', 'campus.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', NULL, 2, 1, NULL, '2023-05-29 22:59:02');
 
 -- --------------------------------------------------------
 
@@ -229,7 +226,7 @@ ALTER TABLE `estados`
 -- AUTO_INCREMENT de la tabla `integrantes`
 --
 ALTER TABLE `integrantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `portafolio`
