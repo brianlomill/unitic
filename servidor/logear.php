@@ -7,9 +7,9 @@ $password = $_POST['password'];
 
 $Auth = new Auth();
 
-if($Auth->logear($admin, $password)){
+if ($Auth->logear($admin, $password)) {
     header("location: ../admin/index.php");
-}else{
+} else {
     echo "Error";
     header("location: ../admin/login.php?fallo=true");
 }
