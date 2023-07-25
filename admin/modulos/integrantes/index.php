@@ -52,9 +52,9 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
                             <td><?php echo $integrante['email']; ?></td>
                             <td>
                                 <?php if ($integrante['estado'] == 1) : ?>
-                                    Activo
+                                    <span class="badge bg-success">Activo</span>
                                 <?php else : ?>
-                                    Inactivo
+                                    <span class="badge bg-danger">Inactivo</span>
                                 <?php endif; ?>
                             </td>
                             <td>
