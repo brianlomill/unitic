@@ -20,6 +20,8 @@ $url_base = "http://localhost/unitic/admin/"
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -30,7 +32,7 @@ $url_base = "http://localhost/unitic/admin/"
                     <li class="nav-item dropdown">
                         <a class="navbar-brand dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrador</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="<?php echo $url_base;?>actualizarContrasena.php">Actualizar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $url_base; ?>actualizarContrasena.php">Actualizar Contraseña</a></li>
                         </ul>
                     </li>
                 </ul>

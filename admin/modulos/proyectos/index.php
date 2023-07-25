@@ -17,7 +17,7 @@ if (!isset($_SESSION['administrador'])) {
     </div>
     <div class="card-body">
         <div class="table-responsive-sm">
-            <table class="table table-bordered table-primary text-center">
+            <table class="cell-border" id="miTabla">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['administrador'])) {
             </table>
         </div>
     </div>
-</div><br>
-
-<?php include("../../templates/footer.php") ?>
+</div>
+<br>
 <?php include("crear.php") ?>
+<?php include("../../templates/footer.php") ?>

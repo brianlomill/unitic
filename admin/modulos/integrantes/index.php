@@ -32,7 +32,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
              <?php if (empty($listaIntegrantes)) : ?>
                 <p>No hay integrantes registrados.</p>
              <?php else : ?>
-            <table class="table table-bordered table-primary text-center">
+            <table class="cell-border" id="miTabla">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
