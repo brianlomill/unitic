@@ -135,7 +135,7 @@
         </div>
       </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a name="" id="" class="btn btn-outline-primary me-md-2" href="#" role="button">Ver Más</a>
+        <a name="" id="" class="btn btn-outline-primary me-md-.5" href="proyectos.php" role="button">Ver Más</a>
       </div>
     </div>
   </div>
@@ -188,6 +188,9 @@
             </div>
           <?php } ?>
         </div>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a name="" id="" class="btn btn-outline-primary me-md-3" href="proyectos.php" role="button">Ver Más</a>
       </div>
     </div>
   </div>

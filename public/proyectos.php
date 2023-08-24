@@ -29,7 +29,7 @@
 ?>
 
 <div class="container my-5">
-<h2 class="h5">MONOGRAFIAS</h2></br>
+<h2 class="h5">PROYECTOS</h2></br>
     <div class="row">
     	<div class="card col-md-12 p-3">
     		<div class="row">
