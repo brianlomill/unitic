@@ -1,7 +1,7 @@
 <?php
 include 'Conexion.php';
 
-// Clase Integrantes
+// Clase Integrantes para el modulo integrantes
 class Integrantes extends Conexion
 {
     public function __construct()

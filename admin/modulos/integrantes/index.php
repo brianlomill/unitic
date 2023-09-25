@@ -35,7 +35,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
             <table class="cell-border" id="miTabla">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">#</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Estado</th>

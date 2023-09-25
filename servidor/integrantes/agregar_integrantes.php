@@ -17,7 +17,7 @@ $carpeta_destino = "../../archivos/integrantes/";
 
 // Conocer el tipo de extensión del archivo
 $tipo_imagen = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
-
+// Se envia a la archivo clases/integrantes para enviar los datos a la base de datos
 $Integrantes = new Integrantes();
 
 if ($tipo_imagen == "png" || $tipo_imagen == "jpg" || $tipo_imagen == "jpeg") {

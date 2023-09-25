@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2023 a las 01:04:30
+-- Tiempo de generación: 21-09-2023 a las 02:46:19
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -44,7 +44,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id`, `nombres`, `apellidos`, `email`, `foto`, `password`, `created_at`, `update_at`, `roles_id`) VALUES
-(1, 'Brian', 'Lozano', 'blozanoguar@uniminuto.edu.co', NULL, '1111', '2023-05-25 18:20:40', NULL, 1);
+(1, 'Brian', 'Lozano', 'blozanoguar@uniminuto.edu.co', NULL, '$2y$10$t9278LcKnRu6vCS.62iVYONoUuENHGW/x3TdFc0A33nGOFyBitac2', '2023-07-21 01:30:56', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -92,28 +92,38 @@ CREATE TABLE `integrantes` (
 --
 
 INSERT INTO `integrantes` (`id`, `nombres`, `apellidos`, `email`, `foto`, `cvlac`, `linkedln`, `fecha_ingreso`, `fecha_retiro`, `roles_id`, `estado`, `update_at`, `created_at`) VALUES
-(1, 'Juan Andres', 'Lopez Garcia', 'lozanodavid10@hotmail.com', 'estudiante3.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-02-22', '0000-00-00', 2, 1, NULL, '2023-05-29 16:56:40'),
+(1, 'Juan Andres', 'Lopez Garciaa', 'lozanodavid10@hotmail.com', 'estudiante3.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-02-22', '0000-00-00', 2, 1, NULL, '2023-08-17 01:37:58'),
 (2, 'Luisa', 'Cardenas Ortega', 'blozanoguar@uniminuto.edu.co', 'estudiante1.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2022-02-16', NULL, 2, 1, NULL, '2023-05-29 16:29:23'),
 (3, 'Luis Andres', 'Trujillo Sandoval', 'admin@sistematiozacion.com', 'integrante-foto2.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-03-16', NULL, 2, 1, NULL, '2023-05-29 16:30:05'),
 (4, 'bccvn', 'juana', 'blozanoguar@uniminuto.edu.co', 'estudiante1.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-03', NULL, 2, 1, NULL, '2023-05-29 22:30:42'),
-(5, 'manuel', 'perez', 'jivanhernandez1994@gmail.com', 'campus.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', NULL, 2, 1, NULL, '2023-05-29 22:59:02');
+(5, 'manuel', 'perez', 'jivanhernandez1994@gmail.com', 'campus.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', NULL, 2, 1, NULL, '2023-05-29 22:59:02'),
+(6, 'Gustavo ', 'Montealegre', 'gustavo.montealegre@uniminuto.edu', 'estudiante3.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', '0000-00-00', 2, 2, NULL, '2023-05-31 20:28:51');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `portafolio`
+-- Estructura de tabla para la tabla `integrantes_portafolios`
 --
 
-CREATE TABLE `portafolio` (
+CREATE TABLE `integrantes_portafolios` (
+  `id` int(11) NOT NULL,
+  `portafolio_id` int(11) NOT NULL,
+  `integrantes` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `portafolios`
+--
+
+CREATE TABLE `portafolios` (
   `id` int(11) NOT NULL,
   `titulo` varchar(250) NOT NULL,
   `programa` varchar(100) NOT NULL,
   `fecha` date DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
-  `imagen` varchar(255) NOT NULL,
   `archivo` varchar(250) NOT NULL,
-  `integrantes` int(11) DEFAULT NULL,
-  `administrador` int(11) DEFAULT NULL,
   `tipo_trabajo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -186,12 +196,18 @@ ALTER TABLE `integrantes`
   ADD KEY `estado` (`estado`);
 
 --
--- Indices de la tabla `portafolio`
+-- Indices de la tabla `integrantes_portafolios`
 --
-ALTER TABLE `portafolio`
+ALTER TABLE `integrantes_portafolios`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `integrantes` (`integrantes`),
-  ADD KEY `administrador` (`administrador`),
+  ADD KEY `integrante_id` (`integrantes`),
+  ADD KEY `integrantes_portafolios_ibfk_1` (`portafolio_id`);
+
+--
+-- Indices de la tabla `portafolios`
+--
+ALTER TABLE `portafolios`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `tipo_trabajo` (`tipo_trabajo`);
 
 --
@@ -226,12 +242,18 @@ ALTER TABLE `estados`
 -- AUTO_INCREMENT de la tabla `integrantes`
 --
 ALTER TABLE `integrantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `portafolio`
+-- AUTO_INCREMENT de la tabla `integrantes_portafolios`
 --
-ALTER TABLE `portafolio`
+ALTER TABLE `integrantes_portafolios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `portafolios`
+--
+ALTER TABLE `portafolios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -264,12 +286,16 @@ ALTER TABLE `integrantes`
   ADD CONSTRAINT `integrantes_ibfk_2` FOREIGN KEY (`estado`) REFERENCES `estados` (`id`);
 
 --
--- Filtros para la tabla `portafolio`
+-- Filtros para la tabla `integrantes_portafolios`
 --
-ALTER TABLE `portafolio`
-  ADD CONSTRAINT `portafolio_ibfk_1` FOREIGN KEY (`integrantes`) REFERENCES `integrantes` (`id`),
-  ADD CONSTRAINT `portafolio_ibfk_2` FOREIGN KEY (`administrador`) REFERENCES `administrador` (`id`),
-  ADD CONSTRAINT `portafolio_ibfk_3` FOREIGN KEY (`tipo_trabajo`) REFERENCES `tipo_trabajo` (`id`);
+ALTER TABLE `integrantes_portafolios`
+  ADD CONSTRAINT `integrantes_portafolios_ibfk_1` FOREIGN KEY (`portafolio_id`) REFERENCES `portafolios` (`id`);
+
+--
+-- Filtros para la tabla `portafolios`
+--
+ALTER TABLE `portafolios`
+  ADD CONSTRAINT `portafolios_ibfk_3` FOREIGN KEY (`tipo_trabajo`) REFERENCES `tipo_trabajo` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

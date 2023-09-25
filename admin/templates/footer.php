@@ -18,7 +18,7 @@
     (function() {
       'use strict'
 
-      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+      // Obtener todos los formularios para aplicar estilos de validación de Bootstrap 
       var forms = document.querySelectorAll('.needs-validation')
 
       // Bucle sobre ellos y evitar el envío
@@ -35,45 +35,42 @@
         })
     })()
   </script>
-<script
-  src="https://code.jquery.com/jquery-3.7.0.js"
-  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-  crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-<script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-        $('#miTabla').DataTable({
-            language: {
-                "decimal": "",
-                "emptyTable": "No hay datos disponibles en la tabla",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                "infoEmpty": "Mostrando 0 a 0 de 0 registros",
-                "infoFiltered": "(filtrado de _MAX_ registros totales)",
-                "infoPostFix": "",
-                "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ registros por página",
-                "loadingRecords": "Cargando...",
-                "processing": "Procesando...",
-                "search": "Buscar:",
-                "zeroRecords": "No se encontraron registros coincidentes",
-                "paginate": {
-                    "first": "Primero",
-                    "last": "Último",
-                    "next": "Siguiente",
-                    "previous": "Anterior"
-                },
-                "aria": {
-                    "sortAscending": ": activar para ordenar la columna en orden ascendente",
-                    "sortDescending": ": activar para ordenar la columna en orden descendente"
-                }
-            },
-            "columnDefs": [{
-                "className": "text-center",
-                "targets": "_all"
-            }]
-        });
+      $('#miTabla').DataTable({
+        language: {
+          "decimal": "",
+          "emptyTable": "No hay datos disponibles en la tabla",
+          "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+          "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+          "infoFiltered": "(filtrado de _MAX_ registros totales)",
+          "infoPostFix": "",
+          "thousands": ",",
+          "lengthMenu": "Mostrar _MENU_ registros por página",
+          "loadingRecords": "Cargando...",
+          "processing": "Procesando...",
+          "search": "Buscar:",
+          "zeroRecords": "No se encontraron registros coincidentes",
+          "paginate": {
+            "first": "Primero",
+            "last": "Último",
+            "next": "Siguiente",
+            "previous": "Anterior"
+          },
+          "aria": {
+            "sortAscending": ": activar para ordenar la columna en orden ascendente",
+            "sortDescending": ": activar para ordenar la columna en orden descendente"
+          }
+        },
+        "columnDefs": [{
+          "className": "text-center",
+          "targets": "_all"
+        }]
+      });
     });
-</script>
+  </script>
   </body>
 
   </html>

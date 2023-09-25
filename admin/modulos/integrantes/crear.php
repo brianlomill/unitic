@@ -7,7 +7,7 @@
         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../../../servidor/integrantes/agrear_integrantes.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form action="../../../servidor/integrantes/agregar_integrantes.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
           <div class="row">
             <div class="col-sm-6">
@@ -19,6 +19,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6">
               <div class="mb-3">
                 <label for="apellidos" class="form-label">Apellidos</label>
@@ -28,6 +29,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6">
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -37,6 +39,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6">
               <div class="mb-3">
                 <label for="cvlac" class="form-label">Link CVLAC</label>
@@ -46,6 +49,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6">
               <div class="mb-3">
                 <label for="linkedin" class="form-label">Link LinkedIn</label>
@@ -55,6 +59,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6">
               <div class="mb-3">
                 <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
@@ -64,12 +69,13 @@
                 </div>
               </div>
             </div>
+            
             <div class="col-12">
               <label for="foto" class="form-label">Subir foto</label>
               <input type="file" name="foto" id="foto" class="form-control" required>
               <div class="invalid-feedback">
-                  Seleccione un foto
-                </div>
+                Seleccione un foto
+              </div>
             </div>
             <br>
 
@@ -77,10 +83,27 @@
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Guardar cambios</button>
             </div>
+          </div>
         </form>
       </div>
     </div>
-
   </div>
 </div>
-</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+   
+    $('#agregar').on('hidden.bs.modal', function(e) {
+      // Restablecer el contenido de los campos del formulario aquí
+      $('#nombres').val('');
+      $('#apellidos').val('');
+      $('#email').val('');
+      $('#cvlac').val('');
+      $('#linkedin').val('');
+      $('#fecha_ingreso').val('');
+      $('#foto').val('');
+    });
+  });
+</script>
