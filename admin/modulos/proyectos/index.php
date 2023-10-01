@@ -45,12 +45,14 @@ $listarProyectos = $proyectos->obtenerProyectos();
                 <?php foreach ($listarProyectos as $proyecto) : ?>
                     <tr class="text-center">
                         <td scope="row"><?php echo $proyecto['id']; ?></td>
-                        <td><?php echo $proyecto['archivo']; ?></td>
+                        <td><?php
+                            echo $proyecto['archivo']; 
+                        ?></td>
                         <td><?php echo $proyecto['titulo']; ?></td>
                         <td><?php echo $proyecto['programa']; ?></td>
                         <td><?php echo $proyecto['descripcion']; ?></td>
                         <td>
-                            <a name="editar" id="editar" class="btn btn-primary btn-sm" href="#" role="button">Editar</a>
+                            <a href="editar.php?id=<?php echo $proyecto['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
                         </td>
                     </tr>
                      <?php endforeach; ?>
