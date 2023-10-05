@@ -109,6 +109,7 @@ if ($integrante === null) {
       </div>
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-danger" onclick="history.back()">Volver</button>
       </div>
     </form>
   </div>

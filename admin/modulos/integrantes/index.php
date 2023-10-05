@@ -36,6 +36,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Foto</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Estado</th>
@@ -47,6 +48,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
             
                         <tr class="text-center">
                             <td scope="row"><?php echo $integrante['id']; ?></td>
+                            <td><img class="img-fluid mx-auto d-block rounded-circle"  width="40" height="40" src="../../../archivos/integrantes/<?php echo $integrante['foto']; ?>"></td>
                             <td><?php $Nombres = $integrante['nombres'] . ' ' . $integrante['apellidos'];
                                 echo $Nombres ?></td>
                             <td><?php echo $integrante['email']; ?></td>

@@ -3,50 +3,46 @@ include '../../clases/Integrantes.php';
 session_start();
 
 $id = $_POST['id'];
-$nombres = $_POST['nombres'];
-$apellidos = $_POST['apellidos'];
-$email = $_POST['email'];
-$cvlac = $_POST['cvlac'];
-$linkedin = $_POST['linkedin'];
-$fecha_ingreso = $_POST['fecha_ingreso'];
-$fecha_retiro = $_POST['fecha_retiro'];
-$rol = "2";
-$estado = $_POST['estado'];
+$titulo = $_POST['titulo'];
+$archivo_existente = $_POST['archivo_existente'];
+$archivo_nuevo = $_POST['archivo_nuevo'];
+$programa = $_POST['programa'];
+$fecha = $_POST['fecha'];
+$descripcion = $_POST['descripcion'];
+$integrantes = $_POST['integrante'];
 
-$Integrantes = new Integrantes();
+$Proyectos = new Proyectos();
 
 // Validar campos obligatorios
-if (empty($nombres) || empty($apellidos) || empty($email) || empty($fecha_ingreso) || empty($rol)) {
+if (empty($titulo) || empty($programa) || empty($fecha) || empty($descripcion) || empty($integrantes)) {
     $_SESSION['error_message'] = "Debes completar todos los campos obligatorios.";
-    header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
+    header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
     exit;
 }
 
 // Realizar la edición del integrante
 try {
-    if ($Integrantes->editarIntegrantes(
+    if ($Proyectos->editarProyectos(
         $id,
-        $nombres,
-        $apellidos,
-        $email,
-        $cvlac,
-        $linkedin,
-        $fecha_ingreso,
-        $fecha_retiro,
-        $rol,
-        $estado
+        $titulo,
+        $archivo_existente,
+        $archivo_nuevo,
+        $programa,
+        $fecha,
+        $descripcion,
+        $integrantes
     )) {
         $_SESSION['success_message'] = "El integrante ha sido editado exitosamente.";
-        header("location: ../../admin/modulos/integrantes/index.php");
+        header("location: ../../admin/modulos/proyectos/index.php");
         exit;
     } else {
         $_SESSION['error_message'] = "Hubo un error al editar el integrante.";
-        header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
+        header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
         exit;
     }
 } catch (Exception $e) {
     $_SESSION['error_message'] = "Error: " . $e->getMessage();
-    header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
+    header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
     exit;
 }
 ?>

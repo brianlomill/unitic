@@ -64,15 +64,18 @@
 
             <div class="col-12">
               <label for="archivo" class="form-label">Archivo (WORD & PDF)</label>
-              <input type="file" name="archivo" id="archivo" class="form-control">
-              <!-- <div class="invalid-feedback">
-                Seleccione un archivo
-              </div> -->
+              <input type="file" name="archivo" id="archivo" class="form-control" required> 
+              <em><p id="errorArchivo" class="text-danger"  style="font-size: 14px;"></p></em>
             </div>
-            <br>
+
+            <div class="col-12">
+              <label for="foto" class="form-label">Subir foto de portada</label>
+              <input type="file" name="foto" id="foto" class="form-control" required>
+              <em><p id="errorFoto" class="text-danger"  style="font-size: 14px;"></p></em>
+            </div>
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" id="close" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary" id="enviarFormularioBtn">Guardar cambios</button>
             </div>
           </div>
@@ -129,4 +132,43 @@
       $('#archivo').val('');
     });
   });
+
+  // En tu JavaScript o dentro de un script en el HTML
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el elemento del error
+    var errorArchivo = document.getElementById('errorArchivo');
+    var archivoInput = document.getElementById('archivo');
+
+    // Agregar un evento al input del archivo para verificar el tipo de archivo
+    archivoInput.addEventListener('change', function() {
+        var tipo_archivo = this.files[0].type;
+        if (!(tipo_archivo === "application/pdf" || tipo_archivo === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
+            // Mostrar el mensaje de error
+            errorArchivo.textContent = "El formato del archivo no es válido. Solo se permiten archivos PDF y DOCX.";
+            // Hacer que el mensaje de error sea visible
+            errorArchivo.style.display = 'block';
+        } else {
+            // Ocultar el mensaje de error si el archivo es válido
+            errorArchivo.style.display = 'none';
+            errorArchivo.textContent = ''; // Limpiar el contenido del mensaje de error
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var errorImagen = document.getElementById('errorFoto');
+    var fotoInput = document.getElementById('foto');
+
+    fotoInput.addEventListener('change', function() {
+        var tipo_imagen = this.files[0].type;
+        if (!(tipo_imagen === "image/png" || tipo_imagen === "image/jpeg" || tipo_imagen === "image/jpg")) {
+            errorImagen.textContent = "El formato de la imagen no es válido. Solo se permiten imágenes en formato PNG, JPG o JPEG.";
+            errorImagen.style.display = 'block';
+        } else {
+            errorImagen.style.display = 'none';
+            errorImagen.textContent = '';
+        }
+    });
+});
+
 </script>

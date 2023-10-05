@@ -16,7 +16,7 @@ $estado = $_POST['estado'];
 $Integrantes = new Integrantes();
 
 // Validar campos obligatorios
-if (empty($nombres) || empty($apellidos) || empty($email) || empty($fecha_ingreso) || empty($rol)) {
+if (empty($nombres) || empty($apellidos) || empty($email) || empty($linkedin) || empty($cvlac)|| empty($fecha_ingreso) || empty($rol)) {
     $_SESSION['error_message'] = "Debes completar todos los campos obligatorios.";
     header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
     exit;
