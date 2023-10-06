@@ -28,7 +28,7 @@
                     <a class="nav-link active text-white" aria-current="page" href="#container-info">Quienes somos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#proyectos">Proyectos</a>
+                    <a class="nav-link active text-white" aria-current="page" href="../public/proyectos.php">Proyectos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
