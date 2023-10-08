@@ -27,7 +27,7 @@
     ?>
 
     <div class="container my-5">
-      <h2 class="h5">MONOGRAFIAS</h2></br>
+      <h2 class="container my-5 h4">MONOGRAFIAS</h2>
       <div class="row">
         <div class="card col-md-12 p-3">
           <div class="row">

@@ -10,9 +10,9 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-dark" id="navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="../img/logo2.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
-            <img src="../img/unitic-estandar.png" alt="" width="150" height="50" class="d-inline-block align-text-top">
+        <a class="navbar-brand" href="../public/index.php">
+            <img src="../img/logo2.WEBP" alt="" width="50" height="50" class="d-inline-block align-text-top">
+            <img src="../img/uniticestandar2.WEBP" alt="" width="150" height="50" class="d-inline-block align-text-top">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,16 +25,16 @@
                     <a class="nav-link active text-warning" aria-current="page" href="../index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#container-info">Quienes somos</a>
+                    <a class="nav-link active text-white" aria-current="page" href="../public/proyectos.php">Proyectos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#proyectos">Proyectos</a>
+                    <a class="nav-link active text-white" aria-current="page" href="../public/monografias.php">Monografias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="../public/integrantes.php">Integrantes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#integrantes">Integrantes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#">Contactenos</a>

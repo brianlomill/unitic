@@ -28,7 +28,7 @@
     ?>
     <div class="banner">
       <div class="banner-content">
-        <img src="../img/uniticestandar2.png" alt="shopping">
+        <img src="../img/uniticestandar2.WEBP" alt="shopping">
         <h2>
           Ingeniería de Sistemas - ISUM - GIRARDOT
         </h2>
@@ -156,8 +156,6 @@
         // Obtener los primeros 3 integrantes
         $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
         ?>
-
-
 
         <div class="section-integrantes">
           <?php

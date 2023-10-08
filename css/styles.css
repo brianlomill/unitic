@@ -14,7 +14,7 @@ body{
 /* SECCION DE LA BANNER */
 
 .header {
-  background: url("../img/campus.jpeg") no-repeat center;
+  background: url("../img/campus.webp") no-repeat center;
   background-size: cover;
 }
 .banner{
