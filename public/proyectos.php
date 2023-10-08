@@ -32,7 +32,7 @@
     $listarIntegrantes = $proyectos->obtenerIntegrantes();
 
     ?>
-    <h2 class="container my-5 h4">PROYECTOS</h2>
+    <h2 class="container my-5 h5">PROYECTOS</h2>
     <?php foreach ($ListarProyectos as $proyecto) : ?>
       <div class="container my-5">
         <div class="row">

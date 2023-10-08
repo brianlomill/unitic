@@ -181,14 +181,14 @@
               <ul class="icons">
                 <li><a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
                 <li><a href="<?php echo $integrante['linkedln'];?>" target="_blank" title="Linkedln"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="#" target="_blank" title="Cvlac"><i class="bi bi-box-arrow-up-right"></i></a></li>
+                <li><a href="#" target="_blank" title="Cvlac"><i class="bi bi-person-vcard"></i></a></li>
               </ul>
             </div>
           <?php } ?>
         </div>
       </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a name="" id="" class="btn btn-outline-primary me-md-3" href="proyectos.php" role="button">Ver Más</a>
+        <a name="" id="" class="btn btn-outline-primary me-md-3" href="integrantes.php" role="button">Ver Más</a>
       </div>
     </div>
   </div>

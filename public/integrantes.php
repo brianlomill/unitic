@@ -24,42 +24,41 @@
   <body>
     <?php
     include('../templates/navbarSecciones.php');
-    include('../clases/Proyectos.php');
+    include('../clases/Integrantes.php');
 
-    $proyectos = new Proyectos();
+    $integrantes = new Integrantes();
 
-    $ListarProyectos = $proyectos->obtenerProyectos();
-    $listarIntegrantes = $proyectos->obtenerIntegrantes();
+    $listarIntegrantes = $integrantes->obtenerIntegrantes();
 
     ?>
     <h2 class="container my-5 h4">INTEGRANTES</h2>
-    <?php foreach ($ListarProyectos as $proyecto) : ?>
+    <?php foreach ($listarIntegrantes as $integrante) : ?>
       <div class="container my-5">
         <div class="row">
           <div class="card col-md-12 p-3">
             <div class="row">
               <div class="col-md-3">
-                <!-- <img width="100%" src="../img/uniminuto.jpg"> -->
-                <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
-                  <img class="img-fluid mx-auto d-block" src="../archivos/proyectos/img_archivos/<?php echo $proyecto['imagen']; ?>">
-                </a>
+                <img class="img-fluid mx-auto d-block" src="../archivos/integrantes/<?php echo $integrante['foto']; ?>">
               </div>
               <div class="col-md-8">
                 <div class="card-block">
-                  <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
-                    <h6 class="card-title h5" style="color:#146C94"><?php echo $proyecto['titulo'] ?></h6>
-                  </a>
-                  <p style="color:#19A7CE"><em><?php echo $proyecto['programa'] ?></em></p>
-                  <p class="h6 text-dark text-opacity-75">"<?php echo $proyecto['fecha'] ?>"</p>
-                  <p><small>Integrantes: </small>
-                    <?php foreach ($listarIntegrantes as $integrante) {
-                      if ($integrante['portafolio_id'] == $proyecto['id']) {
-                        echo '<p class="h6 text-dark"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
-                      }
-                    } ?>
-
-                    <!-- <p class="h6 text-dark"><i class="bi bi-check-all"></i>edwin</p> -->
-                  </p>
+                  <h6 class="card-title h5" style="color:#146C94"><?php echo $integrante['nombres'] . " " . $integrante['apellidos'] ?></h6>
+                  <h6><i class="bi bi-envelope-at"></i> Correo:</h6>
+                  <h6 style="color:#19A7CE">
+                    <a href="mailto:<?php echo $integrante['email'] ?>"><em><?php echo $integrante['email'] ?></em></a>
+                  </h6>
+                  <h6><i class="fab fa-linkedin"></i> Linkedln:</h6>
+                  <h6 style="color:#19A7CE"><em><a href="<?php echo $integrante['linkedln']; ?>" target="_blank" title="Linkedln"><?php echo $integrante['linkedln'] ?></a></em></h6>
+                  <h6><i class="bi bi-person-vcard"></i> Cvlac:</h6>
+                  <h6 style="color:#19A7CE"><em><a href="<?php echo $integrante['cvlac']; ?>" target="_blank" title="Linkedln"><?php echo $integrante['cvlac'] ?></a></em></h6>
+                  <h6><i class="bi bi-calendar-date"></i> Fecha de ingreso:</h6>
+                  <p class="h6 text-dark text-opacity-75">"<?php echo $integrante['fecha_ingreso'] ?>"</p>
+                  <h6><i class="bi bi-eye"></i> Estado: <?php if ($integrante['estado'] == 1) : ?>
+                      <span class="badge bg-success">Activo</span>
+                    <?php else : ?>
+                      <span class="badge bg-danger">Inactivo</span>
+                    <?php endif; ?>
+                  </h6>
                 </div>
               </div>
             </div>
