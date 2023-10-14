@@ -99,7 +99,7 @@ class Integrantes extends Conexion
     public function obtenerIntegrantes()
     {
         $conexion = $this->obtenerConexion();
-        $sql = "SELECT * FROM integrantes";
+        $sql = "SELECT * FROM integrantes order by estado";
         $result = mysqli_query($conexion, $sql);
         $integrantes = array();
 
