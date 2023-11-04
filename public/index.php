@@ -24,7 +24,15 @@
 <body>
   <header class="header">
     <?php
-    include('../templates/navbar.php')
+    include('../templates/navbar.php');
+    $url_base = "../archivos/integrantes/";
+    include '../clases/Integrantes.php';
+
+    // Instancia de la clase Integrantes
+    $integrantes = new Integrantes();
+
+    // Obtener los primeros 3 integrantes
+    $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
     ?>
     <div class="banner">
       <div class="banner-content">
@@ -91,7 +99,9 @@
         <div class="col-sm-4 col-md-4 py-4">
           <div class="card">
             <div class="card-body">
-              <a href="#"><i class="bi bi-file-earmark-text" style="font-size: 2rem; color: #0e0d0d;"></i></a>
+              <a href="#">
+                <img src="../img/pdf.webp" alt="pdf">
+              </a>             
               <h3 class="card-title">2020</h3><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
               <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in
@@ -106,7 +116,9 @@
         <div class="col-sm-4 col-md-4 py-4">
           <div class="card">
             <div class="card-body">
-              <a href="#"><i class="bi bi-file-earmark-text" style="font-size: 2rem; color: #0e0d0d;"></i></a>
+              <a href="#">
+                <img src="../img/pdf.webp" alt="pdf">
+              </a>             
               <h3 class="card-title">2020</h3><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
               <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in
@@ -121,7 +133,9 @@
         <div class="col-sm-4 col-md-4 py-4">
           <div class="card">
             <div class="card-body">
-              <a href="#"><i class="bi bi-file-earmark-text" style="font-size: 2rem; color: #0e0d0d;"></i></a>
+              <a href="#">
+                <img src="../img/pdf.webp" alt="pdf">
+              </a>             
               <h3 class="card-title">2020</h3><br>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
               <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in
@@ -146,20 +160,10 @@
     </div>
     <div class="container py-2">
       <div class="row">
-        <?php
-        $url_base = "../archivos/integrantes/";
-        include '../clases/Integrantes.php';
-
-        // Crear una instancia de la clase Integrantes
-        $integrantes = new Integrantes();
-
-        // Obtener los primeros 3 integrantes
-        $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
-        ?>
 
         <div class="section-integrantes">
           <?php
-          // Generar las cards de Bootstrap para los integrantes obtenidos
+          // Genera las cards de Bootstrap para los integrantes obtenidos
           foreach ($integrantesList as $integrante) {
             $nombres = $integrante["nombres"] . ' ' . $integrante["apellidos"];
             $foto = $integrante["foto"];

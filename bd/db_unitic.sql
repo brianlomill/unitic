@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2023 a las 02:46:19
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 31-10-2023 a las 22:03:52
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,7 @@ CREATE TABLE `administrador` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `update_at` date DEFAULT NULL,
   `roles_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `administrador`
@@ -55,7 +55,7 @@ INSERT INTO `administrador` (`id`, `nombres`, `apellidos`, `email`, `foto`, `pas
 CREATE TABLE `estados` (
   `id` int(11) NOT NULL,
   `estado` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `estados`
@@ -85,31 +85,20 @@ CREATE TABLE `integrantes` (
   `estado` int(11) NOT NULL,
   `update_at` date DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `integrantes`
 --
 
 INSERT INTO `integrantes` (`id`, `nombres`, `apellidos`, `email`, `foto`, `cvlac`, `linkedln`, `fecha_ingreso`, `fecha_retiro`, `roles_id`, `estado`, `update_at`, `created_at`) VALUES
-(1, 'Juan Andres', 'Lopez Garciaa', 'lozanodavid10@hotmail.com', 'estudiante3.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-02-22', '0000-00-00', 2, 1, NULL, '2023-08-17 01:37:58'),
-(2, 'Luisa', 'Cardenas Ortega', 'blozanoguar@uniminuto.edu.co', 'estudiante1.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2022-02-16', NULL, 2, 1, NULL, '2023-05-29 16:29:23'),
-(3, 'Luis Andres', 'Trujillo Sandoval', 'admin@sistematiozacion.com', 'integrante-foto2.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-03-16', NULL, 2, 1, NULL, '2023-05-29 16:30:05'),
-(4, 'bccvn', 'juana', 'blozanoguar@uniminuto.edu.co', 'estudiante1.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-03', NULL, 2, 1, NULL, '2023-05-29 22:30:42'),
-(5, 'manuel', 'perez', 'jivanhernandez1994@gmail.com', 'campus.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', NULL, 2, 1, NULL, '2023-05-29 22:59:02'),
-(6, 'Gustavo ', 'Montealegre', 'gustavo.montealegre@uniminuto.edu', 'estudiante3.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', '0000-00-00', 2, 2, NULL, '2023-05-31 20:28:51');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `integrantes_portafolios`
---
-
-CREATE TABLE `integrantes_portafolios` (
-  `id` int(11) NOT NULL,
-  `portafolio_id` int(11) NOT NULL,
-  `integrantes` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(1, 'Juan Andress', 'Lopez Garciaa', 'lozanodavid10@hotmail.com', 'estudiante3.webp', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a...', '2023-02-22', '0000-00-00', 2, 1, NULL, '2023-10-08 03:19:43'),
+(2, 'Luisa', 'Cardenas Ortega', 'blozanoguar@uniminuto.edu.co', 'estudiante1.webp', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2022-02-16', '0000-00-00', 2, 1, NULL, '2023-10-08 03:19:53'),
+(3, 'Luis Andres', 'Trujillo Sandoval', 'admin@sistematiozacion.com', 'integrante-foto2.webp', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-03-16', '0000-00-00', 2, 1, NULL, '2023-10-08 03:20:03'),
+(4, 'bccvn', 'juana', 'blozanoguar@uniminuto.edu.co', 'estudiante1.webp', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-03', NULL, 2, 1, NULL, '2023-10-08 03:20:13'),
+(5, 'manuel', 'perez', 'jivanhernandez1994@gmail.com', 'estudiante3.webp', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', NULL, 2, 1, NULL, '2023-10-08 03:20:23'),
+(6, 'Gustavo ', 'Montealegre', 'gustavo.montealegre@uniminuto.edu', 'estudiante3.webp', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-05-02', '0000-00-00', 2, 2, NULL, '2023-10-08 03:20:32'),
+(7, 'brian David', 'rfdbdfgbc', 'lozanodavid10@hotmail.com', '20170313_200208.jpg', 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001662775', 'https://www.linkedin.com/in/brian-lozano-a2140718a/', '2023-10-01', '0000-00-00', 2, 1, NULL, '2023-10-08 15:33:45');
 
 -- --------------------------------------------------------
 
@@ -124,8 +113,39 @@ CREATE TABLE `portafolios` (
   `fecha` date DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `archivo` varchar(250) NOT NULL,
+  `imagen` varchar(100) NOT NULL,
   `tipo_trabajo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `portafolios`
+--
+
+INSERT INTO `portafolios` (`id`, `titulo`, `programa`, `fecha`, `descripcion`, `archivo`, `imagen`, `tipo_trabajo`) VALUES
+(1, 'Diseño y desarrollo de plataformas web \"Observatorio de Graduados\" para el fortalecimiento del vinculos entre profesionales de trabajo social e ingeniería de sistemas y Uniminuto1', 'Tecnologia en informatica TINF', '2023-10-04', 'prueba archivo imagen', 'Actividad.pdf', 'thumb-1920-601846.jpg', 1),
+(2, 'javascript', 'Ingeniería de Sistemas - ISUM', '2022-06-06', 'Producto de un libro dedicado a la programacion', 'Actividad_grupal_#2_consultas_lenguajes.pdf', 'thumb-1920-601846.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `portafolios_has_integrantes`
+--
+
+CREATE TABLE `portafolios_has_integrantes` (
+  `id` int(11) NOT NULL,
+  `portafolio_id` int(11) NOT NULL,
+  `integrantes` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `portafolios_has_integrantes`
+--
+
+INSERT INTO `portafolios_has_integrantes` (`id`, `portafolio_id`, `integrantes`) VALUES
+(1, 1, 'juan'),
+(2, 1, 'maria'),
+(3, 2, 'Edwin Reinel Perdomo Sedano'),
+(4, 2, 'Diego Alexander Beltran');
 
 -- --------------------------------------------------------
 
@@ -137,7 +157,7 @@ CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `titulo` varchar(50) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `roles`
@@ -156,7 +176,7 @@ INSERT INTO `roles` (`id`, `titulo`, `created_at`) VALUES
 CREATE TABLE `tipo_trabajo` (
   `id` int(11) NOT NULL,
   `titulo` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipo_trabajo`
@@ -196,19 +216,18 @@ ALTER TABLE `integrantes`
   ADD KEY `estado` (`estado`);
 
 --
--- Indices de la tabla `integrantes_portafolios`
---
-ALTER TABLE `integrantes_portafolios`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `integrante_id` (`integrantes`),
-  ADD KEY `integrantes_portafolios_ibfk_1` (`portafolio_id`);
-
---
 -- Indices de la tabla `portafolios`
 --
 ALTER TABLE `portafolios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `tipo_trabajo` (`tipo_trabajo`);
+
+--
+-- Indices de la tabla `portafolios_has_integrantes`
+--
+ALTER TABLE `portafolios_has_integrantes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `integrantes_portafolios_ibfk_1` (`portafolio_id`);
 
 --
 -- Indices de la tabla `roles`
@@ -242,19 +261,19 @@ ALTER TABLE `estados`
 -- AUTO_INCREMENT de la tabla `integrantes`
 --
 ALTER TABLE `integrantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de la tabla `integrantes_portafolios`
---
-ALTER TABLE `integrantes_portafolios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `portafolios`
 --
 ALTER TABLE `portafolios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `portafolios_has_integrantes`
+--
+ALTER TABLE `portafolios_has_integrantes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -286,16 +305,16 @@ ALTER TABLE `integrantes`
   ADD CONSTRAINT `integrantes_ibfk_2` FOREIGN KEY (`estado`) REFERENCES `estados` (`id`);
 
 --
--- Filtros para la tabla `integrantes_portafolios`
---
-ALTER TABLE `integrantes_portafolios`
-  ADD CONSTRAINT `integrantes_portafolios_ibfk_1` FOREIGN KEY (`portafolio_id`) REFERENCES `portafolios` (`id`);
-
---
 -- Filtros para la tabla `portafolios`
 --
 ALTER TABLE `portafolios`
   ADD CONSTRAINT `portafolios_ibfk_3` FOREIGN KEY (`tipo_trabajo`) REFERENCES `tipo_trabajo` (`id`);
+
+--
+-- Filtros para la tabla `portafolios_has_integrantes`
+--
+ALTER TABLE `portafolios_has_integrantes`
+  ADD CONSTRAINT `portafolios_has_integrantes_ibfk_1` FOREIGN KEY (`portafolio_id`) REFERENCES `portafolios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
