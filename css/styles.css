@@ -271,7 +271,7 @@ body{
 }
 
 .bg-image {
-  background-image: url('../img/campus.jpeg');
+  background-image: url("../img/campus.webp");
   background-size: cover;
   background-position: center;
 }
