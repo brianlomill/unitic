@@ -34,13 +34,15 @@
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="../public/proyectos.php">Proyectos</a>
                         </li>
+                        <li>
+                            <a class="nav-link active text-white" aria-current="page" href="../public/monografias.php">Monografias</a>
+                        </li>
                         <li class="nav-item">
                             <div class="dropdown">
                                 <a class="nav-link active text-white dropdown-toggle" href="#" role="button" id="productosDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     Productos
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="productosDropdown">
-                                    <li><a class="dropdown-item" href="../public/monografias.php">Monografias</a></li>
                                     <li><a class="dropdown-item" href="../public/ponencias.php">Ponencias</a></li>
                                     <li><a class="dropdown-item" href="../public/posters.php">Posters</a></li>
                                 </ul>
@@ -51,9 +53,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Contactenos</a>
                         </li>
                     </ul>
                     <a name="" id="" class="btn btn-outline-warning" href="../admin/login.php" role="button">Administrador</a>

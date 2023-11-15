@@ -2,7 +2,7 @@
   <html lang="en">
 
   <head>
-    <title>Semillero UNITIC</title>
+    <title>Proyectos - UNITIC</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,10 +32,9 @@
     $listarIntegrantes = $proyectos->obtenerIntegrantes();
 
     ?>
-    <h2 class="container my-5 h5">PROYECTOS</h2>
+    <h5 class="container my-5">PROYECTOS</h5>
     <?php foreach ($ListarProyectos as $proyecto) : ?>
       <div class="container my-5">
-        <div class="row">
           <div class="card col-md-12 p-3">
             <div class="row">
               <div class="col-md-3">
@@ -64,7 +63,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     <?php endforeach; ?>
 
