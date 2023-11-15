@@ -34,9 +34,6 @@
                     <a class="nav-link active text-white" aria-current="page" href="#integrantes">Integrantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#">Contactenos</a>
                 </li>
             </ul>
