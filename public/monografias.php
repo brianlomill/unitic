@@ -35,10 +35,10 @@
         <div class="col-md-8">
           <div class="card-block">
             <h6 class="card-title h5" style="color:#146C94">Diseño y desarrollo de plataformas web "Observatorio de Graduados" para el fortalecimiento del vinculos entre profesionales de trabajo social e ingeniería de sistemas y Uniminuto</h6>
-            <p style="color:#19A7CE"><em>Tecnologia en informatica TINF.</em></p>
+            <h6 style="color: #19A7CE; font-style: italic;">Tecnologia en informatica TINF.</h6>
             <p class="h6 text-dark text-opacity-75">"2020 - 10"</p>
-            <p><small>Graduados:</small>
-            <p class="h6 text-dark"><i class="bi bi-check-all"></i> Edwin Reinel Perdomo Sedano</p>
+            <p class="h6 text-dark">Graduados:</p>
+            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i> Edwin Reinel Perdomo Sedano</p>
             </p>
           </div>
         </div>

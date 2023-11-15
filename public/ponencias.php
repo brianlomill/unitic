@@ -24,77 +24,28 @@
 <body>
   <?php
   include('../templates/navbarSecciones.php');
-  include('../clases/Proyectos.php');
-
-  $proyectos = new Proyectos();
-
-  $ListarProyectos = $proyectos->obtenerProyectos();
-  $listarIntegrantes = $proyectos->obtenerIntegrantes();
-
   ?>
-  <h5 class="container my-5">PROYECTOS</h5>
-  <?php foreach ($ListarProyectos as $proyecto) : ?>
-    <div class="container my-5">
-      <div class="card col-md-12 p-3">
-        <div class="row">
-          <div class="col-md-3">
-            <!-- <img width="100%" src="../img/uniminuto.jpg"> -->
-            <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
-              <img class="img-fluid mx-auto d-block" src="../archivos/proyectos/img_archivos/<?php echo $proyecto['imagen']; ?>">
-            </a>
-          </div>
-          <div class="col-md-8">
-            <div class="card-block">
-              <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
-                <h6 class="card-title h5" style="color:#146C94"><?php echo $proyecto['titulo'] ?></h6>
-              </a>
-              <p style="color:#19A7CE"><em><?php echo $proyecto['programa'] ?></em></p>
-              <p class="h6 text-dark text-opacity-75">"<?php echo $proyecto['fecha'] ?>"</p>
-              <p><small>Integrantes: </small>
-                <?php foreach ($listarIntegrantes as $integrante) {
-                  if ($integrante['portafolio_id'] == $proyecto['id']) {
-                    echo '<p class="h6 text-dark"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
-                  }
-                } ?>
-
-                <!-- <p class="h6 text-dark"><i class="bi bi-check-all"></i>edwin</p> -->
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <?php endforeach; ?>
-
-</body>
-<div class="container my-5">
-  <h2 class="h5">PONENCIAS</h2></br>
-  <div class="row">
+  <h5 class="container my-5">PONENCIAS</h5>
+  <div class="container my-5">
     <div class="card col-md-12 p-3">
       <div class="row">
         <div class="col-md-3">
-          <img width="100%" src="../img/uniminuto.jpg">
+          <img width="100%" src="../img/campus.webp">
         </div>
         <div class="col-md-8">
           <div class="card-block">
             <h6 class="card-title h5" style="color:#146C94">Diseño y desarrollo de plataformas web "Observatorio de Graduados" para el fortalecimiento del vinculos entre profesionales de trabajo social e ingeniería de sistemas y Uniminuto</h6>
-            <p style="color:#19A7CE"><em>Tecnologia en informatica TINF.</em></p>
-            <p class="h6 text-dark text-opacity-75">"texto"</p>
-            <p><small>Ponentes:</small>
+            <h6 style="color: #19A7CE; font-style: italic;">Nombre del evento de las ponencias y ciudad</h6>
+            <p class="h6 text-dark">Ponentes:</p>
             <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i> Edwin Reinel Perdomo Sedano</p>
-            </p>
-            <p><small>Descripción del evento:</small>
-            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i> Edwin Reinel Perdomo Sedano</p>
-            </p>
-            <p><small>Ubicacion:</small>
-            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i> Ubicacion 1</p>
-            </p>
-            <p><small>Fecha:</small>
-            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i> Ubicacion 1</p>
+            <p class="h6 text-dark">Descripción del evento:</p>
+            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>Ubicación</p>
+            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>Fecha</p>
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+</body>

@@ -48,16 +48,14 @@
                   <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
                     <h6 class="card-title h5" style="color:#146C94"><?php echo $proyecto['titulo'] ?></h6>
                   </a>
-                  <p style="color:#19A7CE"><em><?php echo $proyecto['programa'] ?></em></p>
+                  <h6 style="color: #19A7CE; font-style: italic;"><?php echo $proyecto['programa'] ?></h6>
                   <p class="h6 text-dark text-opacity-75">"<?php echo $proyecto['fecha'] ?>"</p>
-                  <p><small>Integrantes: </small>
+                  <p class="h6 text-dark">Integrantes:</p>
                     <?php foreach ($listarIntegrantes as $integrante) {
                       if ($integrante['portafolio_id'] == $proyecto['id']) {
-                        echo '<p class="h6 text-dark"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
+                        echo '<p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
                       }
                     } ?>
-
-                    <!-- <p class="h6 text-dark"><i class="bi bi-check-all"></i>edwin</p> -->
                   </p>
                 </div>
               </div>
