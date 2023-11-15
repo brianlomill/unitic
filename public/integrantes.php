@@ -31,10 +31,9 @@
     $listarIntegrantes = $integrantes->obtenerIntegrantes();
 
     ?>
-    <h2 class="container my-5 h4">INTEGRANTES</h2>
+    <h5 class="container my-5 h5">INTEGRANTES</h5>
     <?php foreach ($listarIntegrantes as $integrante) : ?>
       <div class="container my-5">
-        <div class="row">
           <div class="card col-md-12 p-3">
             <div class="row">
               <div class="col-md-3">

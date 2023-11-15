@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-xl-5 col-lg-6 col-md-8">
             <div class="section-title">
-              <h4>POSTERS</h4>
+              <h5>POSTERS</h5>
             </div>
           </div>
         </div>
