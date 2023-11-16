@@ -1,14 +1,15 @@
 <?php
 session_start();
 include("../../templates/header.php");
-include("../../../clases/Proyectos.php");
+include("../../../clases/Monografias.php");
 
 if (isset($_SESSION['error_message'])) {
   echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
   echo $_SESSION['error_message'];
   echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
   echo '</div>';
-  unset($_SESSION['error_message']); // Limpiar el mensaje de error almacenado en la sesión
+  unset($_SESSION['error_message']); 
+  // Limpiar el mensaje de error almacenado en la sesión
 }
 
 if (!isset($_SESSION['administrador'])) {
@@ -20,25 +21,25 @@ if (!isset($_GET['id'])) {
   exit();
 }
 
-// Instancia de la clase Proyectos
-$proyectos = new Proyectos();
+// Instancia de la clase Monografias
+$monografias = new Monografias();
 
-// Obtener los proyectos
-$conn = $proyectos->obtenerProyectos();
+// Obtener los monografias
+$conn = $monografias->obtenerMonografias();
 
 $id = $_GET['id'];
-$listarProyectos = $proyectos->obtenerProyectos();
+$listarMonografias = $monografias->obtenerMonografias();
 
 // Buscar el proyecto por ID en el array
-$proyecto = null;
-foreach ($listarProyectos as $item) {
+$monografias = null;
+foreach ($listarMonografias as $item) {
   if ($item['id'] == $id) {
-    $proyecto = $item;
+    $monografia = $item;
     break;
   }
 }
 
-if ($proyecto === null) {
+if ($monografia === null) {
   // El proyecto no se encontró en la lista
   header("Location: index.php");
   exit();

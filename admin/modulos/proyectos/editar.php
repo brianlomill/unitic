@@ -23,14 +23,9 @@ if (!isset($_GET['id'])) {
 // Instancia de la clase Proyectos
 $proyectos = new Proyectos();
 
-// Obtener los proyectos
-$conn = $proyectos->obtenerProyectos();
-
 $id = $_GET['id'];
 $listarProyectos = $proyectos->obtenerProyectos();
 
-// Buscar el proyecto por ID en el array
-$proyecto = null;
 foreach ($listarProyectos as $item) {
   if ($item['id'] == $id) {
     $proyecto = $item;
@@ -72,7 +67,7 @@ $listarIntegrantes = $proyectos->obtenerIntegrantes();
       </div>
       <div class="col-md-6">
         <label for="apellidos" class="form-label">Archivo Nuevo</label>
-        <input type="file" name="archivo_nuevo" id="archivo_nuevo" class="form-control" value="<?php echo $proyecto['archivo'] ?>">
+        <input type="file" name="archivo_nuevo" id="archivo_nuevo" class="form-control">
       </div>
       <div class="col-md-6">
         <label for="programa" class="form-label">Programa</label>
