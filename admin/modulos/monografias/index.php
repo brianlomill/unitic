@@ -46,8 +46,8 @@ $listarMonografias = $monografias->obtenerMonografias();
                             <tr class="text-center">
                                 <td scope="row"><?php echo $monografia['id']; ?></td>
                                 <td>
-                                    <a href="../../../archivos/proyectos/<?php echo $monografia['archivo']; ?>" target="_blank">
-                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/proyectos/img_archivos/<?php echo $monografia['imagen']; ?>">
+                                    <a href="../../../archivos/monografias/<?php echo $monografia['archivo']; ?>" target="_blank">
+                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/monografias/img_archivos/<?php echo $monografia['imagen']; ?>">
                                     </a>
                                 </td>
                                 <td><?php echo $monografia['titulo']; ?></td>

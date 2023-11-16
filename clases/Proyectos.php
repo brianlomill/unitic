@@ -49,7 +49,7 @@ class Proyectos extends Conexion
     }
     
 
-    public function ingresarIntegrantesPoyectos($proyectoId, $integrantes)
+    public function ingresarIntegrantesProyectos($proyectoId, $integrantes)
     {
         $conexion = $this->obtenerConexion();
 
