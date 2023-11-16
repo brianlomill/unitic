@@ -76,7 +76,7 @@ class Proyectos extends Conexion
     public function obtenerProyectos()
     {
         $conexion = $this->obtenerConexion();
-        $sql = "SELECT * FROM portafolios";
+        $sql = "SELECT * FROM portafolios where tipo_trabajo = 1";
         $result = mysqli_query($conexion, $sql);
         $proyectos = array();
 
@@ -101,7 +101,7 @@ class Proyectos extends Conexion
             throw new Exception("Error en la conexión a la base de datos: " . mysqli_connect_error());
         }
     
-        $sql = "SELECT * FROM portafolios LIMIT ?";
+        $sql = "SELECT * FROM portafolios where tipo_trabajo = 1 LIMIT ?";
         
         // Manejo de errores en la preparación de la consulta
         $query = mysqli_prepare($conexion, $sql);
@@ -142,8 +142,7 @@ class Proyectos extends Conexion
 
     public function obtenerIntegrantes(){
         $conexion = $this->obtenerConexion();
-        $sql = "SELECT *
-        FROM portafolios_has_integrantes pi
+        $sql = "SELECT * FROM portafolios_has_integrantes pi
         INNER JOIN portafolios p ON (pi.portafolio_id = p.id)";
         $result = mysqli_query($conexion, $sql);
         $integrantes = array();
