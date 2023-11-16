@@ -22,42 +22,55 @@ $url_base = "http://localhost/unitic/admin/"
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <!-- DATATABLES -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <!-- css -->
+   <link rel="stylesheet" href="../../../css/navbar.css"> 
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg bg-dark" id="navbar">
             <div class="container">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="navbar-brand dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrador</a>
+                        <a class="navbar-brand dropdown-toggle text-white" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrador</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?php echo $url_base; ?>actualizarContrasena.php">Actualizar Contraseña</a></li>
                         </ul>
                     </li>
                 </ul>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav m-auto" style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" href="<?php echo $url_base; ?>index.php" aria-current="page">Inicio <span class="visually-hidden">(current)</span></a>
+                            <a class="nav-link active text-warning" aria-current="page" href="<?php echo $url_base; ?>index.php">Inicio <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo $url_base; ?>modulos/proyectos/">Proyectos</a>
+                            <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/proyectos/">Proyectos</a>
+                        </li>
+                        <li>
+                            <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/monografias/">Monografias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo $url_base; ?>modulos/productos/">Productos</a>
+                            <div class="dropdown">
+                                <a class="nav-link active text-white dropdown-toggle" href="#" role="button" id="productosDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="productosDropdown">
+                                    <li><a class="dropdown-item" href="#">Ponencias</a></li>
+                                    <li><a class="dropdown-item" href="#">Posters</a></li>
+                                    <li><a class="dropdown-item" href="#">Desarrollo</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo $url_base; ?>modulos/integrantes/">Integrantes</a>
+                            <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/integrantes/">Integrantes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo $url_base; ?>modulos/desarrollo/">Desarrollo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="<?php echo $url_base; ?>modulos/articulos/">Articulos</a>
+                            <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
                         </li>
                     </ul>
                     <a href="<?php echo $url_base; ?>../servidor/cerrar_sesion.php">
@@ -69,4 +82,4 @@ $url_base = "http://localhost/unitic/admin/"
         </nav>
     </header>
     <main class="container">
-<br>
+        <br>
