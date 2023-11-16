@@ -33,7 +33,7 @@ $listarMonografias = $monografias->obtenerMonografias();
                 <table class="cell-border" id="miTabla">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
+                            <th scope="col">#</th>
                             <th scope="col">Monografia</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Programa</th>
@@ -42,9 +42,12 @@ $listarMonografias = $monografias->obtenerMonografias();
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($listarMonografias as $monografia) : ?>
+                        <?php
+                        $registro = 1;
+                        foreach ($listarMonografias as $monografia) :
+                        ?>
                             <tr class="text-center">
-                                <td scope="row"><?php echo $monografia['id']; ?></td>
+                                <td scope="row"><?php echo $registro; ?></td>
                                 <td>
                                     <a href="../../../archivos/monografias/<?php echo $monografia['archivo']; ?>" target="_blank">
                                         <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/monografias/img_archivos/<?php echo $monografia['imagen']; ?>">
@@ -57,7 +60,10 @@ $listarMonografias = $monografias->obtenerMonografias();
                                     <a href="editar.php?id=<?php echo $monografia['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php
+                            $registro++;
+                        endforeach;
+                        ?>
                     </tbody>
                 </table>
             <?php endif; ?>
