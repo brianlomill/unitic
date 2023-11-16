@@ -1,47 +1,71 @@
-<?php session_start();
-if(!isset($_SESSION['Administrador'])){
-  header("location: ../../index.php");
-}?>
-<?php include("../../templates/header.php") ?>
+<?php
+session_start();
+if (!isset($_SESSION['administrador'])) {
+    header("location: ../../index.php");
+}
+include("../../templates/header.php");
+include("../../../clases/Monografias.php");
+
+//instancia de la clase Integrantes
+$monografias = new Monografias();
+
+// Obtener los proyectos
+$listarMonografias = $monografias->obtenerMonografias();
+
+?>
 
 <div class="titulo">
-<h3>Monografías</h3>
+    <h3>Monografias</h3>
 </div><br>
 
 <div class="card">
     <div class="card-header fs-3 mb-3">
-        <a name="" id="" class="btn btn-primary " href="#" role="button">Agregar monografías 
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar">
+            Agregar monografias
             <i class="bi bi-plus-circle"></i>
-        </a>
+        </button>
     </div>
     <div class="card-body">
         <div class="table-responsive-sm">
-            <table class="table table-bordered table-primary text-center">
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Programa</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>
-                            <a name="editar" id="editar" class="btn btn-primary btn-sm" href="#" role="button">Editar</a> |
-                            <a name="editar" id="editar" class="btn btn-success btn-sm" href="#" role="button">Estado</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>  
+            <?php if (empty($listarMonografias)) : ?>
+                <p>No hay monografias registradas.</p>
+            <?php else : ?>
+                <table class="cell-border" id="miTabla">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Monografia</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Programa</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($listarMonografias as $monografia) : ?>
+                            <tr class="text-center">
+                                <td scope="row"><?php echo $monografia['id']; ?></td>
+                                <td>
+                                    <a href="../../../archivos/proyectos/<?php echo $monografia['archivo']; ?>" target="_blank">
+                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/proyectos/img_archivos/<?php echo $monografia['imagen']; ?>">
+                                    </a>
+                                </td>
+                                <td><?php echo $monografia['titulo']; ?></td>
+                                <td><?php echo $monografia['programa']; ?></td>
+                                <td><?php echo $monografia['descripcion']; ?></td>
+                                <td>
+                                    <a href="editar.php?id=<?php echo $monografia['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+        </div>
     </div>
-</div><br>
-<footer>
-<?php include("../../templates/footer.php") ?>
-</footer>
+</div>
+<br>
+<?php
+include("crear.php");
+include("../../templates/footer.php");
+?>
