@@ -1,5 +1,5 @@
 <?php
-include 'Conexion.php';
+include_once('Conexion.php');
 
 // Clase Proyectos
 class Proyectos extends Conexion
@@ -19,14 +19,13 @@ class Proyectos extends Conexion
         $tipo_trabajo
     ) {
         $conexion = $this->obtenerConexion();
-        $sql = "INSERT INTO portafolios (titulo, programa, fecha, descripcion, archivo, imagen, tipo_trabajo) 
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO portafolios (titulo, programa, fecha, descripcion, archivo, imagen, tipo_trabajo, created_at) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
         $query = mysqli_prepare($conexion, $sql);
-
+    
         if (!$query) {
             throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
         }
-
         mysqli_stmt_bind_param(
             $query,
             "ssssssi",
@@ -38,15 +37,17 @@ class Proyectos extends Conexion
             $foto,
             $tipo_trabajo
         );
-
+        
+    
         if (!mysqli_stmt_execute($query)) {
             throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
         }
-
+    
         mysqli_stmt_close($query);
-
+    
         return true;
     }
+    
 
     public function ingresarIntegrantesPoyectos($proyectoId, $integrantes)
     {
@@ -87,6 +88,57 @@ class Proyectos extends Conexion
 
         return $proyectos;
     }
+
+    public function obtenerPrimerosProyectos()
+    {
+        // Obtener solo 3 proyectos
+        $cantidad = 3;
+        
+        // Verificar la conexión a la base de datos
+        $conexion = $this->obtenerConexion();
+        
+        if (!$conexion) {
+            throw new Exception("Error en la conexión a la base de datos: " . mysqli_connect_error());
+        }
+    
+        $sql = "SELECT * FROM portafolios LIMIT ?";
+        
+        // Manejo de errores en la preparación de la consulta
+        $query = mysqli_prepare($conexion, $sql);
+    
+        if (!$query) {
+            throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
+        }
+    
+        // Enlazar el parámetro y ejecutar la consulta
+        mysqli_stmt_bind_param($query, "i", $cantidad);
+    
+        if (!mysqli_stmt_execute($query)) {
+            throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
+        }
+    
+        // Obtener los resultados
+        $result = mysqli_stmt_get_result($query);
+    
+        // Manejo de errores en la obtención de resultados
+        if (!$result) {
+            throw new Exception("Error al obtener los resultados: " . mysqli_error($conexion));
+        }
+    
+        // Recorrer los resultados y almacenar en un array
+        $proyectos = array();
+    
+        while ($row = mysqli_fetch_assoc($result)) {
+            $proyectos[] = $row;
+        }
+    
+        // Cerrar la consulta y la conexión
+        mysqli_stmt_close($query);
+        mysqli_close($conexion);
+    
+        return $proyectos;
+    }
+    
 
     public function obtenerIntegrantes(){
         $conexion = $this->obtenerConexion();
@@ -144,4 +196,5 @@ class Proyectos extends Conexion
 
         return true;
     }
+    
 }

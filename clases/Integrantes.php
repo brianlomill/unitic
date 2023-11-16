@@ -1,5 +1,5 @@
 <?php
-include 'Conexion.php';
+include_once('Conexion.php');
 
 // Clase Integrantes para el modulo integrantes
 class Integrantes extends Conexion
@@ -21,17 +21,17 @@ class Integrantes extends Conexion
         $estado
     ) {
         $conexion = $this->obtenerConexion();
-        $sql = "INSERT INTO integrantes (nombres, apellidos, email, foto, cvlac, linkedln, fecha_ingreso, roles_id, estado) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO integrantes (nombres, apellidos, email, foto, cvlac, linkedln, fecha_ingreso, roles_id, estado, created_at, updated_at) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)";
         $query = mysqli_prepare($conexion, $sql);
-
+    
         if (!$query) {
             throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
         }
-
+    
         mysqli_stmt_bind_param(
             $query,
-            "sssssssii",
+            "ssssssssi",
             $nombres,
             $apellidos,
             $email,
@@ -42,15 +42,17 @@ class Integrantes extends Conexion
             $rol,
             $estado
         );
-
+    
         if (!mysqli_stmt_execute($query)) {
             throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
         }
-
+    
         mysqli_stmt_close($query);
-
+    
         return true;
     }
+    
+    
 
     public function editarIntegrantes(
         $id,
@@ -113,33 +115,31 @@ class Integrantes extends Conexion
     }
 
     public function obtenerPrimerosIntegrantes()
-{
-    $cantidad = 3; // Obtener solo 3 integrantes
-    $conexion = $this->obtenerConexion();
-    $sql = "SELECT * FROM integrantes LIMIT ?";
-    $query = mysqli_prepare($conexion, $sql);
+    {
+        $cantidad = 3; // Obtener solo 3 integrantes
+        $conexion = $this->obtenerConexion();
+        $sql = "SELECT * FROM integrantes LIMIT ?";
+        $query = mysqli_prepare($conexion, $sql);
 
-    if (!$query) {
-        throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
+        if (!$query) {
+            throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
+        }
+
+        mysqli_stmt_bind_param($query, "i", $cantidad);
+
+        if (!mysqli_stmt_execute($query)) {
+            throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
+        }
+
+        $result = mysqli_stmt_get_result($query);
+        $integrantes = array();
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $integrantes[] = $row;
+        }
+
+        mysqli_stmt_close($query);
+
+        return $integrantes;
     }
-
-    mysqli_stmt_bind_param($query, "i", $cantidad);
-
-    if (!mysqli_stmt_execute($query)) {
-        throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
-    }
-
-    $result = mysqli_stmt_get_result($query);
-    $integrantes = array();
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $integrantes[] = $row;
-    }
-
-    mysqli_stmt_close($query);
-
-    return $integrantes;
 }
-}
-
-?>

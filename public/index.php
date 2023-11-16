@@ -25,14 +25,21 @@
   <header class="header">
     <?php
     include('../templates/navbar.php');
+
     $url_base = "../archivos/integrantes/";
     include '../clases/Integrantes.php';
+    include '../clases/Proyectos.php';
+
+    $proyectos = new Proyectos();
+
+    $proyectosList = $proyectos->obtenerPrimerosProyectos();
 
     // Instancia de la clase Integrantes
     $integrantes = new Integrantes();
 
     // Obtener los primeros 3 integrantes
     $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
+
     ?>
     <div class="banner">
       <div class="banner-content">
@@ -96,63 +103,36 @@
     </div>
     <div class="container py-2">
       <div class="row">
-        <div class="col-sm-4 col-md-4 py-4">
-          <div class="card">
-            <div class="card-body">
-              <a href="#">
-                <img src="../img/pdf.webp" alt="pdf">
-              </a>             
-              <h3 class="card-title">2020</h3><br>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
-              <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in
-                <cite title="Source Title">Source Title</cite>
+        <?php foreach ($proyectosList as $proyecto) : ?>
+          <div class="col-sm-4 col-md-4 py-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <a href="#">
+                  <img src="../img/pdf.webp" alt="pdf">
+                </a>
                 <br>
                 <br>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </figcaption>
+                <h3 class="card-title">
+                  <?php echo date("Y", strtotime($proyecto['fecha'])); ?>
+                </h3>
+                <h6 class="card-text" title="<?php echo $proyecto['titulo']; ?>">
+                  <?php echo strlen($proyecto['titulo']) > 150 ? substr($proyecto['titulo'], 0, 150) . '...' : $proyecto['titulo']; ?>
+                </h6>
+                <h6 style="color: #ffc000; font-style: italic; font-weight: bold;">
+                  <?php echo $proyecto['programa']; ?>
+                </h6>
+                <br>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-4 col-md-4 py-4">
-          <div class="card">
-            <div class="card-body">
-              <a href="#">
-                <img src="../img/pdf.webp" alt="pdf">
-              </a>             
-              <h3 class="card-title">2020</h3><br>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
-              <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in
-                <cite title="Source Title">Source Title</cite>
-                <br>
-                <br>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </figcaption>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 col-md-4 py-4">
-          <div class="card">
-            <div class="card-body">
-              <a href="#">
-                <img src="../img/pdf.webp" alt="pdf">
-              </a>             
-              <h3 class="card-title">2020</h3><br>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p><br>
-              <figcaption class="blockquote-footer mb-0 text-body-secondary">Someone famous in
-                <cite title="Source Title">Source Title</cite>
-                <br>
-                <br>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </figcaption>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a name="" id="" class="btn btn-outline-primary me-md-.5" href="proyectos.php" role="button">Ver Más</a>
       </div>
     </div>
   </div>
+
 
   <div class="section" id="integrantes">
     <div class="tittle">
@@ -184,7 +164,7 @@
               </div>
               <ul class="icons">
                 <li><a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
-                <li><a href="<?php echo $integrante['linkedln'];?>" target="_blank" title="Linkedln"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="<?php echo $integrante['linkedln']; ?>" target="_blank" title="Linkedln"><i class="fab fa-linkedin"></i></a></li>
                 <li><a href="#" target="_blank" title="Cvlac"><i class="bi bi-person-vcard"></i></a></li>
               </ul>
             </div>
@@ -197,6 +177,10 @@
     </div>
   </div>
   </div>
+
+  /*=============================================
+  = FOOTER =
+  =============================================*/
 
   <footer>
     <?php
