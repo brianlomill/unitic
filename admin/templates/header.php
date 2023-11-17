@@ -60,8 +60,8 @@ $url_base = "http://localhost/unitic/admin/"
                                     Productos
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="productosDropdown">
-                                    <li><a class="dropdown-item" href="#">Ponencias</a></li>
-                                    <li><a class="dropdown-item" href="#">Posters</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo $url_base; ?>modulos/ponencias/">Ponencias</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo $url_base; ?>modulos/posters/">Posters</a></li>
                                     <li><a class="dropdown-item" href="#">Desarrollo</a></li>
                                 </ul>
                             </div>

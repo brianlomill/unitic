@@ -36,7 +36,7 @@ try {
     exit;
 } catch (Exception $e) {
     $_SESSION['error_message'] = "Error al actualizar monografia: " . $e->getMessage();
-    header("location: ../../admin/modulos/monografias/editar.php?id=$id");
+    header("location: ../../admin/modulos/monografias/monografias.php?id=$id");
     exit;
 }
 ?>

@@ -3,11 +3,11 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header modal-header bg-primary text-white">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar Proyectos</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar monografias</h5>
         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../../../servidor/proyectos/agregar_proyectos.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form action="../../../servidor/monografias/agregar_monografias.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
           <div class="row">
             <div class="col-sm-12">
