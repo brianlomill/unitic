@@ -53,19 +53,15 @@
             </div>
 
             <div class="col-12">
-              <label for="archivo" class="form-label">Subir foto poster</label>
-              <input type="file" name="archivo" id="archivo" class="form-control" required>
-              <em>
-                <p id="errorFoto" class="text-danger" style="font-size: 14px;"></p>
-              </em>
+              <label for="poster" class="form-label">Archivo (WORD & PDF)</label>
+              <input type="file" name="poster" id="poster" class="form-control" required> 
+              <em><p id="errorPoster" class="text-danger"  style="font-size: 14px;"></p></em>
             </div>
 
             <div class="col-12">
-              <label for="foto" class="form-label">Subir imagen</label>
-              <input type="file" name="foto" id="foto" class="form-control" required>
-              <em>
-                <p id="errorFoto" class="text-danger" style="font-size: 14px;"></p>
-              </em>
+              <label for="img" class="form-label">Subir foto de portada</label>
+              <input type="file" name="img" id="img" class="form-control" required>
+              <em><p id="errorFoto" class="text-danger"  style="font-size: 14px;"></p></em>
             </div>
 
             <div class="modal-footer">
@@ -127,58 +123,5 @@
       $('#descripcion').val('');
       $('#archivo').val('');
     });
-  });
-
-  // En tu JavaScript o dentro de un script en el HTML
-  document.addEventListener('DOMContentLoaded', function() {
-    // Obtener el elemento del error
-    var errorArchivo = document.getElementById('errorArchivo');
-    var archivoInput = document.getElementById('archivo');
-
-    console.log(errorArchivo, archivoInput); // Agrega esta línea para verificar en la consola
-
-    if (archivoInput) {
-        archivoInput.addEventListener('change', function() {
-            // Agregar un evento al input del archivo para verificar el tipo de archivo
-    archivoInput.addEventListener('change', function() {
-      var tipo_archivo = this.files[0].type;
-      if (!(tipo_archivo === "application/pdf" || tipo_archivo === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
-        // Mostrar el mensaje de error
-        errorArchivo.textContent = "El formato del archivo no es válido. Solo se permiten archivos PDF y DOCX.";
-        // Hacer que el mensaje de error sea visible
-        errorArchivo.style.display = 'block';
-      } else {
-        // Ocultar el mensaje de error si el archivo es válido
-        errorArchivo.style.display = 'none';
-        errorArchivo.textContent = ''; // Limpiar el contenido del mensaje de error
-      }
-    });
-        });
-    }
-    
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var errorImagen = document.getElementById('errorFoto');
-    var fotoInput = document.getElementById('foto');
-
-    console.log(errorImagen, fotoInput); // Agrega esta línea para verificar en la consola
-
-    if (fotoInput) {
-        fotoInput.addEventListener('change', function() {
-           fotoInput.addEventListener('change', function() {
-      var tipo_imagen = this.files[0].type;
-      if (!(tipo_imagen === "image/png" || tipo_imagen === "image/jpeg" || tipo_imagen === "image/jpg")) {
-        errorImagen.textContent = "El formato de la imagen no es válido. Solo se permiten imágenes en formato PNG, JPG o JPEG.";
-        errorImagen.style.display = 'block';
-      } else {
-        errorImagen.style.display = 'none';
-        errorImagen.textContent = '';
-      }
-    }); 
-        });
-    }
-
-    
   });
 </script>

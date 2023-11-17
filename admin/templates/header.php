@@ -70,7 +70,7 @@ $url_base = "http://localhost/unitic/admin/"
                             <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/integrantes/">Integrantes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
+                            <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/posters/">Posters</a>
                         </li>
                     </ul>
                     <a href="<?php echo $url_base; ?>../servidor/cerrar_sesion.php">
