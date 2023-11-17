@@ -26,6 +26,8 @@ $proyectos = new Proyectos();
 $id = $_GET['id'];
 $listarProyectos = $proyectos->obtenerProyectos();
 
+$proyecto = null; // Inicializar la variable $proyecto
+
 foreach ($listarProyectos as $item) {
   if ($item['id'] == $id) {
     $proyecto = $item;
@@ -35,7 +37,7 @@ foreach ($listarProyectos as $item) {
 
 if ($proyecto === null) {
   // El proyecto no se encontró en la lista
-  header("Location: index.php");
+  header("Location: ../index.php");
   exit();
 }
 
@@ -62,14 +64,6 @@ $listarIntegrantes = $proyectos->obtenerIntegrantes();
         <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Ingrese titulo" value="<?php echo $proyecto['titulo'] ?>">
       </div>
       <div class="col-md-6">
-        <label for="apellidos" class="form-label">Archivo Existente</label>
-        <input type="text" name="archivo_existente" id="archivo_existente" class="form-control" value="<?php echo $proyecto['archivo'] ?>">
-      </div>
-      <div class="col-md-6">
-        <label for="apellidos" class="form-label">Archivo Nuevo</label>
-        <input type="file" name="archivo_nuevo" id="archivo_nuevo" class="form-control">
-      </div>
-      <div class="col-md-6">
         <label for="programa" class="form-label">Programa</label>
         <input type="text" name="programa" class="form-control" id="programa" placeholder="Ingrese programa" value="<?php echo $proyecto['programa'] ?>">
       </div>
@@ -79,7 +73,7 @@ $listarIntegrantes = $proyectos->obtenerIntegrantes();
       </div>
       <div class="col-md-6">
         <label for="descripcion" class="form-label">Descripción</label>
-        <input type="text" name="descripcion" class="form-control" id="programa" placeholder="Ingrese descripción" value="<?php echo $proyecto['descripcion'] ?>">
+        <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Ingrese descripción" value="<?php echo $proyecto['descripcion'] ?>">
       </div>
       <div class="col-md-6">
         <label for="integrantes" class="form-label">Integrantes</label>
