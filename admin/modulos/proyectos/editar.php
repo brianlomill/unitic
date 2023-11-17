@@ -64,7 +64,7 @@ $listarIntegrantes = $proyectos->obtenerIntegrantes();
     <h5><?php echo $proyecto['titulo'] ?></h5>
   </div>
   <div class="card-body">
-    <form class="row g-3" method="post" action="../../../servidor/proyectos/editar_proyectos.php">
+    <form class="row g-3" method="POST" action="../../../servidor/proyectos/editar_proyectos.php">
       <div class="col-md-6">
         <label for="id" class="form-label">ID</label>
         <input type="text" name="id" class="form-control" id="id" value="<?php echo $proyecto['id'] ?>" readonly>

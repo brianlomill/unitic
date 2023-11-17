@@ -56,7 +56,7 @@ if ($integrante === null) {
     <h5><?php echo $integrante['nombres'] . ' ' . $integrante['apellidos'] ?></h5>
   </div>
   <div class="card-body">
-    <form class="row g-3" method="post" action="../../../servidor/integrantes/editar_integrantes.php">
+    <form class="row g-3" method="POST" action="../../../servidor/integrantes/editar_integrantes.php">
       <div class="col-md-6">
         <label for="id" class="form-label">ID</label>
         <input type="text" name="id" class="form-control" id="id" value="<?php echo $integrante['id'] ?>" readonly>

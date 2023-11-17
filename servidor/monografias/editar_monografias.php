@@ -1,48 +1,42 @@
 <?php
-include '../../clases/Integrantes.php';
+include '../../clases/Monografias.php';
 session_start();
 
-$id = $_POST['id'];
-$titulo = $_POST['titulo'];
-$archivo_existente = $_POST['archivo_existente'];
-$archivo_nuevo = $_POST['archivo_nuevo'];
-$programa = $_POST['programa'];
-$fecha = $_POST['fecha'];
-$descripcion = $_POST['descripcion'];
-$integrantes = $_POST['integrante'];
-
-$Proyectos = new Proyectos();
-
 // Validar campos obligatorios
-if (empty($titulo) || empty($programa) || empty($fecha) || empty($descripcion) || empty($integrantes)) {
+if (empty($_POST['id']) || empty($_POST['titulo']) || empty($_POST['programa']) || empty($_POST['fecha']) || empty($_POST['descripcion']) || empty($_POST['integrantes'])) {
     $_SESSION['error_message'] = "Debes completar todos los campos obligatorios.";
-    header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
+    header("location: ../../admin/modulos/monografias/editar.php?id={$_POST['id']}");
     exit;
 }
 
-// Realizar la edición del integrante
+$id = $_POST['id'];
+$titulo = $_POST['titulo'];
+$programa = $_POST['programa'];
+$fecha = $_POST['fecha'];
+$descripcion = $_POST['descripcion'];
+$integrantes = $_POST['integrantes'];
+
 try {
-    if ($Proyectos->editarProyectos(
+    // Actualizar proyecto
+    $Monografias = new Monografias();
+    $conexion = $Monografias->obtenerConexion();
+    $Monografias->editarMonografias(
         $id,
         $titulo,
-        $archivo_existente,
-        $archivo_nuevo,
         $programa,
         $fecha,
-        $descripcion,
-        $integrantes
-    )) {
-        $_SESSION['success_message'] = "El integrante ha sido editado exitosamente.";
-        header("location: ../../admin/modulos/proyectos/index.php");
-        exit;
-    } else {
-        $_SESSION['error_message'] = "Hubo un error al editar el integrante.";
-        header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
-        exit;
-    }
+        $descripcion
+    );
+
+    // Luego, llamar a actualizarIntegrantes
+    $Monografias->actualizarIntegrantes($id, $integrantes);
+
+    $_SESSION['success_message'] = "La monografia se ha actualizado correctamente.";
+    header("location: ../../admin/modulos/monografias/editar.php?id=$id");
+    exit;
 } catch (Exception $e) {
-    $_SESSION['error_message'] = "Error: " . $e->getMessage();
-    header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
+    $_SESSION['error_message'] = "Error al actualizar monografia: " . $e->getMessage();
+    header("location: ../../admin/modulos/monografias/monografias.php?id=$id");
     exit;
 }
 ?>
