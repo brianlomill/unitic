@@ -53,16 +53,16 @@
             </div>
 
             <div class="col-12">
-              <label for="poster" class="form-label">Subir foto poster</label>
-              <input type="file" name="poster" id="poster" class="form-control" required>
+              <label for="archivo" class="form-label">Subir foto poster</label>
+              <input type="file" name="archivo" id="archivo" class="form-control" required>
               <em>
                 <p id="errorFoto" class="text-danger" style="font-size: 14px;"></p>
               </em>
             </div>
 
             <div class="col-12">
-              <label for="img" class="form-label">Subir imagen</label>
-              <input type="file" name="img" id="img" class="form-control" required>
+              <label for="foto" class="form-label">Subir imagen</label>
+              <input type="file" name="foto" id="foto" class="form-control" required>
               <em>
                 <p id="errorFoto" class="text-danger" style="font-size: 14px;"></p>
               </em>
@@ -135,7 +135,11 @@
     var errorArchivo = document.getElementById('errorArchivo');
     var archivoInput = document.getElementById('archivo');
 
-    // Agregar un evento al input del archivo para verificar el tipo de archivo
+    console.log(errorArchivo, archivoInput); // Agrega esta línea para verificar en la consola
+
+    if (archivoInput) {
+        archivoInput.addEventListener('change', function() {
+            // Agregar un evento al input del archivo para verificar el tipo de archivo
     archivoInput.addEventListener('change', function() {
       var tipo_archivo = this.files[0].type;
       if (!(tipo_archivo === "application/pdf" || tipo_archivo === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
@@ -149,13 +153,20 @@
         errorArchivo.textContent = ''; // Limpiar el contenido del mensaje de error
       }
     });
+        });
+    }
+    
   });
 
   document.addEventListener('DOMContentLoaded', function() {
     var errorImagen = document.getElementById('errorFoto');
     var fotoInput = document.getElementById('foto');
 
-    fotoInput.addEventListener('change', function() {
+    console.log(errorImagen, fotoInput); // Agrega esta línea para verificar en la consola
+
+    if (fotoInput) {
+        fotoInput.addEventListener('change', function() {
+           fotoInput.addEventListener('change', function() {
       var tipo_imagen = this.files[0].type;
       if (!(tipo_imagen === "image/png" || tipo_imagen === "image/jpeg" || tipo_imagen === "image/jpg")) {
         errorImagen.textContent = "El formato de la imagen no es válido. Solo se permiten imágenes en formato PNG, JPG o JPEG.";
@@ -164,6 +175,10 @@
         errorImagen.style.display = 'none';
         errorImagen.textContent = '';
       }
-    });
+    }); 
+        });
+    }
+
+    
   });
 </script>

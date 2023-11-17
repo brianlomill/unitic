@@ -3,11 +3,11 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header modal-header bg-primary text-white">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar monografias</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar ponencia</h5>
         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="../../../servidor/monografias/agregar_monografias.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form action="../../../servidor/ponencias/agregar_ponencias.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
           <div class="row">
             <div class="col-sm-12">
@@ -20,12 +20,12 @@
               </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-12">
               <div class="mb-3">
-                <label for="programa" class="form-label">Programa</label>
-                <input type="text" id="programa" name="programa" class="form-control" required>
+                <label for="evento" class="form-label">Evento</label>
+                <input type="text" id="evento" name="evento" class="form-control" required>
                 <div class="invalid-feedback">
-                  Escriba el programa
+                  Escriba el evento
                 </div>
               </div>
             </div>
@@ -40,14 +40,24 @@
               </div>
             </div>
 
+            <div class="col-sm-6">
+              <div class="mb-3">
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" class="form-control" required>
+                <div class="invalid-feedback">
+                  Escriba la ciudad
+                </div>
+              </div>
+            </div>
+
             <div class="col-sm-12" id="integrantes">
               <div class="mb-3">
                 <button type="button" class="btn btn-primary" id="agregarIntegrantes">
-                  Integrantes
+                  Creadores y/o Integrantes
                   <i class="bi bi-plus-circle"></i>
                 </button>
                 <div class="invalid-feedback">
-                  Escriba los integrantes
+                  Escriba los Creadores y/o Integrantes
                 </div>
               </div>
             </div>
@@ -64,14 +74,18 @@
 
             <div class="col-12">
               <label for="archivo" class="form-label">Archivo (WORD & PDF)</label>
-              <input type="file" name="archivo" id="archivo" class="form-control" required> 
-              <em><p id="errorArchivo" class="text-danger"  style="font-size: 14px;"></p></em>
+              <input type="file" name="archivo" id="archivo" class="form-control" required>
+              <em>
+                <p id="errorArchivo" class="text-danger" style="font-size: 14px;"></p>
+              </em>
             </div>
 
             <div class="col-12">
               <label for="foto" class="form-label">Subir foto de portada</label>
               <input type="file" name="foto" id="foto" class="form-control" required>
-              <em><p id="errorFoto" class="text-danger"  style="font-size: 14px;"></p></em>
+              <em>
+                <p id="errorFoto" class="text-danger" style="font-size: 14px;"></p>
+              </em>
             </div>
 
             <div class="modal-footer">
@@ -106,23 +120,25 @@
     });
 
     $("#enviarFormularioBtn").click(function() {
-        // Obtén los valores de los campos de integrantes
-        const integrantes = [];
-        $("input[name='integrante[]']").each(function() {
-            integrantes.push($(this).val());
-        });
+      // Obtén los valores de los campos de integrantes
+      const integrantes = [];
+      $("input[name='integrante[]']").each(function() {
+        integrantes.push($(this).val());
+      });
 
-        // Envia los datos de los integrantes por AJAX
-        $.ajax({
-            type: "POST",
-            url: "agregar_proyectos.php", // Cambia la URL al archivo que maneja la solicitud
-            data: { integrantes: integrantes }, // Envía los datos de los integrantes como un objeto
-            success: function(response) {
-                // Maneja la respuesta del servidor si es necesario
-                console.log(response);
-            }
-        });
-        });
+      // Envia los datos de los integrantes por AJAX
+      $.ajax({
+        type: "POST",
+        url: "agregar_proyectos.php", // Cambia la URL al archivo que maneja la solicitud
+        data: {
+          integrantes: integrantes
+        }, // Envía los datos de los integrantes como un objeto
+        success: function(response) {
+          // Maneja la respuesta del servidor si es necesario
+          console.log(response);
+        }
+      });
+    });
     $('#agregar').on('hidden.bs.modal', function(e) {
       // Restablecer el contenido de los campos del formulario aquí
       $('#titulo').val('');
@@ -134,41 +150,40 @@
   });
 
   // En tu JavaScript o dentro de un script en el HTML
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     // Obtener el elemento del error
     var errorArchivo = document.getElementById('errorArchivo');
     var archivoInput = document.getElementById('archivo');
 
     // Agregar un evento al input del archivo para verificar el tipo de archivo
     archivoInput.addEventListener('change', function() {
-        var tipo_archivo = this.files[0].type;
-        if (!(tipo_archivo === "application/pdf" || tipo_archivo === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
-            // Mostrar el mensaje de error
-            errorArchivo.textContent = "El formato del archivo no es válido. Solo se permiten archivos PDF y DOCX.";
-            // Hacer que el mensaje de error sea visible
-            errorArchivo.style.display = 'block';
-        } else {
-            // Ocultar el mensaje de error si el archivo es válido
-            errorArchivo.style.display = 'none';
-            errorArchivo.textContent = ''; // Limpiar el contenido del mensaje de error
-        }
+      var tipo_archivo = this.files[0].type;
+      if (!(tipo_archivo === "application/pdf" || tipo_archivo === "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
+        // Mostrar el mensaje de error
+        errorArchivo.textContent = "El formato del archivo no es válido. Solo se permiten archivos PDF y DOCX.";
+        // Hacer que el mensaje de error sea visible
+        errorArchivo.style.display = 'block';
+      } else {
+        // Ocultar el mensaje de error si el archivo es válido
+        errorArchivo.style.display = 'none';
+        errorArchivo.textContent = ''; // Limpiar el contenido del mensaje de error
+      }
     });
-});
+  });
 
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var errorImagen = document.getElementById('errorFoto');
     var fotoInput = document.getElementById('foto');
 
     fotoInput.addEventListener('change', function() {
-        var tipo_imagen = this.files[0].type;
-        if (!(tipo_imagen === "image/png" || tipo_imagen === "image/jpeg" || tipo_imagen === "image/jpg")) {
-            errorImagen.textContent = "El formato de la imagen no es válido. Solo se permiten imágenes en formato PNG, JPG o JPEG.";
-            errorImagen.style.display = 'block';
-        } else {
-            errorImagen.style.display = 'none';
-            errorImagen.textContent = '';
-        }
+      var tipo_imagen = this.files[0].type;
+      if (!(tipo_imagen === "image/png" || tipo_imagen === "image/jpeg" || tipo_imagen === "image/jpg")) {
+        errorImagen.textContent = "El formato de la imagen no es válido. Solo se permiten imágenes en formato PNG, JPG o JPEG.";
+        errorImagen.style.display = 'block';
+      } else {
+        errorImagen.style.display = 'none';
+        errorImagen.textContent = '';
+      }
     });
-});
-
+  });
 </script>

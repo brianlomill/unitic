@@ -1,5 +1,5 @@
 <?php
-include '../../clases/Monografias.php';
+include '../../clases/Ponencias.php';
 session_start();
 $errors = [];
 
@@ -7,10 +7,11 @@ try {
     $titulo = $_POST['titulo'];
     $programa = $_POST['programa'];
     $fecha = $_POST['fecha'];
+    $ciudad = $_POST['ciudad'];
     $descripcion = $_POST['descripcion'];
     $archivo = basename($_FILES["archivo"]["name"]);
     $foto = basename($_FILES["foto"]["name"]);
-    $tipo_trabajo = 2;
+    $tipo_trabajo = 7;
     $integrantes = $_POST['integrante'];
 
     // Ruta para guardar las imágenes localmente
@@ -37,7 +38,7 @@ try {
         throw new Exception("El formato de la imagen no es válido. Solo se permiten imágenes en formato PNG, JPG o JPEG.");
     }
 
-    if ($Monografias->ingresarMonografias(
+    if ($Ponencias->ingresarPonencias(
         $titulo,
         $programa,
         $fecha,
@@ -62,10 +63,10 @@ try {
         }
 
         // Obtén el ID del proyecto recién insertado
-        $monografiaID = mysqli_insert_id($conexion);
+        $ponenciaID = mysqli_insert_id($conexion);
 
         // Inserta los integrantes
-        $Monografias->ingresarIntegrantesMonografias($monografiaID, $integrantes);
+        $Ponencias->ingresarIntegrantesPonencias($ponenciaID, $integrantes);
         $_SESSION['success_message'] = "La monografía se ha agregado correctamente.";
         header("location: ../../admin/modulos/monografias/index.php");
         exit;

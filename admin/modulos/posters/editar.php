@@ -78,8 +78,8 @@ $listarIntegrantes = $Posters->obtenerIntegrantes();
       </div>
       
       <div class="col-md-6">
-        <label for="fecha" class="form-label">Fecha del proyecto</label>
-        <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo $postergit['fecha'] ?>" max="<?php echo date("Y-m-d"); ?>" required>
+        <label for="fecha" class="form-label">Fecha del poster</label>
+        <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo $poster['fecha'] ?>" max="<?php echo date("Y-m-d"); ?>" required>
       </div>
 
       <div class="col-md-6">

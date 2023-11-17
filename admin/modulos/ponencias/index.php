@@ -4,13 +4,13 @@ if (!isset($_SESSION['administrador'])) {
     header("location: ../../index.php");
 }
 include("../../templates/header.php");
-include("../../../clases/Monografias.php");
+include("../../../clases/Ponencias.php");
 
 //instancia de la clase Integrantes
-$monografias = new Monografias();
+$Ponencias = new Ponencias();
 
 // Obtener los proyectos
-$listarMonografias = $monografias->obtenerMonografias();
+$listarPonencias = $Ponencias->obtenerPonencias();
 
 ?>
 
@@ -21,43 +21,41 @@ $listarMonografias = $monografias->obtenerMonografias();
 <div class="card">
     <div class="card-header fs-3 mb-3">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar">
-            Agregar monografias
+            Agregar ponencias
             <i class="bi bi-plus-circle"></i>
         </button>
     </div>
     <div class="card-body">
         <div class="table-responsive-sm">
-            <?php if (empty($listarMonografias)) : ?>
-                <p>No hay monografias registradas.</p>
+            <?php if (empty($listarPonencias)) : ?>
+                <p>No hay ponencias registradas.</p>
             <?php else : ?>
                 <table class="cell-border" id="miTabla">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Monografia</th>
+                            <th scope="col">Ponencia</th>
                             <th scope="col">Titulo</th>
-                            <th scope="col">Programa</th>
-                            <th scope="col">Descripción</th>
+                            <th scope="col">Ciudad</th>
                             <th scope="col">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $registro = 1;
-                        foreach ($listarMonografias as $monografia) :
+                        foreach ($listarPonencias as $ponencia) :
                         ?>
                             <tr class="text-center">
-                                <td scope="row"><?php echo $registro; ?></td>
+                                <td scope="row"><?php echo $ponencia; ?></td>
                                 <td>
-                                    <a href="../../../archivos/monografias/<?php echo $monografia['archivo']; ?>" target="_blank">
-                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/monografias/img_archivos/<?php echo $monografia['imagen']; ?>">
+                                <a href="../../../archivos/productos/ponencias/<?php echo $ponencia['archivo']; ?>" target="_blank">
+                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/productos/ponencias/<?php echo $ponencia['archivo']; ?>">
                                     </a>
                                 </td>
-                                <td><?php echo $monografia['titulo']; ?></td>
-                                <td><?php echo $monografia['programa']; ?></td>
-                                <td><?php echo $monografia['descripcion']; ?></td>
+                                <td><?php echo $ponencia['titulo']; ?></td>
+                                <td><?php echo $ponencia['ciudad']; ?></td>
                                 <td>
-                                    <a href="editar.php?id=<?php echo $monografia['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                    <a href="editar.php?id=<?php echo $ponencia['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
                                 </td>
                             </tr>
                         <?php

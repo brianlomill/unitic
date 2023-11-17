@@ -6,23 +6,6 @@ if (!isset($_SESSION['administrador'])) {
 include("../../templates/header.php");
 include("../../../clases/Posters.php");
 
-// Mostrar mensaje de error si existe
-if (isset($_SESSION['error_message'])) {
-    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
-    echo $_SESSION['error_message'];
-    echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
-    echo '</div>';
-    unset($_SESSION['error_message']); // Limpiar el mensaje de error almacenado en la sesión
-  }
-  
-  // Mostrar mensaje de éxito si existe
-  if (isset($_SESSION['success_message'])) {
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
-    echo $_SESSION['success_message'];
-    echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
-    echo '</div>';
-    unset($_SESSION['success_message']); // Limpiar el mensaje de éxito almacenado en la sesión
-  }
 
 //instancia de la clase Integrantes
 $Posters = new Posters();

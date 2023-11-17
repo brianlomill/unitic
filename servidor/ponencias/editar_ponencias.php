@@ -1,9 +1,9 @@
 <?php
-include '../../clases/Monografias.php';
+include '../../clases/Ponencias.php';
 session_start();
 
 // Validar campos obligatorios
-if (empty($_POST['id']) || empty($_POST['titulo']) || empty($_POST['programa']) || empty($_POST['fecha']) || empty($_POST['descripcion']) || empty($_POST['integrantes'])) {
+if (empty($_POST['id']) || empty($_POST['titulo']) || empty($_POST['programa']) || empty($_POST['fecha'])|| empty($_POST['ciudad'])  || empty($_POST['descripcion']) || empty($_POST['integrantes'])) {
     $_SESSION['error_message'] = "Debes completar todos los campos obligatorios.";
     header("location: ../../admin/modulos/monografias/editar.php?id={$_POST['id']}");
     exit;
@@ -13,14 +13,15 @@ $id = $_POST['id'];
 $titulo = $_POST['titulo'];
 $programa = $_POST['programa'];
 $fecha = $_POST['fecha'];
+$ciudad = $_POST['ciudad'];
 $descripcion = $_POST['descripcion'];
 $integrantes = $_POST['integrantes'];
 
 try {
     // Actualizar proyecto
-    $Monografias = new Monografias();
+    $Ponencias = new Ponencias();
     $conexion = $Monografias->obtenerConexion();
-    $Monografias->editarMonografias(
+    $Ponencias->editarPonencias(
         $id,
         $titulo,
         $programa,
@@ -39,8 +40,3 @@ try {
     header("location: ../../admin/modulos/monografias/monografias.php?id=$id");
     exit;
 }
-?>
-
-
-
-

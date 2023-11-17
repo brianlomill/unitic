@@ -7,8 +7,8 @@ try {
     $titulo = $_POST['titulo'];
     $fecha = $_POST['fecha'];
     $ciudad = $_POST['ciudad'];
-    $poster = basename($_FILES["poster"]["name"]);
-    $img = basename($_FILES["img"]["name"]);
+    $poster = basename($_FILES["archivo"]["name"]);
+    $img = basename($_FILES["foto"]["name"]);
     $tipo_trabajo = 3;
     $integrantes = $_POST['integrante'];
 
