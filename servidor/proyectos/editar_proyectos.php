@@ -15,7 +15,6 @@ $programa = $_POST['programa'];
 $fecha = $_POST['fecha'];
 $descripcion = $_POST['descripcion'];
 $integrantes = $_POST['integrantes'];
-echo $integrantes;
 
 try {
     // Actualizar proyecto
@@ -33,7 +32,7 @@ try {
     $Proyectos->actualizarIntegrantes($id, $integrantes);
 
     $_SESSION['success_message'] = "El proyecto se ha actualizado correctamente.";
-    header("location: ../../admin/modulos/proyectos/index.php");
+    header("location: ../../admin/modulos/proyectos/editar.php?id=$id");
     exit;
 } catch (Exception $e) {
     $_SESSION['error_message'] = "Error al actualizar el proyecto: " . $e->getMessage();

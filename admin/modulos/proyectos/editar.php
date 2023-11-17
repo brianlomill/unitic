@@ -3,12 +3,22 @@ session_start();
 include("../../templates/header.php");
 include("../../../clases/Proyectos.php");
 
+// Mostrar mensaje de error si existe
 if (isset($_SESSION['error_message'])) {
   echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">';
   echo $_SESSION['error_message'];
   echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
   echo '</div>';
   unset($_SESSION['error_message']); // Limpiar el mensaje de error almacenado en la sesión
+}
+
+// Mostrar mensaje de éxito si existe
+if (isset($_SESSION['success_message'])) {
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
+  echo $_SESSION['success_message'];
+  echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+  echo '</div>';
+  unset($_SESSION['success_message']); // Limpiar el mensaje de éxito almacenado en la sesión
 }
 
 if (!isset($_SESSION['administrador'])) {
@@ -86,7 +96,7 @@ $listarIntegrantes = $proyectos->obtenerIntegrantes();
       </div>
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Actualizar</button>
-        <button type="button" class="btn btn-danger" onclick="history.back()">Volver</button>
+        <a href="index.php" class="btn btn-danger">Volver</a>
       </div>
     </form>
   </div>
