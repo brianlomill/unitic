@@ -23,7 +23,7 @@ $url_base = "http://localhost/unitic/admin/"
     <!-- DATATABLES -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
     <!-- css -->
-   <link rel="stylesheet" href="../../../css/navbar.css"> 
+    <link rel="stylesheet" href="../../../css/navbar.css">
 </head>
 
 <body>
@@ -81,5 +81,4 @@ $url_base = "http://localhost/unitic/admin/"
             </div>
         </nav>
     </header>
-    <main class="container">
-        <br>
+    <main class="container"><br>
