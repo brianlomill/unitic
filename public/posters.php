@@ -1,5 +1,5 @@
-  <!doctype html>
-  <html lang="en">
+  <!DOCTYPE html>
+  <html lang="es">
 
   <head>
     <title>Semillero UNITIC</title>
@@ -22,8 +22,15 @@
   </head>
 
   <body>
+
     <?php
-    include('../templates/navbarSecciones.php')
+    include('../templates/navbarSecciones.php');
+    include('../clases/Posters.php');
+
+    $Posters = new Posters();
+
+    $listarPosters = $Posters->obtenerPosters();
+    $integrantes = $Posters->obtenerIntegrantes();
     ?>
 
     <section class="home-blog bg-sand">
@@ -37,89 +44,57 @@
           </div>
         </div>
         <!-- FINALIZA TITULO -->
+
         <div class="row ">
-          <div class="col-md-6">
-            <div class="media blog-media">
-              <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image"></a>
-              <div class="circle">
-                <h5 class="day">14</h5>
-                <span class="month">sep</span>
-              </div>
-              <div class="media-body">
-                <a href="">
-                  <h5 class="mt-0">Standard Blog Post</h5>
-                </a>
-                Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                <a href="blog-post-left-sidebar.html" class="post-link">Read More</a>
-                <ul>
-                  <li>by: Admin</li>
-                  <li class="text-right"><a href="blog-post-left-sidebar.html">07 comments</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="media blog-media">
-              <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/FFB6C1/000000" alt="Generic placeholder image"></a>
-              <div class="circle">
-                <h5 class="day">12</h5>
-                <span class="month">sep</span>
-              </div>
-              <div class="media-body">
-                <a href="">
-                  <h5 class="mt-0">perferendis labore</h5>
-                </a>
-                Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                <a href="blog-post-left-sidebar.html" class="post-link">Read More</a>
-                <ul>
-                  <li>by: Admin</li>
-                  <li class="text-right"><a href="blog-post-left-sidebar.html">04 comments</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="media blog-media">
-              <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/FF7F50/000000" alt="Generic placeholder image"></a>
-              <div class="circle">
-                <h5 class="day">09</h5>
-                <span class="month">sep</span>
-              </div>
-              <div class="media-body">
-                <a href="">
-                  <h5 class="mt-0">deleniti incdunt magni</h5>
-                </a>
-                Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                <a href="blog-post-left-sidebar.html" class="post-link">Read More</a>
-                <ul>
-                  <li>by: Admin</li>
-                  <li class="text-right"><a href="blog-post-left-sidebar.html">10 comments</a></li>
-                </ul>
+          <!-- Aquí comienza el bucle para mostrar los posters -->
+          <?php foreach ($listarPosters as $poster) : ?>
+            <div class="col-md-6">
+              <div class="media blog-media">
+                <!-- <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image">
+                            </a> -->
+                <div class="media blog-media">
+                  <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>" target="_blank">
+                    <img class="d-flex" src="../archivos/productos/posters/<?php echo $poster['imagen']; ?>" alt="poster UNITIC" loading="lazy" style="width: 250px; height: 380px;" width="250" height="380">
+                  </a>
+                </div>
+
+                <div class="media-body">
+                  <div class="circle">
+                    <h5 class="day">
+                      <?php
+                      $fecha = $poster['fecha']; // Tu fecha completa aquí
+                      $ano = date('Y', strtotime($fecha));
+                      echo $ano;
+                      ?>
+                    </h5>
+                  </div>
+                  <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>">
+                    <h5 class="mt-2"><?php echo $poster['titulo'] ?>.</h5>
+                  </a>
+                  <h5>
+                    <?php echo $poster['ciudad']; ?>
+                  </h5>
+                  <ul>
+                    <li>
+                      <?php
+                      foreach ($integrantes as $integrante) {
+                        if ($integrante['portafolio_id'] == $poster['id']) {
+                          echo 'Hecho por: '. $integrante['integrantes'];
+                        }
+                      }
+                      ?>
+                    </li>
+                  </ul>
+                  <span class="badge bg-success">Ver</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="media blog-media">
-              <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/008B8B/000000" alt="Generic placeholder image"></a>
-              <div class="circle">
-                <h5 class="day">04</h5>
-                <span class="month">sep</span>
-              </div>
-              <div class="media-body">
-                <a href="">
-                  <h5 class="mt-0">Explicabo magnam </h5>
-                </a>
-                Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                <a href="blog-post-left-sidebar.html" class="post-link">Read More</a>
-                <ul>
-                  <li>by: Admin</li>
-                  <li class="text-right"><a href="blog-post-left-sidebar.html">06 comments</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
+          <!-- Fin del bucle -->
         </div>
       </div>
     </section>
 
   </body>
+
+  </html>
