@@ -17,7 +17,7 @@ $descripcion = $_POST['descripcion'];
 $integrantes = $_POST['integrantes'];
 
 try {
-    // Actualizar proyecto
+    // Actualizar monografia
     $Monografias = new Monografias();
     $conexion = $Monografias->obtenerConexion();
     $Monografias->editarMonografias(
@@ -39,8 +39,3 @@ try {
     header("location: ../../admin/modulos/monografias/editar.php?id=$id");
     exit;
 }
-?>
-
-
-
-

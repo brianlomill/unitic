@@ -51,8 +51,6 @@ class Integrantes extends Conexion
     
         return true;
     }
-    
-    
 
     public function editarIntegrantes(
         $id,

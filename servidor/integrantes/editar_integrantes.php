@@ -24,7 +24,7 @@ if (empty($nombres) || empty($apellidos) || empty($email) || empty($linkedin) ||
 
 // Realizar la edición del integrante
 try {
-    if ($Integrantes->editarIntegrantes(
+    $Integrantes->editarIntegrantes(
         $id,
         $nombres,
         $apellidos,
@@ -35,15 +35,11 @@ try {
         $fecha_retiro,
         $rol,
         $estado
-    )) {
-        $_SESSION['success_message'] = "El integrante ha sido editado exitosamente.";
-        header("location: ../../admin/modulos/integrantes/index.php");
-        exit;
-    } else {
-        $_SESSION['error_message'] = "Hubo un error al editar el integrante.";
-        header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
-        exit;
-    }
+    );
+    
+    $_SESSION['success_message'] = "La monografia se ha actualizado correctamente.";
+    header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
+    exit;
 } catch (Exception $e) {
     $_SESSION['error_message'] = "Error: " . $e->getMessage();
     header("location: ../../admin/modulos/integrantes/editar.php?id=$id");
