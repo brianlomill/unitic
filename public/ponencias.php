@@ -24,28 +24,46 @@
 <body>
   <?php
   include('../templates/navbarSecciones.php');
+  include('../clases/Ponencias.php');
+
+  $Ponencias = new Ponencias();
+
+  $listarPonencias = $Ponencias->obtenerPonencias();
+  $listarIntegrantes = $Ponencias->obtenerIntegrantes();
   ?>
   <h5 class="container my-5">PONENCIAS</h5>
-  <div class="container my-5">
-    <div class="card col-md-12 p-3">
-      <div class="row">
-        <div class="col-md-3">
-          <img width="100%" src="../img/campus.webp">
-        </div>
-        <div class="col-md-8">
-          <div class="card-block">
-            <h6 class="card-title h5" style="color:#146C94">Diseño y desarrollo de plataformas web "Observatorio de Graduados" para el fortalecimiento del vinculos entre profesionales de trabajo social e ingeniería de sistemas y Uniminuto</h6>
-            <h6 style="color: #19A7CE; font-style: italic;">Nombre del evento de las ponencias y ciudad</h6>
-            <p class="h6 text-dark">Ponentes:</p>
-            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i> Edwin Reinel Perdomo Sedano</p>
-            <p class="h6 text-dark">Descripción del evento:</p>
-            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>Ubicación</p>
-            <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>Fecha</p>
-            </p>
+  <?php foreach ($listarPonencias as $ponencia) : ?>
+    <div class="container my-5">
+      <div class="card col-md-12 p-3">
+        <div class="row">
+          <div class="col-md-3">
+            <img width="100%" src="../img/campus.webp">
+          </div>
+          <div class="col-md-8">
+            <div class="card-block">
+              <h6 class="card-title h5" style="color:#146C94"><?php echo $ponencia['titulo']; ?></h6>
+              <h6 style="color: #19A7CE; font-style: italic;">
+                <?php echo $ponencia['titulo'] . " - " . $ponencia['ciudad'] . " " . $ponencia['fecha']; ?>
+              </h6>
+              <p class="h6 text-dark text-opacity-75">"<?php echo $ponencia['evento']; ?>"</p>
+              <p class="h6 text-dark">Ponentes:</p>
+              <?php foreach ($listarIntegrantes as $integrante) {
+                if ($integrante['portafolio_id'] == $ponencia['id']) {
+                  echo '<p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
+                }
+              } ?>
+              <p class="h6 text-dark">Descripción del evento:</p>
+              <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i><?php echo $ponencia['ciudad']; ?></p>
+              <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i><?php
+                      $fecha = $ponencia['fecha']; // Tu fecha completa aquí
+                      $ano = date('Y', strtotime($fecha));
+                      echo $ano;
+                      ?></p>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+  <?php endforeach; ?>
 </body>
