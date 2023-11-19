@@ -24,25 +24,25 @@
 <body>
   <header class="header">
     <?php
-    include('../templates/navbar.php');
+      include('../templates/navbar.php');
 
-    $url_base = "../archivos/integrantes/";
-    include '../clases/Integrantes.php';
-    include '../clases/Proyectos.php';
+      $url_base = "../archivos/integrantes/";
+      include '../clases/Integrantes.php';
+      include '../clases/Proyectos.php';
 
-    $proyectos = new Proyectos();
+      $proyectos = new Proyectos();
 
-    $proyectosList = $proyectos->obtenerPrimerosProyectos();
+      $proyectosList = $proyectos->obtenerPrimerosProyectos();
 
-    // Instancia de la clase Integrantes
-    $integrantes = new Integrantes();
+      // Instancia de la clase Integrantes
+      $integrantes = new Integrantes();
 
-    // Obtener los primeros 3 integrantes
-    $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
+      // Obtener los primeros 3 integrantes
+      $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
 
     ?>
 
-    /* SECCION BANNER */
+    <!-- SECCION BANNER -->
 
     <div class="banner">
       <div class="banner-content">
@@ -74,7 +74,7 @@
     </div>
   </header>
 
-  /* SECCION SOBRE NOSOTROS - UNITIC */
+  <!-- SECCION SOBRE NOSOTROS - UNITIC  -->
 
   <div class="container-info" id="container-info">
     <div class="section p-5 mb-4 rounded-3">
@@ -103,7 +103,7 @@
     </div>
   </div>
 
-  /* SECCION PROYECTOS */
+   <!-- SECCION PROYECTOS  -->
 
   <div class="section" id="proyectos">
     <div class="tittle">
@@ -141,7 +141,7 @@
     </div>
   </div>
 
-  /* SECCION INTEGRANTES */
+   <!-- SECCION INTEGRANTES  -->
 
   <div class="section" id="integrantes">
     <div class="tittle">
@@ -187,11 +187,11 @@
   </div>
   </div>
 
-  /* SECCION CONTACTO */
+   <!-- SECCION CONTACTO  -->
 
-  
 
-  /* SECCION FOOTER */
+
+   <!-- FOOTER -->
 
   <?php
   include('../templates/footer.php');
