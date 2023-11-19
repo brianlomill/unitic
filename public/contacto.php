@@ -9,8 +9,10 @@
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- ICONOS BOOTSTRAP -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <link href="../css/navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/stylesContacto.css" />
@@ -18,9 +20,9 @@
 
 <body>
     <header>
-    <?php
-    include('../templates/navbarSecciones.php');
-    ?>
+        <?php
+        include('../templates/navbarSecciones.php');
+        ?>
     </header>
     <main>
         <div id="contact" class="contact-area section-padding">
@@ -35,19 +37,19 @@
                             <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
                                 <div class="row g-3">
                                     <div class="col-sm-6">
-                                        <input type="text" name="name" class="form-control mb-3" placeholder="Name" required="required">
+                                        <input type="text" name="nombres" class="form-control mb-3" placeholder="Nombres" required="required">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="email" name="email" class="form-control mb-3" placeholder="Email" required="required">
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" name="subject" class="form-control mb-3" placeholder="Subject" required="required">
+                                        <input type="text" name="asunto" class="form-control mb-3" placeholder="Asunto" required="required">
                                     </div>
                                     <div class="col-12">
-                                        <textarea rows="6" name="message" class="form-control mb-3" placeholder="Your Message" required="required"></textarea>
+                                        <textarea rows="6" name="mensaje" class="form-control mb-3" placeholder="Tu Mensaje" required="required"></textarea>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Send Message</button>
+                                        <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Enviar Mensaje</button>
                                     </div>
                                 </div>
                             </form>
@@ -56,23 +58,23 @@
                     </div><!--- END COL -->
                     <div class="col-lg-5">
                         <div class="single_address">
-                            <i class="fa fa-map-marker"></i>
-                            <h4>Our Address</h4>
+                        <i class="fas fa-map-marker-alt"></i>
+                            <h4>Nuestra Dirección</h4>
                             <p>3481 Melrose Place, Beverly Hills</p>
                         </div>
                         <div class="single_address">
-                            <i class="fa fa-envelope"></i>
-                            <h4>Send your message</h4>
+                        <i class="fas fa-envelope"></i>
+                            <h4>Envías tu mensaje</h4>
                             <p>Info@example.com</p>
                         </div>
                         <div class="single_address">
-                            <i class="fa fa-phone"></i>
-                            <h4>Call us on</h4>
+                        <i class="fas fa-phone"></i>
+                            <h4>Llamanos al</h4>
                             <p>(+1) 517 397 7100</p>
                         </div>
                         <div class="single_address">
-                            <i class="fa fa-clock-o"></i>
-                            <h4>Work Time</h4>
+                        <i class="fas fa-clock"></i>
+                            <h4>Horario</h4>
                             <p>Mon - Fri: 08.00 - 16.00. <br>Sat: 10.00 - 14.00</p>
                         </div>
                     </div><!--- END COL -->
@@ -81,15 +83,6 @@
         </div>
 
     </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
-
-</html>
+    <?php
+        include '../templates/footer.php';
+    ?>
