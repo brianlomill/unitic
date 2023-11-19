@@ -34,7 +34,7 @@
                     <a class="nav-link active text-white" aria-current="page" href="#integrantes">Integrantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Contactenos</a>
+                    <a class="nav-link active text-white" aria-current="page" href="../public/contacto.php">Contactenos</a>
                 </li>
             </ul>
             <a name="" id="" class="btn btn-outline-warning" href="../admin/login.php" role="button">Administrador</a>
