@@ -44,7 +44,9 @@
             </div>
             <div class="col-md-8">
               <div class="card-block">
-                <h6 class="card-title h5" style="color:#146C94"><?php echo $monografia['titulo']; ?></h6>
+              <a href="../archivos/monografias/<?php echo $monografia['archivo']; ?>" target="_blank">
+                  <h6 class="card-title h5" style="color:#146C94"><?php echo $monografia['titulo'] ?></h6>
+                </a>
                 <h6 style="color: #19A7CE; font-style: italic;"><?php echo $monografia['programa']; ?></h6>
                 <p class="h6 text-dark text-opacity-75">"<?php echo $monografia['fecha']; ?>"</p>
                 <p class="h6 text-dark">Graduados:</p>

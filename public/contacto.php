@@ -60,22 +60,22 @@
                         <div class="single_address">
                         <i class="fas fa-map-marker-alt"></i>
                             <h4>Nuestra Dirección</h4>
-                            <p>3481 Melrose Place, Beverly Hills</p>
+                            <p>Cra. 12a #102,, Girardot, Colombia</p>
                         </div>
                         <div class="single_address">
                         <i class="fas fa-envelope"></i>
-                            <h4>Envías tu mensaje</h4>
-                            <p>Info@example.com</p>
+                            <h4>Envías tu mensaje a</h4>
+                            <p>bdavidlozano@gmail.com</p>
                         </div>
                         <div class="single_address">
                         <i class="fas fa-phone"></i>
                             <h4>Llamanos al</h4>
-                            <p>(+1) 517 397 7100</p>
+                            <p>(+57) 517 397 7100</p>
                         </div>
                         <div class="single_address">
                         <i class="fas fa-clock"></i>
                             <h4>Horario</h4>
-                            <p>Mon - Fri: 08.00 - 16.00. <br>Sat: 10.00 - 14.00</p>
+                            <p>Lun - Vie: 08.00 - 18:00 <br>Sab: 08.00 - 12.00</p>
                         </div>
                     </div><!--- END COL -->
                 </div><!--- END ROW -->
