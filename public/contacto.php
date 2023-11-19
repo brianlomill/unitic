@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Contacto</title>
+    <title>Formulario de Contacto</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <link href="../css/navbar.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/contacto.css" />
+    <link rel="stylesheet" href="../css/stylesContacto.css" />
 </head>
 
 <body>
@@ -25,8 +25,8 @@
     <main>
         <div id="contact" class="contact-area section-padding">
             <div class="container">
-                <div class="section-title text-center">
-                    <h1>Ponerse en contacto</h1>
+                <div class="section-title">
+                    <h5>FORMULARIO DE CONTACTO</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim. Aenean vitae metus in augue pretium ultrices.</p>
                 </div>
                 <div class="row">

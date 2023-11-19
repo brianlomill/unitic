@@ -14,7 +14,7 @@
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- HOJA DE ESTILOS -->
-    <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
 
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -22,18 +22,22 @@
   </head>
 
   <body>
-    <?php
-    include('../templates/navbarSecciones.php');
-    include('../clases/Integrantes.php');
+    <header>
+      <?php
+      include('../templates/navbarSecciones.php');
+      include('../clases/Integrantes.php');
 
-    $integrantes = new Integrantes();
+      $integrantes = new Integrantes();
 
-    $listarIntegrantes = $integrantes->obtenerIntegrantes();
+      $listarIntegrantes = $integrantes->obtenerIntegrantes();
 
-    ?>
-    <h5 class="container my-5 h5">INTEGRANTES</h5>
-    <?php foreach ($listarIntegrantes as $integrante) : ?>
-      <div class="container my-5">
+      ?>
+    </header>
+    <main>
+
+      <h5 class="container my-5 h5">INTEGRANTES</h5>
+      <?php foreach ($listarIntegrantes as $integrante) : ?>
+        <div class="container my-5">
           <div class="card col-md-12 p-3">
             <div class="row">
               <div class="col-md-3">
@@ -63,7 +67,9 @@
             </div>
           </div>
         </div>
-      </div>
-    <?php endforeach; ?>
-
-  </body>
+        </div>
+      <?php
+      endforeach;
+      include "../templates/footer.php";
+      ?>
+    </main>

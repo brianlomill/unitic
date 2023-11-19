@@ -22,6 +22,7 @@
   </head>
 
   <body>
+  <header>
 
     <?php
     include('../templates/navbarSecciones.php');
@@ -32,6 +33,10 @@
     $listarPosters = $Posters->obtenerPosters();
     $integrantes = $Posters->obtenerIntegrantes();
     ?>
+
+  </header>
+
+  <main>
 
     <section class="home-blog bg-sand">
       <div class="container">
@@ -94,7 +99,7 @@
         </div>
       </div>
     </section>
-
-  </body>
-
-  </html>
+    <?php
+      include '../templates/footer.php';  
+    ?>
+    </main>

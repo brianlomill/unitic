@@ -1,12 +1,6 @@
-body {
-    margin-top: 4rem;
-    background: #eee;
-}
-
 .contact-area {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 @media (max-width: 768px) {
@@ -51,11 +45,13 @@ body {
 
 .btn-contact-bg {
     border-radius: 30px;
-    color: #fff !important; /* Agrega !important para asegurarte de que esta regla tenga prioridad */
+    color: #fff !important;
+    /* Agrega !important para asegurarte de que esta regla tenga prioridad */
     padding: 1rem 2rem;
     text-transform: capitalize;
     transition: all 0.3s ease 0s;
-    background: #7564e5 !important; /* Agrega !important para asegurarte de que esta regla tenga prioridad */
+    background: #7564e5 !important;
+    /* Agrega !important para asegurarte de que esta regla tenga prioridad */
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     width: 100%;
@@ -106,20 +102,10 @@ body {
     margin-top: 0.25rem;
 }
 
-.section-title h1 {
-    font-size: 2.75rem;
-    font-weight: 500;
-    margin-top: 0;
-    position: relative;
-    text-transform: capitalize;
-    margin-bottom: 1rem;
-}
+
 
 .section-title p {
-    padding: 0 1rem;
-    width: 70%;
-    margin: auto;
-    letter-spacing: 1px;
+    width: 60%;
 }
 
 .section-title {
