@@ -187,6 +187,10 @@
   </div>
   </div>
 
+  /* SECCION CONTACTO */
+
+  
+
   /* SECCION FOOTER */
 
   <?php
