@@ -1,7 +1,7 @@
 <?php
 include_once('Conexion.php');
 
-// Clase Monografias
+// Clase Ponencias
 class Ponencias extends Conexion
 {
     public function __construct()
@@ -11,7 +11,7 @@ class Ponencias extends Conexion
 
     public function ingresarPonencias(
         $titulo,
-        $programa,
+        $evento,
         $fecha,
         $ciudad,
         $descripcion,
@@ -20,8 +20,8 @@ class Ponencias extends Conexion
         $tipo_trabajo
     ) {
         $conexion = $this->obtenerConexion();
-        $sql = "INSERT INTO portafolios (titulo, programa, fecha, ciudad, descripcion, archivo, imagen, tipo_trabajo, created_at) 
-            VALUES (?, ?, ?, ?, ?, ?, NOW())";
+        $sql = "INSERT INTO portafolios (titulo, evento, fecha, ciudad, descripcion, archivo, imagen, tipo_trabajo, created_at) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())";
         $query = mysqli_prepare($conexion, $sql);
 
         if (!$query) {
@@ -29,9 +29,9 @@ class Ponencias extends Conexion
         }
         mysqli_stmt_bind_param(
             $query,
-            "sssssi",
+            "sssssssi",
             $titulo,
-            $programa,
+            $evento,
             $fecha,
             $ciudad,
             $descripcion,
@@ -39,7 +39,6 @@ class Ponencias extends Conexion
             $foto,
             $tipo_trabajo
         );
-
 
         if (!mysqli_stmt_execute($query)) {
             throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
@@ -50,7 +49,7 @@ class Ponencias extends Conexion
         return true;
     }
 
-    public function ingresarIntegrantesPonencias($posterID, $integrantes)
+    public function ingresarIntegrantesPonencias($ponenciaId, $integrantes)
     {
         $conexion = $this->obtenerConexion();
 
@@ -62,7 +61,7 @@ class Ponencias extends Conexion
                 throw new Exception("Error en la consulta preparada: " . mysqli_error($conexion));
             }
 
-            mysqli_stmt_bind_param($query, "is", $posterID, $integrante);
+            mysqli_stmt_bind_param($query, "is", $ponenciaId, $integrante);
 
             if (!mysqli_stmt_execute($query)) {
                 throw new Exception("Error al ejecutar la consulta: " . mysqli_stmt_error($query));
@@ -77,7 +76,7 @@ class Ponencias extends Conexion
     public function obtenerPonencias()
     {
         $conexion = $this->obtenerConexion();
-        $sql = "SELECT * FROM portafolios where tipo_trabajo = 7";
+        $sql = "SELECT * FROM portafolios where tipo_trabajo = 5";
         $result = mysqli_query($conexion, $sql);
         $posters = array();
 
@@ -109,16 +108,17 @@ class Ponencias extends Conexion
     }
 
     public function editarPonencias(
+        $id,
         $titulo,
-        $programa,
+        $evento,
         $fecha,
         $ciudad,
-        $descripcion,
+        $descripcion
     ) {
         $conexion = $this->obtenerConexion();
 
         // Validar campos
-        if (empty($id) || empty($titulo) || empty($programa) || empty($fecha) || empty($ciudad) || empty($descripcion)) {
+        if (empty($id) || empty($titulo) || empty($evento) || empty($fecha) || empty($ciudad) || empty($descripcion)) {
             throw new Exception("Debes completar todos los campos obligatorios.");
         }
 
@@ -126,7 +126,7 @@ class Ponencias extends Conexion
         mysqli_begin_transaction($conexion);
 
         // La sentencia SQL debe actualizar los campos adecuados
-        $sql = "UPDATE portafolios SET titulo=?, ciudad=?, fecha=? WHERE id=?";
+        $sql = "UPDATE portafolios SET titulo=?, evento=?, fecha=?, ciudad=?, descripcion=?, updated_at=NOW() WHERE id=?";
         $query = mysqli_prepare($conexion, $sql);
 
         if (!$query) {
@@ -136,12 +136,13 @@ class Ponencias extends Conexion
         // Enlazar los parámetros adecuadamente, el tipo de datos del id es 'i'
         mysqli_stmt_bind_param(
             $query,
-            "sssi",
+            "sssssi",
             $titulo,
-            $programa,
+            $evento,
             $fecha,
             $ciudad,
             $descripcion,
+            $id
         );
 
         if (!mysqli_stmt_execute($query)) {
@@ -149,6 +150,9 @@ class Ponencias extends Conexion
         }
 
         mysqli_stmt_close($query);
+
+        // Confirmar la transacción
+        mysqli_commit($conexion);
 
         return true;
     }

@@ -5,18 +5,18 @@ $errors = [];
 
 try {
     $titulo = $_POST['titulo'];
-    $programa = $_POST['programa'];
+    $evento = $_POST['evento'];
     $fecha = $_POST['fecha'];
     $ciudad = $_POST['ciudad'];
     $descripcion = $_POST['descripcion'];
     $archivo = basename($_FILES["archivo"]["name"]);
     $foto = basename($_FILES["foto"]["name"]);
-    $tipo_trabajo = 7;
+    $tipo_trabajo = 5;
     $integrantes = $_POST['integrante'];
 
     // Ruta para guardar las imágenes localmente
-    $carpeta_destino = "../../archivos/monografias/";
-    $carpeta_destino_img = "../../archivos/monografias/img_archivos/";
+    $carpeta_destino = "../../archivos/productos/ponencias/";
+    $carpeta_destino_img = "../../archivos/productos/ponencias/img_archivos/";
 
     // Obtiene el tipo MIME del archivo
     $archivo_temporal = $_FILES["archivo"]["tmp_name"];
@@ -25,8 +25,8 @@ try {
     // Conocer el tipo de extensión de la imagen
     $tipo_imagen = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
 
-    $Monografias = new Monografias();
-    $conexion = $Monografias->obtenerConexion();
+    $Ponencias = new Ponencias();
+    $conexion = $Ponencias->obtenerConexion();
 
     // Verificar formato de archivo
     if (!in_array($tipo_archivo, ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"])) {
@@ -40,8 +40,9 @@ try {
 
     if ($Ponencias->ingresarPonencias(
         $titulo,
-        $programa,
+        $evento,
         $fecha,
+        $ciudad,
         $descripcion,
         $archivo,
         $foto,
@@ -63,19 +64,19 @@ try {
         }
 
         // Obtén el ID del proyecto recién insertado
-        $ponenciaID = mysqli_insert_id($conexion);
+        $ponenciaId = mysqli_insert_id($conexion);
 
         // Inserta los integrantes
-        $Ponencias->ingresarIntegrantesPonencias($ponenciaID, $integrantes);
-        $_SESSION['success_message'] = "La monografía se ha agregado correctamente.";
-        header("location: ../../admin/modulos/monografias/index.php");
+        $Ponencias->ingresarIntegrantesPonencias($ponenciaId, $integrantes);
+        $_SESSION['success_message'] = "La ponencia se ha agregado correctamente.";
+        header("location: ../../admin/modulos/ponencias/index.php");
         exit;
     } else {
-        throw new Exception("Hubo un error al agregar la monografía.");
+        throw new Exception("Hubo un error al agregar la ponwncia.");
     }
 } catch (Exception $e) {
-    $_SESSION['error_message'] = "Error al agregar la monografía: " . $e->getMessage();
-    header("location: ../../admin/modulos/monografias/index.php");
+    $_SESSION['error_message'] = "Error al agregar la ponencia: " . $e->getMessage();
+    header("location: ../../admin/modulos/ponencias/index.php");
     exit;
 }
 ?>

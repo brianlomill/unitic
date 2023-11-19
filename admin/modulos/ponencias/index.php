@@ -46,10 +46,10 @@ $listarPonencias = $Ponencias->obtenerPonencias();
                         foreach ($listarPonencias as $ponencia) :
                         ?>
                             <tr class="text-center">
-                                <td scope="row"><?php echo $ponencia; ?></td>
+                                <td scope="row"><?php echo $registro; ?></td>
                                 <td>
-                                <a href="../../../archivos/productos/ponencias/<?php echo $ponencia['archivo']; ?>" target="_blank">
-                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/productos/ponencias/<?php echo $ponencia['archivo']; ?>">
+                                    <a href="../../../archivos/productos/ponencias/<?php echo $ponencia['archivo']; ?>" target="_blank">
+                                        <img class="img-fluid mx-auto d-block" width="100" height="100" src="../../../archivos/productos/ponencias/img_archivos/<?php echo $ponencia['imagen']; ?>">
                                     </a>
                                 </td>
                                 <td><?php echo $ponencia['titulo']; ?></td>

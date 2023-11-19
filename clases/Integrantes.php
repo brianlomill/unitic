@@ -67,7 +67,7 @@ class Integrantes extends Conexion
         $estado
     ) {
         $conexion = $this->obtenerConexion();
-        $sql = "UPDATE integrantes SET nombres=?, apellidos=?, email=?, cvlac=?, linkedln=?, fecha_ingreso=?, fecha_retiro=?, roles_id=?, estado=? WHERE id=?";
+        $sql = "UPDATE integrantes SET nombres=?, apellidos=?, email=?, cvlac=?, linkedln=?, fecha_ingreso=?, fecha_retiro=?, roles_id=?, estado=?, updated_at=NOW() WHERE id=?";
         $query = mysqli_prepare($conexion, $sql);
 
         if (!$query) {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../../templates/header.php");
-include("../../../clases/Monografias.php");
+include("../../../clases/Ponencias.php");
 
 // Mostrar mensaje de error si existe
 if (isset($_SESSION['error_message'])) {
@@ -29,78 +29,89 @@ if (!isset($_GET['id'])) {
   header("Location: index.php");
   exit();
 }
-// Instancia de la clase Monografias
-$monografias = new Monografias();
+// Instancia de la clase Ponencias
+$Ponencias = new Ponencias();
 
 $id = $_GET['id'];
-$listarMonografias = $monografias->obtenerMonografias();
+$listarPonencias = $Ponencias->obtenerPonencias();
 
-// Buscar el proyecto por ID en el array
-$monografia = null;
-foreach ($listarMonografias as $item) {
+// Buscar el ponencia por ID en el array
+$ponencia = null;
+foreach ($listarPonencias as $item) {
   if ($item['id'] == $id) {
-    $monografia = $item;
+    $ponencia = $item;
     break;
   }
 }
 
-if ($monografia === null) {
-  // El proyecto no se encontró en la lista
+if ($ponencia === null) {
+  // La ponencia no se encontró en la lista
   header("Location: index.php");
   exit();
 }
 
-$listarIntegrantes = $monografias->obtenerIntegrantes();
+$listarIntegrantes = $Ponencias->obtenerIntegrantes();
 // Buscar el proyecto por ID en el array
 
 ?>
 <div class="titulo">
-  <h3>Proyectos</h3>
+  <h3>Editar ponencias</h3>
 </div><br>
 
 <div class="card">
   <div class="card-header fs-3 mb-3 bg-warning text-dark">
-    <h5><?php echo $monografia['titulo'] ?></h5>
+    <h5><?php echo $ponencia['titulo'] ?></h5>
   </div>
   <div class="card-body">
-    <form class="row g-3" method="POST" action="../../../servidor/monografias/editar_monografias.php">
-      <div class="col-md-6">
-        <label for="id" class="form-label">ID</label>
-        <input type="text" name="id" class="form-control" id="id" value="<?php echo $monografia['id'] ?>" readonly>
-      </div>
+    <form class="row g-3" method="POST" action="../../../servidor/ponencias/editar_ponencias.php">
+
+        <input type="text" name="id" class="form-control" id="id" value="<?php echo $ponencia['id'] ?>" readonly hidden>
+
       <div class="col-md-6">
         <label for="titulo" class="form-label">Titulo</label>
-        <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Ingrese titulo" value="<?php echo $monografia['titulo'] ?>">
+        <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Ingrese titulo" value="<?php echo $ponencia['titulo'] ?>">
       </div>
+
       <!-- <div class="col-md-6">
         <label for="apellidos" class="form-label">Archivo Existente</label>
         <input type="text" name="archivo_existente" id="archivo_existente" class="form-control" value="<!?php echo $proyecto['archivo'] ?>">
       </div> -->
+
       <div class="col-md-6">
-        <label for="programa" class="form-label">Programa</label>
-        <input type="text" name="programa" class="form-control" id="programa" placeholder="Ingrese programa" value="<?php echo $monografia['programa'] ?>">
+        <label for="evento" class="form-label">Evento</label>
+        <input type="text" name="evento" class="form-control" id="evento" placeholder="Ingrese programa" value="<?php echo $ponencia['evento'] ?>">
       </div>
+
       <div class="col-md-6">
-        <label for="fecha" class="form-label">Fecha del proyecto</label>
-        <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo $monografia['fecha'] ?>" max="<?php echo date("Y-m-d"); ?>" required>
+        <label for="fecha" class="form-label">Fecha del evento</label>
+        <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo $ponencia['fecha'] ?>" max="<?php echo date("Y-m-d"); ?>" required>
       </div>
+
+      <div class="col-md-6">
+        <label for="ciudad" class="form-label">Ciudad</label>
+        <input type="text" name="ciudad" class="form-control" id="ciudad" placeholder="Ingrese programa" value="<?php echo $ponencia['ciudad'] ?>">
+      </div>
+
       <div class="col-md-6">
         <label for="descripcion" class="form-label">Descripción</label>
-        <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Ingrese descripción" value="<?php echo $monografia['descripcion'] ?>">
+        <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Ingrese descripción" value="<?php echo $ponencia['descripcion'] ?>">
       </div>
+
       <div class="col-md-6">
         <label for="integrantes" class="form-label">Integrantes</label>
-        
+
         <?php foreach ($listarIntegrantes as $integrante) {
-        if ($integrante['portafolio_id'] == $monografia['id']) {
+          if ($integrante['portafolio_id'] == $ponencia['id']) {
             echo '<input type="text" name="integrantes[]" class="form-control" id="integrantes" value="' . $integrante['integrantes'] . '" placeholder="Ingrese integrantes"> <br>';
-        }
-    } ?>
+          }
+        } ?>
       </div>
+
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Actualizar</button>
         <a href="index.php" class="btn btn-danger">Volver</a>
       </div>
+
     </form>
   </div>
 </div>

@@ -32,20 +32,20 @@
 
             <div class="col-sm-6">
               <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha</label>
-                <input type="date" id="fecha" name="fecha" class="form-control" max="<?php echo date("Y-m-d"); ?>" required>
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" class="form-control" required>
                 <div class="invalid-feedback">
-                  Seleccione fecha
+                  Escriba la ciudad
                 </div>
               </div>
             </div>
 
             <div class="col-sm-6">
               <div class="mb-3">
-                <label for="ciudad" class="form-label">Ciudad</label>
-                <input type="text" id="ciudad" name="ciudad" class="form-control" required>
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="date" id="fecha" name="fecha" class="form-control" max="<?php echo date("Y-m-d"); ?>" required>
                 <div class="invalid-feedback">
-                  Escriba la ciudad
+                  Seleccione fecha
                 </div>
               </div>
             </div>

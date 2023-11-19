@@ -162,7 +162,7 @@ class Proyectos extends Conexion
         mysqli_begin_transaction($conexion);
 
         // La sentencia SQL debe actualizar los campos adecuados
-        $sql = "UPDATE portafolios SET titulo=?, programa=?, fecha=?, descripcion=? WHERE id=?";
+        $sql = "UPDATE portafolios SET titulo=?, programa=?, fecha=?, descripcion=?, updated_at=NOW() WHERE id=?";
         $query = mysqli_prepare($conexion, $sql);
 
         if (!$query) {

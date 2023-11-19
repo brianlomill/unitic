@@ -1,7 +1,7 @@
 <?php
 include_once('Conexion.php');
 
-// Clase Monografias
+// Clase Posters
 class Posters extends Conexion
 {
     public function __construct()
@@ -120,7 +120,7 @@ class Posters extends Conexion
         mysqli_begin_transaction($conexion);
 
         // La sentencia SQL debe actualizar los campos adecuados
-        $sql = "UPDATE portafolios SET titulo=?, ciudad=?, fecha=? WHERE id=?";
+        $sql = "UPDATE portafolios SET titulo=?, ciudad=?, fecha=?, updated_at=NOW() WHERE id=?";
         $query = mysqli_prepare($conexion, $sql);
 
         if (!$query) {
