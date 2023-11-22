@@ -63,6 +63,7 @@ $url_base = "http://localhost/unitic/admin/"
                                     <li><a class="dropdown-item" href="<?php echo $url_base; ?>modulos/ponencias/">Ponencias</a></li>
                                     <li><a class="dropdown-item" href="<?php echo $url_base; ?>modulos/posters/">Posters</a></li>
                                     <li><a class="dropdown-item" href="#">Desarrollo</a></li>
+                                    <li><a class="dropdown-item" href="#">Articulos</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -70,7 +71,7 @@ $url_base = "http://localhost/unitic/admin/"
                             <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/integrantes/">Integrantes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="<?php echo $url_base; ?>modulos/posters/">Posters</a>
+                            <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
                         </li>
                     </ul>
                     <a href="<?php echo $url_base; ?>../servidor/cerrar_sesion.php">

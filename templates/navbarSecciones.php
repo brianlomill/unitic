@@ -28,6 +28,7 @@
                         <ul class="dropdown-menu" aria-labelledby="productosDropdown">
                             <li><a class="dropdown-item" href="../public/ponencias.php">Ponencias</a></li>
                             <li><a class="dropdown-item" href="../public/posters.php">Posters</a></li>
+                            <li><a class="dropdown-item" href="../public/posters.php">Desarrollo</a></li>
                         </ul>
                     </div>
                 </li>
