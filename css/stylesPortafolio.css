@@ -263,13 +263,13 @@
 }
 
 .contact input:focus {
-  border-color: #7564e5;
+  border-color: #00135b;
   box-shadow: none;
   outline: 0;
 }
 
 .contact textarea:focus {
-  border-color: #7564e5;
+  border-color: #00135b;
   box-shadow: none;
   outline: 0;
   height: 6rem;
@@ -287,7 +287,7 @@
   padding: 1rem 2rem;
   text-transform: capitalize;
   transition: all 0.3s ease 0s;
-  background: #7564e5 !important;
+  background: #00135b !important;
   /* Agrega !important para asegurarte de que esta regla tenga prioridad */
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
@@ -308,7 +308,7 @@
 
 .single_address i {
   background: #f6f6f6;
-  color: #7564e5;
+  color: #00135b;
   border-radius: 30px;
   width: 3rem;
   height: 3rem;
@@ -323,7 +323,7 @@
 }
 
 .single_address:hover i {
-  background: #7564e5;
+  background: #00135b;
   color: #fff;
 }
 
