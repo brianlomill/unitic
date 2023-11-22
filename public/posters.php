@@ -74,7 +74,7 @@
                         ?>
                       </h5>
                     </div>
-                    <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>">
+                    <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>" target="_blank">
                       <h5 class="mt-2"><?php echo $poster['titulo'] ?>.</h5>
                     </a>
                     <h5>
