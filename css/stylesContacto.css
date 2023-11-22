@@ -1,3 +1,5 @@
+/* FORMULARIO DE CONTACTO ESTILOS */
+
 .contact-area {
     padding-top: 48px;
     padding-bottom: 48px;
@@ -101,8 +103,6 @@
     overflow: hidden;
     margin-top: 0.25rem;
 }
-
-
 
 .section-title p {
     width: 60%;

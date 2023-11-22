@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <link href="../css/navbar.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/stylesContacto.css" />
+    <link rel="stylesheet" href="../css/stylesPortafolio.css" />
 </head>
 
 <body>
