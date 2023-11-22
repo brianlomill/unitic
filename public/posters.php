@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- HOJA DE ESTILOS -->
     <link rel="stylesheet" type="text/css" href="../css/stylesPortafolio.css">
-    <!-- HOJA DE ESTILOS -->
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 

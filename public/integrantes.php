@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Nunito&family=Ubuntu&display=swap" rel="stylesheet">
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <!-- HOJA DE ESTILOS -->
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- HOJA DE ESTILOS -->
+   <link rel="stylesheet" href="../css/stylesPortafolio.css" />
     <style>
       .card-inactivo {
         filter: grayscale(100%);

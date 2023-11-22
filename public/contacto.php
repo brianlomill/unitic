@@ -13,8 +13,7 @@
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-
-    <link href="../css/navbar.css" rel="stylesheet">
+    <!-- HOJA DE ESTILOS -->
     <link rel="stylesheet" href="../css/stylesPortafolio.css" />
 </head>
 
