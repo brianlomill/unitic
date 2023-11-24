@@ -49,18 +49,14 @@
           </div>
           <!-- FINALIZA TITULO -->
 
-          <div class="row ">
+          <div class="row">
             <!-- Aquí comienza el bucle para mostrar los posters -->
             <?php foreach ($listarPosters as $poster) : ?>
-              <div class="col-md-6">
+              <div class="col-md-6 mb-4">
                 <div class="media blog-media">
-                  <!-- <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image">
-                            </a> -->
-                  <div class="media blog-media">
-                    <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>" target="_blank">
-                      <img class="d-flex" src="../archivos/productos/posters/<?php echo $poster['imagen']; ?>" alt="poster UNITIC" loading="lazy" style="width: 250px; height: 380px;" width="250" height="380">
-                    </a>
-                  </div>
+                  <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>" target="_blank">
+                    <img class="d-flex" src="../archivos/productos/posters/<?php echo $poster['imagen']; ?>" alt="poster UNITIC" loading="lazy" style="width: 250px; height: 380px;" width="250" height="380">
+                  </a>
 
                   <div class="media-body">
                     <div class="circle">
@@ -101,4 +97,5 @@
       <?php
       include '../templates/footer.php';
       ?>
+
     </main>

@@ -10,10 +10,10 @@
 
 /**********************  POSTERS ESTILOS **********************/
 
-.home-blog {
+/* .home-blog {
   padding-top: 48px;
   padding-bottom: 48px;
-}
+} */
 
 @media (min-width: 992px) {
   .home-blog {
@@ -23,7 +23,7 @@
 }
 
 .home-blog .section-title {
-  padding-bottom: 0px;
+  padding-bottom: 40px;
 }
 
 .home-blog .media {
@@ -37,11 +37,12 @@
 }
 
 .bg-sand {
-  background-color: #f5f5f6;
+  background-color: #e2dbdb;
+  /* background-color: #8787ad; */
 }
 
 .media.blog-media {
-  margin-top: 30px;
+  margin-top: 10px;
   position: relative;
   display: block;
 }
@@ -106,14 +107,14 @@
   bottom: 15px;
 }
 
-.media.blog-media>a img {
+/* .media.blog-media>a img {
   width: 100%;
   transition: transform 0.3s ease, border 0.3s ease;
-}
+} */
 
-.media.blog-media a:hover img {
-  transform: scale(1.1); /* Ajusta el valor según tus preferencias */
-}
+/* .media.blog-media a:hover img {
+  transform: scale(1.1); Ajusta el valor según tus preferencias */
+/* } */
 
 .media.blog-media:hover>a:before {
   opacity: 1;
@@ -129,6 +130,8 @@
   color: #222;
 }
 
+/* **** CAMBIAR DE COLOR LOS TITULOS ***** */
+/* 
 .media.blog-media:hover .media-body h5 {
   color: #0cc652;
 }
@@ -136,7 +139,7 @@
 .media.blog-media:hover .media-body a.post-link {
   color: #0cc652;
   text-decoration: underline;
-}
+} */
 
 .media.blog-media .media-body {
   border: 1px solid #efeff3;
@@ -158,7 +161,7 @@
 
 @media (min-width: 1200px) {
   .media.blog-media .media-body {
-    padding: 30px 20px 10px;
+    padding: 10px 20px 10px;
   }
 }
 
@@ -208,7 +211,7 @@
 
 .media.blog-media .media-body ul li {
   display: inline-block;
-  width: 49%;
+  width: 100%;
   position: relative;
 }
 
@@ -219,7 +222,7 @@
   left: 0;
   width: 1px;
   height: 14px;
-  background: #eeeef2;
+  background: #b1b1ca;
 }
 
 .media.blog-media .media-body ul li:first-child:before {
@@ -233,14 +236,16 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: #eeeef2;
+  background: #b1b1ca;
 }
 
 .media.blog-media .media-body .badge {
   display: flex; /* Hacer que el span sea un bloque */
   position:relative;
   justify-content: center;
-  width: 40px;
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 /********************** FORMULARIO DE CONTACTO ESTILOS **********************/
@@ -354,7 +359,7 @@
 }
 
 .section-title {
-  margin-bottom: 3rem;
+  justify-content: center;
 }
 
 .text-center {
