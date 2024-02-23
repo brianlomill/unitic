@@ -30,7 +30,7 @@
                     <a class="nav-link active text-white" aria-current="page" href="../public/contacto.php">Contactenos</a>
                 </li>
             </ul>
-            <a name="" id="" class="btn btn-outline-warning" href="../admin/login.php" role="button">Administrador</a>
+            <a name="" id="" class="btn btn-outline-warning btn_administador" href="../admin/login.php" role="button">Administrador</a>
         </div>
     </div>
 </nav>
