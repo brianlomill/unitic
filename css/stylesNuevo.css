@@ -111,8 +111,11 @@ img {
   .header-info h2 {
     font-size: 4rem;
   }
+  .header-info img {
+    padding: 2rem;
+  }
   .iconos-info {
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-left: 1rem;
     margin-right: 1rem;
     justify-content: space-between; /* Distribuye los elementos de manera uniforme */
