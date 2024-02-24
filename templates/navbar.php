@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="../img/logo2.WEBP" alt="" width="50" height="50" class="d-inline-block align-text-top">
-            <img src="../img/uniticestandar2.WEBP" alt="" width="150" height="50" class="d-inline-block align-text-top">
+            <img src="../img/logo.webp" alt="" width="50" height="50" class="d-inline-block align-text-top">
+            <img src="../img/unitic.webp" alt="" width="150" height="50" class="d-inline-block align-text-top">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
