@@ -6,6 +6,8 @@
   --azul: #00135b;
   --blanco: #ffffff;
   --negro: #000000;
+  --gris: #7b8a8a;
+  --verdeClaro: #26d48c;
 }
 html {
   box-sizing: border-box;
@@ -48,6 +50,9 @@ h3 {
 }
 h4 {
   font-size: 2.8rem;
+}
+h5{
+  font-size: 1.5rem;
 }
 img {
   max-width: 100%;
@@ -101,6 +106,7 @@ img {
 }
 
 /* header iconos */
+
 .iconos a i {
   font-size: 2rem;
   color: var(--amarillo);
@@ -136,38 +142,14 @@ img {
   }
 }
 
-
-
-/* .banner .banner-content {
-  width: 60%;
+.d-flex{
+  align-items: center;
 }
 
-.banner .banner-content img {
-  height: 140px;
-  padding: 20px;
-  margin: 10px;
-}
-
-.butt {
-  width: auto;
-  margin-top: 50px;
-}
-
-.butt .row .col-lg-3 {
-  border-left: #ffc000 solid 1px;
-  border-right: #ffc000 solid 1px;
-}
-
-.butt .row .col-lg-3:hover {
-  border-left: #ffc000 solid 1px;
-  border-right: #ffc000 solid 1px;
-  border-bottom: #ffc000 solid 1px;
-} */
-
-/* SECCION DE CONTADORES */
+/* Seccion de barra de proyectos*/
 
 .bg-success {
-  background-color: #26d48c !important;
+  background-color: var(--verdeClaro) !important;
   padding-bottom: 0px;
 }
 
@@ -181,6 +163,7 @@ img {
 .about h5 {
   font-weight: bold;
   color: #00135b !important;
+  font-size: 2rem;
 }
 
 .about h1 {
@@ -189,8 +172,22 @@ img {
 }
 
 .about p {
-  color: #7b8a8a;
-  font-size: 16px;
+  color: var(--gris);
+  font-size: 1.6rem;
+}
+
+.rounded-pill{
+  padding: 1rem;
+  width: 20rem;
+  color: var(--blanco);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .rounded-pill{
+      width: 100%;
+    }
 }
 
 /* SECCION DE PROYECTOS */

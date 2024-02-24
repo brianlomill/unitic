@@ -73,9 +73,11 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> <!-- Fin seccion header -->
 
-  <div class="container-fluid py-5 bg-success p-2 text-dark bg-opacity-75">
+  <!-- Seccion barra de proyectos -->
+ 
+ <div class="container-fluid py-5 bg-success p-2 text-dark bg-opacity-75">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
@@ -104,7 +106,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> <!-- Fin seccion barra de proyectos -->
 
   <!-- SECCION SOBRE NOSOTROS - UNITIC  -->
 
@@ -117,9 +119,8 @@
           <h1>UNITIC - Un Espacio Para La Innovación</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus. Etiam gravida justo nec erat vestibulum, et malesuada augue laoreet.</p>
           <p class="mb-4">Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus.</p>
-          <a href="" class="btn btn-success rounded-pill px-5 py-3 text-white">More Details</a>
+          <a href="" class="btn btn-success rounded-pill">Más Detalles</a>
         </div>
-
         <div class="col-lg-5 col-md-6 col-sm-12">
           <div class="h-100 position-relative">
             <img src="../img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
@@ -130,7 +131,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>  <!-- Fin seccion Nosotros -->
 
   <!-- SECCION PROYECTOS  -->
 
