@@ -79,9 +79,10 @@ img {
 }
 .nav-link {
   margin: 0 1rem;
+  color: var(--blanco);
 }
 .nav-link:hover {
-  border-bottom: var(--amarillo) solid 1px;
+  color: var(--amarillo);
 }
 
 /* Estilos predeterminados para el botón */

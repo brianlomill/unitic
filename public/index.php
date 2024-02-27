@@ -189,7 +189,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-4 col-md-8">
             <div class="team-member">
-              <div class="image">
+              <div class="image rounded">
                 <img src="../img/team_1.jpg" alt="">
                 <div class="social-icons">
                   <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
@@ -211,7 +211,7 @@
           </div>
           <div class="col-lg-4 col-md-8">
             <div class="team-member">
-              <div class="image">
+              <div class="image rounded">
                 <img src="../img/team_2.jpg" alt="">
                 <div class="social-icons">
                   <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
@@ -233,7 +233,7 @@
           </div>
           <div class="col-lg-4 col-md-8">
             <div class="team-member">
-              <div class="image">
+              <div class="image rounded">
                 <img src="../img/team_3.jpg" alt="">
                 <div class="social-icons">
                   <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
