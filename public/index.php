@@ -25,6 +25,9 @@
 </head>
 
 <body>
+
+  <!-- header -->
+
   <header class="header">
     <?php
     include('../templates/navbar.php');
@@ -132,7 +135,7 @@
     </div>
   </div> <!-- Fin seccion Nosotros -->
 
-  <!-- SECCION PROYECTOS  -->
+  <!-- Sección: proyectos -->
 
   <div class="container-fluid proyects py-5 mb-5">
     <div class="container">
@@ -159,9 +162,9 @@
         <?php endforeach; ?>
       </div>
     </div>
-  </div>
+  </div> <!-- Fin de seccion proyectos -->
 
-  <!-- SECCION INTEGRANTES  -->
+  <!-- Seccion: integrantes -->
 
   <div class="container-fluid py-5 mb-5 team">
     <section id="team">
@@ -249,7 +252,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </div><!-- Fin seccion: integrantes -->
 
   <!-- SECCION CONTACTO  -->
 
