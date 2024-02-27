@@ -58,19 +58,19 @@
           <div class="row">
             <div class="iconos">
               <a href="ponencias.php"><i class="bi bi-soundwave"></i></a>
-              <p class="fw-normal">Ponencias</p>
+              <p>Ponencias</p>
             </div>
             <div class="iconos">
               <a href="monografias.php"><i class="bi bi-file-text"></i></a>
-              <p class="fw-normal">Monografias</p>
+              <p>Monografias</p>
             </div>
             <div class="iconos">
               <a href="posters.php"><i class="bi bi-file-earmark-image"></i></i></a>
-              <p class="fw-normal">Poster</p>
+              <p>Poster</p>
             </div>
             <div class="iconos">
               <a href="#"><i class="bi bi-file-earmark-medical"></i></a>
-              <p class="fw-normal">Certificados</p>
+              <p>Certificados</p>
             </div>
           </div>
         </div>

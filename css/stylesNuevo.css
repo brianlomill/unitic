@@ -149,6 +149,11 @@ img {
     font-size: 4rem;
   }
 
+  .iconos p{
+    color: var(--blanco);
+    font-weight: 500;
+  }
+
   .iconos:last-child {
     /* para evitar espacio extra al final */
     margin-right: 0;
