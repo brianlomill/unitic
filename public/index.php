@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-  <title>Semillero UNITIC</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon del sitio -->
+  <link rel="icon" href="../img/logo.webp" type="image/x-icon">
+  <title>Semillero UNITIC</title>
   <!-- FONT FAMILY -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Nunito&family=Ubuntu&display=swap" rel="stylesheet">
@@ -23,7 +25,7 @@
 </head>
 
 <body>
-<header class="header">
+  <header class="header">
     <?php
     include('../templates/navbar.php');
 
@@ -42,8 +44,6 @@
     $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
 
     ?>
-
-    <!-- SECCION HEADER -->
 
     <div class="header-contenido">
       <div class="header-info">
@@ -76,44 +76,43 @@
   </header> <!-- Fin seccion header -->
 
   <!-- Seccion barra de proyectos -->
- 
- <div class="container-fluid py-5 bg-success p-2 text-dark bg-opacity-75">
+
+  <div class="container-fluid py-5 bg-success p-2 text-dark bg-opacity-75">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
-          <div class="d-flex counter">
+        <div class="col-lg-3">
+          <div class="d-flex">
             <h1 class="me-3 text-primary counter-value">99</h1>
-            <h5 class="text-white mt-1">Estudiantes activos en el semillero</h5>
+            <h6 class="text-white mt-1">Estudiantes activos en el semillero</h6>
           </div>
         </div>
         <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
           <div class="d-flex counter">
             <h1 class="me-3 text-primary counter-value">25</h1>
-            <h5 class="text-white mt-1">Total de proyectos </h5>
+            <h6 class="text-white mt-1">Total de proyectos </h6>
           </div>
         </div>
         <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
           <div class="d-flex counter">
             <h1 class="me-3 text-primary counter-value">120</h1>
-            <h5 class="text-white mt-1">Total de productos elaborados</h5>
+            <h6 class="text-white mt-1">Total de productos elaborados</h6>
           </div>
         </div>
         <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
           <div class="d-flex counter">
             <h1 class="me-3 text-primary counter-value">5</h1>
-            <h5 class="text-white mt-1">Años en funcionamiento
+            <h6 class="text-white mt-1">Años en funcionamiento</h6>
           </div>
         </div>
       </div>
     </div>
   </div> <!-- Fin seccion barra de proyectos -->
 
-  <!-- SECCION SOBRE NOSOTROS - UNITIC  -->
+  <!-- Sección: sobre nosotros  -->
 
   <div class="container-fluid about py-5">
     <div class="container pt-5">
       <div class="row g-5">
-
         <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
           <h5>Acerca de Nosotros</h5>
           <h1>UNITIC - Un Espacio Para La Innovación</h1>
@@ -131,30 +130,29 @@
         </div>
       </div>
     </div>
-  </div>  <!-- Fin seccion Nosotros -->
+  </div> <!-- Fin seccion Nosotros -->
 
   <!-- SECCION PROYECTOS  -->
 
   <div class="container-fluid proyects py-5 mb-5">
     <div class="container">
-      <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-        <h5 class="h5">Proyectos</h5>
-        <h1 class="h1">Proyectos UNITIC</h1>
+      <div class="text-center mx-auto">
+        <h1>Proyectos UNITIC</h1>
       </div>
       <div class="row g-5 justify-content-center">
         <?php foreach ($proyectosList as $proyecto) : ?>
-          <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
+          <div class="col-lg-6 col-xl-3 col-12 col-sm-12 sombras">
             <div class="proyect position-relative bg-light rounded">
               <img src="../archivos/proyectos/img_archivos/<?php echo $proyecto['imagen']; ?>" class="img-fluid  rounded" alt="Archivo pdf">
-              <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;"><?php echo date("Y", strtotime($proyecto['fecha'])); ?></span>
+              <span class="fecha position-absolute px-4 py-2 rounded"><?php echo date("Y", strtotime($proyecto['fecha'])); ?></span>
 
               <div class="proyects-content px-3">
                 <h5 class="autor"><?php echo strlen($proyecto['titulo']) > 50 ? substr($proyecto['titulo'], 0, 50) . ' ...' : $proyecto['titulo']; ?></h5>
                 <p><?php echo $proyecto['descripcion']; ?></p>
                 <span class="programa"><?php echo $proyecto['programa']; ?></span>
               </div>
-              <div class="proyects-coment d-flex justify-content-center px-4 py-2 border bg-primary rounded-bottom w-100">
-                <a href="proyectos.php" class="text-white"><small><i class="bi bi-eye-fill"></i></i> Ver Más</small></a>
+              <div class="btn__ver d-flex justify-content-center px-4 py-2 border rounded-bottom w-100">
+                <a href="proyectos.php"><small><i class="bi bi-eye-fill"></i></i> Ver Más</small></a>
               </div>
             </div>
           </div>
@@ -165,7 +163,93 @@
 
   <!-- SECCION INTEGRANTES  -->
 
-  <div class="container-fluid py-5 mb-5 team"></div>
+  <div class="container-fluid py-5 mb-5 team">
+    <section id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h5>Equipo</h6>
+                <h1>Nuestros Miembros</h1>
+                <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                  roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-8">
+            <div class="team-member">
+              <div class="image">
+                <img src="../img/team_1.jpg" alt="">
+                <div class="social-icons">
+                  <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <h5>Marvin McKinney</h5>
+              <p>Marketing Coordinator</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="team-member">
+              <div class="image">
+                <img src="../img/team_2.jpg" alt="">
+                <div class="social-icons">
+                  <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <h5>Kathryn Murphy</h5>
+              <p>Ethical Hacker</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="team-member">
+              <div class="image">
+                <img src="../img/team_3.jpg" alt="">
+                <div class="social-icons">
+                  <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+                <div class="overlay"></div>
+              </div>
+
+              <h5>Darrell Steward</h5>
+              <p>Software Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a class="btn btn-outline-primary btn_outlines" href="../admin/login.php" role="button">Ver Más <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- SECCION CONTACTO  -->
 
