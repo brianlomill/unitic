@@ -138,30 +138,37 @@
   <!-- Sección: proyectos -->
 
   <div class="container-fluid proyects py-5 mb-5">
-    <div class="container">
-      <div class="text-center mx-auto">
-        <h1>Proyectos UNITIC</h1>
-      </div>
-      <div class="row g-5 justify-content-center">
-        <?php foreach ($proyectosList as $proyecto) : ?>
-          <div class="col-lg-6 col-xl-3 col-12 col-sm-12 sombras">
-            <div class="proyect position-relative bg-light rounded">
-              <img src="../archivos/proyectos/img_archivos/<?php echo $proyecto['imagen']; ?>" class="img-fluid  rounded" alt="Archivo pdf">
-              <span class="fecha position-absolute px-4 py-2 rounded"><?php echo date("Y", strtotime($proyecto['fecha'])); ?></span>
-
-              <div class="proyects-content px-3">
-                <h5 class="autor"><?php echo strlen($proyecto['titulo']) > 50 ? substr($proyecto['titulo'], 0, 50) . ' ...' : $proyecto['titulo']; ?></h5>
-                <p><?php echo $proyecto['descripcion']; ?></p>
-                <span class="programa"><?php echo $proyecto['programa']; ?></span>
-              </div>
-              <div class="btn__ver d-flex justify-content-center px-4 py-2 border rounded-bottom w-100">
-                <a href="proyectos.php"><small><i class="bi bi-eye-fill"></i></i> Ver Más</small></a>
-              </div>
+    <section id="proyectos">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h1>Nuestros Proyectos</h1>
+              <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
             </div>
           </div>
-        <?php endforeach; ?>
+        </div>
+        <div class="row justify-content-center">
+          <?php foreach ($proyectosList as $proyecto) : ?>
+            <div class="col-lg-6 col-xl-3 col-12 col-sm-12 sombras">
+              <div class="proyect position-relative bg-light rounded">
+                <img src="../archivos/proyectos/img_archivos/<?php echo $proyecto['imagen']; ?>" class="img-fluid  rounded" alt="Archivo pdf">
+                <span class="fecha position-absolute px-4 py-2 rounded"><?php echo date("Y", strtotime($proyecto['fecha'])); ?></span>
+                <div class="proyects-content px-3">
+                  <h5 class="autor"><?php echo strlen($proyecto['titulo']) > 50 ? substr($proyecto['titulo'], 0, 50) . ' ...' : $proyecto['titulo']; ?></h5>
+                  <p><?php echo $proyecto['descripcion']; ?></p>
+                  <span class="programa"><?php echo $proyecto['programa']; ?></span>
+                </div>
+                <div class="btn__ver d-flex justify-content-center px-4 py-2 border rounded-bottom w-100">
+                  <a href="proyectos.php"><small><i class="bi bi-eye-fill"></i></i> Ver Más</small></a>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
       </div>
-    </div>
+    </section>
   </div> <!-- Fin de seccion proyectos -->
 
   <!-- Seccion: integrantes -->
