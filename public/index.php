@@ -54,26 +54,24 @@
         <h2>
           Ingeniería de Sistemas - ISUM - GIRARDOT
         </h2>
-        <div class="iconos-info">
-          <div class="row">
-            <div class="iconos">
-              <a href="ponencias.php"><i class="bi bi-soundwave"></i></a>
-              <p>Ponencias</p>
-            </div>
-            <div class="iconos">
-              <a href="monografias.php"><i class="bi bi-file-text"></i></a>
-              <p>Monografias</p>
-            </div>
-            <div class="iconos">
-              <a href="posters.php"><i class="bi bi-file-earmark-image"></i></i></a>
-              <p>Poster</p>
-            </div>
-            <div class="iconos">
-              <a href="#"><i class="bi bi-file-earmark-medical"></i></a>
-              <p>Certificados</p>
-            </div>
+        <section class="layout">
+          <div class="grow">
+            <a href="ponencias.php"><i class="bi bi-soundwave"></i></a>
+            <p>Ponencias</p>
           </div>
-        </div>
+          <div class="grow">
+            <a href="monografias.php"><i class="bi bi-file-text"></i></a>
+            <p>Monografias</p>
+          </div>
+          <div class="grow">
+            <a href="posters.php"><i class="bi bi-file-earmark-image"></i></i></a>
+            <p>Poster</p>
+          </div>
+          <div class="grow">
+            <a href="#"><i class="bi bi-file-earmark-medical"></i></a>
+            <p>Certificados</p>
+          </div>
+        </section>
       </div>
     </div>
   </header> <!-- Fin seccion header -->

@@ -106,6 +106,7 @@ img {
   background-size: cover;
   background-position: center center;
 }
+
 .header-contenido {
   display: flex;
   justify-content: center;
@@ -116,56 +117,78 @@ img {
 }
 
 .header-info h2 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 2rem;
 }
 
-/* header iconos */
+.layout {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
 
-.iconos a i {
-  font-size: 2rem;
+@media (max-width: 1024px) {
+    .layout {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+}
+
+.layout a i {
+  font-size: 4rem;
   color: var(--amarillo);
 }
 
-@media (min-width: 768px) {
+.layout p {
+  color: var(--blanco);
+}
+
+.grow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--amarillo);
+  padding: 1rem;
+}
+
+.grow a i {
+  flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+  .header-contenido {
+    height: 60rem;
+  }
+  .header-info {
+    margin-bottom: -10rem;
+  }
   .header-info h2 {
-    font-size: 4rem;
+    font-size: 3rem;
+    margin: 1rem;
   }
-  .header-info img {
-    padding: 2rem;
+  .layout {
+    flex-wrap: wrap;
+    margin: 5rem 5rem;
   }
-  .iconos-info {
-    margin-top: 5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+  .layout a i {
+    font-size: 3rem;
+    color: var(--amarillo);
   }
-  .iconos {
-    border: 1px solid var(--amarillo);
-    flex: 1;
-    padding: 1rem;
-    margin-right: 3rem;
+  .grow {
+    flex-basis: calc(50% - 1.6rem);
+    padding: 0;
   }
-  .iconos a i {
-    font-size: 4rem;
-  }
-
-  .iconos p{
-    color: var(--blanco);
-    font-weight: 500;
-  }
-
-  .iconos:last-child {
-    /* para evitar espacio extra al final */
-    margin-right: 0;
+  .grow p {
+    font-size: 1rem;
   }
 }
+
+/* Seccion de barra de proyectos*/
 
 .d-flex {
   align-items: center;
 }
-
-/* Seccion de barra de proyectos*/
 
 .bg-success {
   background-color: var(--verdeClaro) !important;
@@ -245,7 +268,7 @@ img {
   margin: 1rem;
 }
 
-@media (min-width: 480px ) {
+@media (min-width: 480px) {
   .col-xl-3 {
     width: 65%;
     margin: 1rem;
@@ -382,7 +405,7 @@ img {
 
 /* Sección de Galeria */
 
-.gallery{
+.gallery {
   background-color: var(--grisClaro);
 }
 
