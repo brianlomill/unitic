@@ -84,23 +84,23 @@
         <div class="col-lg-3">
           <div class="d-flex">
             <h1 class="me-3 text-primary counter-value">99</h1>
-            <h6 class="text-white mt-1">Estudiantes activos en el semillero</h6>
+            <h6 class="text-white mt-1">Estudiantes activos</h6>
           </div>
         </div>
-        <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
-          <div class="d-flex counter">
+        <div class="col-lg-3">
+          <div class="d-flex">
             <h1 class="me-3 text-primary counter-value">25</h1>
             <h6 class="text-white mt-1">Total de proyectos </h6>
           </div>
         </div>
-        <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
-          <div class="d-flex counter">
+        <div class="col-lg-3">
+          <div class="d-flex">
             <h1 class="me-3 text-primary counter-value">120</h1>
-            <h6 class="text-white mt-1">Total de productos elaborados</h6>
+            <h6 class="text-white mt-1">Total de productos</h6>
           </div>
         </div>
-        <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
-          <div class="d-flex counter">
+        <div class="col-lg-3">
+          <div class="d-flex">
             <h1 class="me-3 text-primary counter-value">5</h1>
             <h6 class="text-white mt-1">Años en funcionamiento</h6>
           </div>

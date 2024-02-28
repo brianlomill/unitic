@@ -129,10 +129,10 @@ img {
 }
 
 @media (max-width: 1024px) {
-    .layout {
-      margin-left: 3rem;
-      margin-right: 3rem;
-    }
+  .layout {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }
 
 .layout a i {
@@ -184,10 +184,23 @@ img {
   }
 }
 
-/* Seccion de barra de proyectos*/
+/* Seccion de barra de proyectos */
 
 .d-flex {
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
 }
 
 .bg-success {
@@ -198,12 +211,6 @@ img {
 .counter-value {
   font-weight: bold;
   color: var(--azul) !important;
-}
-
-@media (max-width: 480px) {
-  .d-flex h1 {
-    font-size: 4rem;
-  }
 }
 
 /* Sección: sobre nosotros */
