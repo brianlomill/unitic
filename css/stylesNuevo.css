@@ -380,6 +380,12 @@ img {
   opacity: 1;
 }
 
+/* Sección de Galeria */
+
+.gallery{
+  background-color: var(--grisClaro);
+}
+
 /* TITULOS */
 
 .tittle {

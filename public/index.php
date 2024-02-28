@@ -114,25 +114,27 @@
   <!-- Sección: sobre nosotros  -->
 
   <div class="container-fluid about py-5">
-    <div class="container pt-5">
-      <div class="row g-5">
-        <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-          <h5>Acerca de Nosotros</h5>
-          <h1>UNITIC - Un Espacio Para La Innovación</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus. Etiam gravida justo nec erat vestibulum, et malesuada augue laoreet.</p>
-          <p class="mb-4">Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus.</p>
-          <a href="" class="btn btn-success rounded-pill">Más Detalles</a>
-        </div>
-        <div class="col-lg-5 col-md-6 col-sm-12">
-          <div class="h-100 position-relative">
-            <img src="../img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
-            <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-              <img src="../img/about-2.jpg" class="img-fluid w-100 rounded" alt="">
+    <section id="nosotros">
+      <div class="container pt-5">
+        <div class="row g-5">
+          <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+            <h5>Acerca de Nosotros</h5>
+            <h1>UNITIC - Un Espacio Para La Innovación</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus. Etiam gravida justo nec erat vestibulum, et malesuada augue laoreet.</p>
+            <p class="mb-4">Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus.</p>
+            <a href="" class="btn btn-success rounded-pill">Más Detalles</a>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+            <div class="h-100 position-relative">
+              <img src="../img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+              <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                <img src="../img/about-2.jpg" class="img-fluid w-100 rounded" alt="">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div> <!-- Fin seccion Nosotros -->
 
   <!-- Sección: proyectos -->
@@ -143,9 +145,9 @@
         <div class="row">
           <div class="col-12">
             <div class="intro">
-              <h1>Nuestros Proyectos</h1>
-              <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+              <h5>Explora Nuestros Logros</h5>
+              <h1>Proyectos Destacados</h1>
+              <p class="mx-auto">Sumérgete en la creatividad y la innovación que impulsa nuestros proyectos destacados.</p>
             </div>
           </div>
         </div>
@@ -179,10 +181,9 @@
         <div class="row">
           <div class="col-12">
             <div class="intro">
-              <h5>Equipo</h6>
-                <h1>Nuestros Miembros</h1>
-                <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                  roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+              <h5>Conoce a nuestro equipo en acción</h6>
+                <h1> Nuestros Colaboradores</h1>
+                <p class="mx-auto">Descubre la fuerza impulsora detrás de nuestro éxito: un equipo dedicado y apasionado que trabaja en armonía para lograr resultados extraordinarios.</p>
             </div>
           </div>
         </div>
@@ -261,7 +262,86 @@
     </section>
   </div><!-- Fin seccion: integrantes -->
 
-  <!-- SECCION CONTACTO  -->
+  <!-- Sección: Galeria -->
+
+  <div class="container-fluid gallery py-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="intro">
+            <h5>Explora nuestra galeria</h6>
+              <h1>Imágenes Destacadas</h1>
+              <p class="mx-auto">Sumérgete en nuestra colección visual que captura momentos significativos y experiencias compartidas. Descubre la diversidad y la belleza a través de nuestras imágenes cuidadosamente seleccionadas.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <hr class="mt-2 mb-5"> -->
+      <div class="row text-center text-lg-start">
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fin de sección Galeria -->
 
   <!-- FOOTER -->
 
