@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Nunito&family=Ubuntu&display=swap" rel="stylesheet">
   <!-- BOOTSTRAP ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <!-- HOJA DE ESTILOS -->
@@ -342,6 +341,74 @@
   </div>
 
   <!-- Fin de sección Galeria -->
+
+  <!-- Sección: Contacto -->
+  <div class="container-fluid py-5 mb-5">
+    <section id="contacto">
+      <div class="container contacto">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h5>Contactanos</h6>
+                <h1>Formulario de Contacto</h1>
+                <p class="mx-auto">Sumérgete en la creatividad y la innovación que impulsa nuestros proyectos destacados.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="contact">
+              <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+                <div class="row g-5">
+                  <div class="col-sm-6">
+                    <input type="text" name="nombres" class="form-control mb-3" placeholder="Nombres" required="required">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required="required">
+                  </div>
+                  <div class="col-12">
+                    <input type="text" name="asunto" class="form-control mb-3" placeholder="Asunto" required="required">
+                  </div>
+                  <div class="col-12">
+                    <textarea rows="6" name="mensaje" class="form-control mb-3" placeholder="Tu Mensaje" required="required"></textarea>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Enviar Mensaje</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="single_address">
+              <i class="fas fa-map-marker-alt"></i>
+              <h6>Nuestra Dirección</h6>
+              <p>Cra. 12a #102,, Girardot, Colombia</p>
+            </div>
+            <div class="single_address">
+              <i class="fas fa-envelope"></i>
+              <h6>Envías tu mensaje a</h6>
+              <p>mtsanchez@uniminuto.edu</p>
+            </div>
+            <div class="single_address">
+              <i class="fas fa-phone"></i>
+              <h6>Llamanos al</h6>
+              <p>(+57) 321 461 4550</p>
+            </div>
+            <div class="single_address">
+              <i class="fas fa-clock"></i>
+              <h6>Horario</h6>
+              <p>Lun - Vie: 08.00 - 18:00 <br>Sab: 08.00 - 12.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- Fin de sección Contacto -->
 
   <!-- FOOTER -->
 
