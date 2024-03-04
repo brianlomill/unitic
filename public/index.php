@@ -191,13 +191,13 @@
                 <img src="../img/team_1.jpg" alt="">
                 <div class="social-icons">
                   <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f" style="font-size: 1.5rem"></i>
                   </a>
                   <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" style="font-size: 1.5rem"></i>
                   </a>
                   <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" style="font-size: 1.5rem"></i>
                   </a>
                 </div>
                 <div class="overlay"></div>
@@ -213,13 +213,13 @@
                 <img src="../img/team_2.jpg" alt="">
                 <div class="social-icons">
                   <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f" style="font-size: 1.5rem"></i>
                   </a>
                   <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" style="font-size: 1.5rem"></i>
                   </a>
                   <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" style="font-size: 1.5rem"></i>
                   </a>
                 </div>
                 <div class="overlay"></div>
@@ -235,13 +235,13 @@
                 <img src="../img/team_3.jpg" alt="">
                 <div class="social-icons">
                   <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f" style="font-size: 1.5rem"></i>
                   </a>
                   <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" style="font-size: 1.5rem"></i>
                   </a>
                   <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" style="font-size: 1.5rem"></i>
                   </a>
                 </div>
                 <div class="overlay"></div>
