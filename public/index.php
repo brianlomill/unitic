@@ -173,7 +173,7 @@
   <!-- Seccion: integrantes -->
 
   <div class="container-fluid py-5 mb-5 team">
-    <section id="equipo">
+    <section id="integrantes">
       <div class="container">
         <div class="row">
           <div class="col-12">

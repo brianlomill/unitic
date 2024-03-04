@@ -13,10 +13,10 @@
                     <a class="nav-link active text-warning" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#container-info">Quienes somos</a>
+                    <a class="nav-link" aria-current="page" href="#nosotros">Quienes somos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../public/proyectos.php">Proyectos</a>
+                    <a class="nav-link" aria-current="page" href="#proyectos">Proyectos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#integrantes">Integrantes</a>
@@ -25,7 +25,7 @@
                     <a class="nav-link" aria-current="page" href="#galeria">Galeria</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../public/contacto.php">Contactenos</a>
+                    <a class="nav-link" aria-current="page" href="#contacto">Contactenos</a>
                 </li>
             </ul>
             <a class="btn btn-outline-warning btn_outlines" href="../admin/login.php" role="button">Administrador</a>
