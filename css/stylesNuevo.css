@@ -528,6 +528,28 @@ img {
   text-align: center !important;
 }
 
+/* Login */
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url("../img/campus.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
 /* TITULOS */
 
 /* .tittle {
@@ -618,25 +640,3 @@ img {
   bottom: 30px;
   z-index: 99;
 } */
-
-/* LOGIN */
-
-.login {
-  min-height: 100vh;
-}
-
-.bg-image {
-  background-image: url("../img/campus.webp");
-  background-size: cover;
-  background-position: center;
-}
-
-.login-heading {
-  font-weight: 300;
-}
-
-.btn-login {
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
-  padding: 0.75rem 1rem;
-}
