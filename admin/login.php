@@ -67,7 +67,7 @@ require('../clases/Conexion.php');
                         <a href="#l" class="forgot-link float-end text-primary">Forgot password?</a> -->
                         <div class="d-grid gap-2 d-md-flex">
                           <button class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2" type="submit">Iniciar sesion</button>
-                          <button class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2" type="return" onclick="history.back()">Volver</button>
+                          <button class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2" type="button" onclick="goBack()">Volver</button>
                         </div>
                       </form>
                     </div>
@@ -108,26 +108,10 @@ require('../clases/Conexion.php');
   </script>
 
   <script>
-    // Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
-    (function() {
-      'use strict'
-
-      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-      var forms = document.querySelectorAll('.needs-validation')
-
-      // Bucle sobre ellos y evitar el envío
-      Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-          form.addEventListener('submit', function(event) {
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-          }, false)
-        })
-    })()
+    function goBack() {
+        // Redirigir al index y quitar cualquier parámetro de error en la URL
+        window.location.href = 'index.php';
+    }
   </script>
 </body>
 

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
     <div class="container">
-        <a class="navbar-brand" href="../public/index.php">
+        <a class="navbar-brand" href="../index.php">
             <img src="../img/logo.webp" alt="" width="50" height="50" class="d-inline-block align-text-top">
             <img src="../img/unitic.webp" alt="" width="150" height="50" class="d-inline-block align-text-top">
         </a>

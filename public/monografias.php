@@ -40,7 +40,7 @@
         <div class="card col-md-12 p-3">
           <div class="row">
             <div class="col-md-3">
-              <img width="100%" src="../img/uniminuto.jpg">
+              <img width="100%" src="../archivos/monografias/img_archivos/<?php echo $monografia['imagen']; ?>"">
             </div>
             <div class="col-md-8">
               <div class="card-block">
