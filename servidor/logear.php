@@ -10,9 +10,8 @@ $Auth = new Auth();
 if ($Auth->logear($admin, $password)) {
     header("location: ../admin/index.php");
 } else {
-    echo "Error";
-    header("location: ../admin/login.php?fallo=true");
+    header('Location: ../admin/login.php?error=1');
+    exit();
 }
-
 
 ?>
