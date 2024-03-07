@@ -36,10 +36,10 @@
                     <a class="nav-link active text-white" aria-current="page" href="../public/integrantes.php">Integrantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="../public/contacto.php">Contacto</a>
+                    <a class="nav-link active text-white" aria-current="page" href="#">Galeria</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Geleria</a>
+                    <a class="nav-link active text-white" aria-current="page" href="../index.php#contacto">Contactanos</a>
                 </li>
             </ul>
             <a class="btn btn-outline-warning" href="../admin/login.php" role="button">Administrador</a>
