@@ -25,7 +25,7 @@ body {
   line-height: 2;
 }
 
-/** Globales **/
+/***** Globales *****/
 .contenedor {
   width: min(90%, 120rem);
   margin: 0 auto;
@@ -72,7 +72,7 @@ img {
   border-radius: 1.5rem;
 }
 
-/* navbar */
+/***** navbar - menu de navegación *****/
 .navbar-nav {
   padding: 0;
   margin: 2rem;
@@ -86,10 +86,11 @@ img {
 }
 
 /* Estilos predeterminados para el botón */
+
 .navbar-toggler {
   background-color: var(
     --amarillo
-  ); /* Cambia a amarillo cuando la pantalla es menor de 768 píxeles */
+  );
 }
 
 .btn_outlines {
@@ -98,7 +99,7 @@ img {
   transition: 0.5s;
 }
 
-/* Sección del header */
+/***** Sección del header *****/
 
 .header {
   background: url("../img/campus.webp");
@@ -156,7 +157,7 @@ img {
   flex-grow: 1;
 }
 
-/* Estilos para los titulos en cada secciones */
+/***** Estilos para los titulos en cada secciones *****/
 
 .intro {
   margin-bottom: 3.6rem;
@@ -208,7 +209,7 @@ img {
   }
 }
 
-/* Seccion de barra de proyectos */
+/***** Seccion de barra de proyectos *****/
 
 .d-flex {
   align-items: center;
@@ -237,7 +238,7 @@ img {
   color: var(--azul) !important;
 }
 
-/* Sección: sobre nosotros */
+/***** Sección: sobre nosotros *****/
 
 .about h1 {
   color: var(--negro);
@@ -268,7 +269,7 @@ img {
   }
 }
 
-/* Sección de proyectos */
+/***** Sección de proyectos *****/
 
 .col-xl-3 {
   width: 90%;
@@ -345,7 +346,7 @@ img {
   font-weight: 700;
 }
 
-/* Sección Integrantes */
+/***** Sección Integrantes *****/
 
 .team-member {
   text-align: center;
@@ -416,7 +417,7 @@ img {
   background-color: var(--grisClaro);
 }
 
-/* Estilos del formulario de contacto */
+/***** Formulario de contacto *****/
 
 @media (max-width: 768px) {
   .contact {
@@ -528,7 +529,7 @@ img {
   text-align: center !important;
 }
 
-/* Login */
+/***** Login *****/
 
 @media (min-width: 768px) {
   .login {
