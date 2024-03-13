@@ -441,16 +441,16 @@ img {
 }
 
 .contact input:focus {
-  border-color: var(--negro);
+  border-color: var(--verdeClaro);
   box-shadow: none;
   outline: 0;
 }
 
 .contact textarea:focus {
-  border-color: var(--negro);
+  border-color: var(--verdeClaro);
   box-shadow: none;
   outline: 0;
-  height: 10rem;
+  height: 6rem;
 }
 
 .form-control::placeholder {

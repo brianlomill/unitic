@@ -357,7 +357,7 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="contact">
-              <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+              <form class="form" method="post" action="servidor/contacto.php" onsubmit="return validation();">
                 <div class="row g-5">
                   <div class="col-sm-6">
                     <input type="text" name="nombres" class="form-control mb-3" placeholder="Nombres" required="required">
@@ -372,7 +372,7 @@
                     <textarea rows="6" name="mensaje" class="form-control mb-3" placeholder="Tu Mensaje" required="required"></textarea>
                   </div>
                   <div class="col-12 text-center">
-                    <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Enviar Mensaje</button>
+                    <button type="submit" class="btn btn-contact-bg">Enviar Mensaje</button>
                   </div>
                 </div>
               </form>
