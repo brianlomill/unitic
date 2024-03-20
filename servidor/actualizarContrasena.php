@@ -12,17 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Crear una instancia de la clase Auth
     $auth = new Auth();
 
-    if ($auth->updateContrasena($adminId, $passwordAntigua, $passwordNueva)) {
-        // La contraseña se actualizó correctamente
-        header("location: ../admin/index.php");
-        exit();
-    } else {
+    try {
+        if ($auth->updateContrasena($adminId, $passwordAntigua, $passwordNueva)) {
+            // La contraseña se actualizó correctamente
+            header("location: ../admin/index.php");
+            exit();
+        }
+    } catch (Exception $e) {
         // Ocurrió un error al actualizar la contraseña
-        echo "Error al actualizar la contraseña. Asegúrate de que la contraseña antigua sea correcta.";
-        // header("location: ../admin/actualizarContrasena.php?fallo=true");
+        header("location: ../admin/actualizarContrasena.php?error=1");
+        exit();
     }
 }
-?>
-
-
 ?>
