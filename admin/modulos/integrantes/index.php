@@ -22,7 +22,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
 
 <div class="card">
     <div class="card-header fs-3 mb-3">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar">
+        <button type="button" class="btn btn-primary botonos-datatables" data-bs-toggle="modal" data-bs-target="#agregar">
             Agregar integrantes
             <i class="bi bi-plus-circle"></i>
         </button>
@@ -60,7 +60,7 @@ $listaIntegrantes = $integrantes->obtenerIntegrantes();
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="editar.php?id=<?php echo $integrante['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                <a href="editar.php?id=<?php echo $integrante['id'] ?>" class="btn btn-primary botonos-datatables btn-sm" role="button">Editar</a>
                             </td>
                         </tr>
                          <?php endforeach; ?>

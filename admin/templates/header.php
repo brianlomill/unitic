@@ -1,5 +1,7 @@
 <?php
-$url_base = "http://localhost/unitic/admin/"
+$url_base = "http://localhost/unitic/admin/";
+$url_styles = "http://localhost/unitic/css/";
+$url_img = "http://localhost/unitic/img/";
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +22,7 @@ $url_base = "http://localhost/unitic/admin/"
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- HOJA DE ESTILOS -->
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url_styles; ?>styles.css">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <!-- DATATABLES JQUERY -->
@@ -33,8 +35,8 @@ $url_base = "http://localhost/unitic/admin/"
         <nav class="navbar navbar-expand-lg bg-dark" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="../img/logo.webp" alt="logo unitic" width="50" height="50" class="d-inline-block align-text-top text-white">
-                    <img src="../img/unitic.webp" alt="logo unitic" width="150" height="50" class="d-inline-block align-text-top text-white">
+                    <img src="<?php echo $url_img; ?>logo.webp" alt="logo unitic" width="50" height="50" class="d-inline-block align-text-top text-white">
+                    <img src="<?php echo $url_img; ?>unitic.webp" alt="logo unitic" width="150" height="50" class="d-inline-block align-text-top text-white">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +80,7 @@ $url_base = "http://localhost/unitic/admin/"
                                 <i class="fas fa-user"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="actualizarContrasena.php">Actualizar Contraseña</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $url_base; ?>actualizarContrasena.php">Actualizar Contraseña</a></li>
                                 <li><a class="dropdown-item" href="<?php echo $url_base; ?>../servidor/cerrar_sesion.php">Cerrar Sesión</a></li>
                             </ul>
                         </li>

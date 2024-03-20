@@ -26,6 +26,7 @@ body {
 }
 
 /***** Globales *****/
+
 .contenedor {
   width: min(90%, 120rem);
   margin: 0 auto;
@@ -73,6 +74,7 @@ img {
 }
 
 /***** navbar - menu de navegación *****/
+
 .navbar-nav {
   font-size: 1.6rem;
   padding: 0;
@@ -97,18 +99,31 @@ img {
   color: var(--amarillo);
 }
 
-/* Estilos predeterminados para el botón */
+/* Estilos predeterminados para el botón de pantallas chicas en el navbar */
 
 .navbar-toggler {
   background-color: var(
     --amarillo
   );
 }
+ /* estilos del boton de administrador */
 
 .btn_outlines {
   font-size: 1.6rem;
   font-weight: 500;
   transition: 0.5s;
+}
+
+/***** Datatables estilos personalizados *****/
+
+table.dataTable tbody {
+  line-height: 1.8 !important;
+}
+
+.botonos-datatables {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
 /***** Sección del header *****/

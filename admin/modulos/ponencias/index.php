@@ -20,7 +20,7 @@ $listarPonencias = $Ponencias->obtenerPonencias();
 
 <div class="card">
     <div class="card-header fs-3 mb-3">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar">
+        <button type="button" class="btn btn-primary botonos-datatables" data-bs-toggle="modal" data-bs-target="#agregar">
             Agregar ponencias
             <i class="bi bi-plus-circle"></i>
         </button>
@@ -55,7 +55,7 @@ $listarPonencias = $Ponencias->obtenerPonencias();
                                 <td><?php echo $ponencia['titulo']; ?></td>
                                 <td><?php echo $ponencia['ciudad']; ?></td>
                                 <td>
-                                    <a href="editar.php?id=<?php echo $ponencia['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                    <a href="editar.php?id=<?php echo $ponencia['id'] ?>" class="btn btn-primary botonos-datatables btn-sm" role="button">Editar</a>
                                 </td>
                             </tr>
                         <?php

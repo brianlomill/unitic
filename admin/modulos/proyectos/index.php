@@ -20,7 +20,7 @@ $listarProyectos = $proyectos->obtenerProyectos();
 
 <div class="card">
     <div class="card-header fs-3 mb-3">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar">
+        <button type="button" class="btn btn-primary botonos-datatables" data-bs-toggle="modal" data-bs-target="#agregar">
             Agregar proyectos
             <i class="bi bi-plus-circle"></i>
         </button>
@@ -58,7 +58,7 @@ $listarProyectos = $proyectos->obtenerProyectos();
                                 <td><?php echo $proyecto['programa']; ?></td>
                                 <td><?php echo $proyecto['descripcion']; ?></td>
                                 <td>
-                                    <a href="editar.php?id=<?php echo $proyecto['id'] ?>" class="btn btn-primary btn-sm" role="button">Editar</a>
+                                    <a href="editar.php?id=<?php echo $proyecto['id'] ?>" class="btn btn-primary botonos-datatables btn-sm" role="button">Editar</a>
                                 </td>
                             </tr>
                         <?php
