@@ -57,14 +57,12 @@ require('../clases/Conexion.php');
                         </div>
                         <?php
                         if (isset($_GET['error']) && $_GET['error'] == 1) {
-                          echo '<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                          echo '<div id="errorAlert" class="alert alert-danger alert-dismissible fade show mt-3"    role="alert">
                             Usuario o contraseña incorrectos
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>';
                         }
                         ?>
-                        <!-- <button type="submit" class="btn btn-theme">Login</button>
-                        <a href="#l" class="forgot-link float-end text-primary">Forgot password?</a> -->
                         <div class="d-grid gap-2 d-md-flex">
                           <button class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2" type="submit">Iniciar sesion</button>
                           <button class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2" type="button" onclick="goBack()">Volver</button>
@@ -85,15 +83,10 @@ require('../clases/Conexion.php');
                   </div>
                 </div>
               </div>
-
-            </div>
-            <!-- end card-body -->
-          </div>
-          <!-- end card -->
-        </div>
-        <!-- end col -->
-      </div>
-      <!-- Row -->
+            </div> <!-- fin card-body -->
+          </div> <!-- fin card -->
+        </div> <!-- fin col -->
+      </div> <!-- fin Row -->
     </div>
 
   </main>
@@ -109,9 +102,16 @@ require('../clases/Conexion.php');
 
   <script>
     function goBack() {
-        // Redirigir al index y quitar cualquier parámetro de error en la URL
-        window.location.href = 'index.php';
+      // Redirigir al index y quitar cualquier parámetro de error en la URL
+      window.location.href = 'index.php';
     }
+
+    setTimeout(function() {
+      var errorAlert = document.getElementById('errorAlert');
+      if (errorAlert) {
+        errorAlert.remove();
+      }
+    }, 3000); // 3000 milisegundos = 3 segundos
   </script>
 </body>
 
