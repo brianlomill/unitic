@@ -74,13 +74,25 @@ img {
 
 /***** navbar - menu de navegación *****/
 .navbar-nav {
+  font-size: 1.6rem;
   padding: 0;
-  margin: 2rem;
+}
+.dropdown-item{
+  font-size: 1.5rem;
+  padding: .5rem 4rem;
+}
+.dropdown-item:hover{
+  background-color: var(--gris);
 }
 .nav-link {
   margin: 0 1rem;
   color: var(--blanco);
 }
+
+.nav-link:focus {
+  color: var(--amarillo);
+}
+
 .nav-link:hover {
   color: var(--amarillo);
 }
