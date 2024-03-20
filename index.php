@@ -179,78 +179,45 @@
           <div class="col-12">
             <div class="intro">
               <h5>Conoce a nuestro equipo en acción</h6>
-                <h1> Nuestros Colaboradores</h1>
+                <h1>Nuestros Colaboradores</h1>
                 <p class="mx-auto">Descubre la fuerza impulsora detrás de nuestro éxito: un equipo dedicado y apasionado que trabaja en armonía para lograr resultados extraordinarios.</p>
             </div>
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image rounded">
-                <img src="img/team_1.jpg" alt="">
-                <div class="social-icons">
-                  <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-                    <i class="fab fa-facebook-f" style="font-size: 1.5rem"></i>
-                  </a>
-                  <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-                    <i class="fab fa-twitter" style="font-size: 1.5rem"></i>
-                  </a>
-                  <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-                    <i class="fab fa-instagram" style="font-size: 1.5rem"></i>
-                  </a>
+          <?php foreach ($integrantesList as $integrante) :
+            $nombres = $integrante["nombres"] . ' ' . $integrante["apellidos"];
+            $foto = $integrante["foto"];
+            $cargo = '';
+            if ($integrante['roles_id'] === 1) {
+              $cargo = 'Administrador';
+            } else {
+              $cargo = 'Estudiante';
+            }
+          ?>
+            <div class="col-lg-4 col-md-8">
+              <div class="team-member">
+                <div class="image rounded">
+                  <img src="archivos/integrantes/<?php echo $foto ?>" class="img-fluid  rounded" alt="img integrante">
+                  <div class="social-icons">
+                    <a class="btn text-white btn-floating m-1" style="background-color: #DB4A39;" href="<?php echo $integrante['email']; ?>" target="_blank" role="button">
+                      <i class="bi bi-envelope-at-fill" title="Correo" style="font-size: 1.5rem"></i>
+                    </a>
+                    <a class="btn text-white btn-floating m-1" style="background-color: #0E76A8 ;" href="<?php echo $integrante['linkedln']; ?>" target="_blank" role="button">
+                      <i class="bi bi-linkedin" title="Linkedln" style="font-size: 1.5rem"></i>
+                    </a>
+                    <a class="btn text-white btn-floating m-1" style="background-color: #6C757D;" href="<?php echo $integrante['cvlac']; ?>" target="_blank" role="button">
+                      <i class="bi bi-file-earmark-person-fill" title="Cvlac" style="font-size: 1.5rem"></i>
+                    </a>
+                  </div>
+                  <div class="overlay"></div>
                 </div>
-                <div class="overlay"></div>
-              </div>
 
-              <h5>Marvin McKinney</h5>
-              <p>Marketing Coordinator</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image rounded">
-                <img src="img/team_2.jpg" alt="">
-                <div class="social-icons">
-                  <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-                    <i class="fab fa-facebook-f" style="font-size: 1.5rem"></i>
-                  </a>
-                  <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-                    <i class="fab fa-twitter" style="font-size: 1.5rem"></i>
-                  </a>
-                  <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-                    <i class="fab fa-instagram" style="font-size: 1.5rem"></i>
-                  </a>
-                </div>
-                <div class="overlay"></div>
+                <h5><?php echo $nombres ?></h5>
+                <p><?php echo $cargo; ?></p>
               </div>
-
-              <h5>Kathryn Murphy</h5>
-              <p>Ethical Hacker</p>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-8">
-            <div class="team-member">
-              <div class="image rounded">
-                <img src="img/team_3.jpg" alt="">
-                <div class="social-icons">
-                  <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-                    <i class="fab fa-facebook-f" style="font-size: 1.5rem"></i>
-                  </a>
-                  <a class="btn text-white btn-floating" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-                    <i class="fab fa-twitter" style="font-size: 1.5rem"></i>
-                  </a>
-                  <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-                    <i class="fab fa-instagram" style="font-size: 1.5rem"></i>
-                  </a>
-                </div>
-                <div class="overlay"></div>
-              </div>
-
-              <h5>Darrell Steward</h5>
-              <p>Software Developer</p>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <a class="btn btn-outline-primary btn_outlines" href="public/integrantes.php" role="button">Ver Más <i class="bi bi-arrow-right"></i></a>
@@ -383,7 +350,7 @@
             <div class="single_address">
               <i class="fas fa-map-marker-alt"></i>
               <h6>Nuestra Dirección</h6>
-              <p>Cra. 12a #102,, Girardot, Colombia</p>
+              <p>Cra. 12a #102 Girardot, Colombia</p>
             </div>
             <div class="single_address">
               <i class="fas fa-envelope"></i>
