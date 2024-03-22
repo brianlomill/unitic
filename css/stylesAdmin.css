@@ -1,0 +1,204 @@
+:root {
+  --fuenteHeading: "PT Sans", sans-serif;
+  --fuenteParrafos: "Inter", "Open Sans", sans-serif;
+
+  --amarillo: #ffc000;
+  --azul: #00135b;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --gris: #7b8a8a;
+  --grisClaro: #f1efef;
+  --verdeClaro: #0d9276;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--fuenteParrafos);
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+/***** Globales *****/
+
+.contenedor {
+  width: min(90%, 120rem);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuenteHeading);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.8rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
+  color: var(--gris);
+}
+
+img {
+  max-width: 100%;
+}
+
+.sombras {
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.55);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+/***** navbar - menu de navegación *****/
+
+.navbar-nav {
+  font-size: 1.6rem;
+  padding: 0;
+}
+.dropdown-item {
+  font-size: 1.5rem;
+  padding: 0.5rem 4rem;
+}
+.dropdown-item:hover {
+  background-color: var(--gris);
+}
+.nav-link {
+  margin: 0 1rem;
+  color: var(--blanco);
+}
+
+.nav-link:focus {
+  color: var(--amarillo);
+}
+
+.nav-link:hover {
+  color: var(--amarillo);
+}
+
+/* Estilos predeterminados para el botón de pantallas chicas en el navbar */
+
+.navbar-toggler {
+  background-color: var(--amarillo);
+}
+/* estilos del boton de administrador */
+
+.btn_outlines {
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+/***** Datatables estilos personalizados *****/
+
+table.dataTable tbody {
+  line-height: 1.8 !important;
+}
+
+.botonos-datatables {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/***** Login *****/
+
+@media (min-width: 768px) {
+  .login {
+    margin: 5rem 10rem;
+  }
+}
+
+.login-form input {
+  border: 2px solid #ced4da;
+  border-radius: 1rem;
+  box-shadow: none;
+  color: var(--gris);
+  font-size: 1.6rem;
+  height: 4.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  padding-left: 3rem;
+}
+
+.login-form label {
+  font-weight: 500;
+}
+
+.text-theme {
+  font-family: var(--fuenteParrafos);
+  font-weight: 500;
+}
+
+.account-block {
+  padding: 0;
+  background-image: url(../img/campus.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+.account-block .overlay {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.account-block .account-testimonial {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+}
+
+.btn-login {
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}

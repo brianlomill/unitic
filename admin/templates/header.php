@@ -22,7 +22,7 @@ $url_img = "http://localhost/unitic/img/";
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- HOJA DE ESTILOS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo $url_styles; ?>styles.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url_styles; ?>stylesAdmin.css">
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <!-- DATATABLES JQUERY -->
