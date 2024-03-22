@@ -126,17 +126,61 @@ img {
   transition: 0.5s;
 }
 
-/***** Datatables estilos personalizados *****/
-
-table.dataTable tbody {
-  line-height: 1.8 !important;
-}
+/***** Estilos para los botones *****/
 
 .botonos-datatables {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 1rem 0;
 }
+
+/***** Datatables estilos personalizados *****/
+
+table.dataTable tbody {
+  line-height: 1.5 !important;
+}
+
+/* Input buscar */
+
+.dataTables_filter input {
+  padding: 0.1rem !important;
+}
+
+/* Cambiar el color del borde del campo de búsqueda cuando está enfocado */
+
+.dataTables_filter input[type="search"]:focus {
+  border-color: var(--negro);
+  padding-left: .5rem !important;
+  outline: none; /* Evita que aparezca el contorno de enfoque predeterminado */
+}
+
+/* boton de numero de paginación */
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0 1rem !important;
+    color: var(--verdeClaro) !important;
+}
+
+/***** Estilos del modal crear *****/
+
+.form-crear input,
+.form-crear textarea {
+    border: 2px solid #ced4da;
+    border-radius: 1rem;
+    box-shadow: none;
+    color: var(--gris);
+    font-size: 1.6rem;
+    height: 4rem;
+    padding: 0.5rem;
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  .form-crear textarea:focus {
+    box-shadow: none;
+    outline: 0;
+    height: 6rem;
+  }
 
 /***** Login *****/
 

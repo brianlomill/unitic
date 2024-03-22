@@ -9,7 +9,7 @@
       <div class="modal-body">
         <form action="../../../servidor/proyectos/agregar_proyectos.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-          <div class="row">
+          <div class="row form-crear">
             <div class="col-sm-12">
               <div class="mb-3">
                 <label for="titulo" class="form-label">Titulo</label>
@@ -42,7 +42,7 @@
 
             <div class="col-sm-12" id="integrantes">
               <div class="mb-3">
-                <button type="button" class="btn btn-primary" id="agregarIntegrantes">
+                <button type="button" class="btn btn-primary botonos-datatables" id="agregarIntegrantes">
                   Integrantes
                   <i class="bi bi-plus-circle"></i>
                 </button>
@@ -75,8 +75,8 @@
             </div>
 
             <div class="modal-footer">
-              <button type="button" id="close" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary" id="enviarFormularioBtn">Guardar cambios</button>
+              <button type="button" id="close" class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2"" id="enviarFormularioBtn">Guardar cambios</button>
             </div>
           </div>
         </form>

@@ -10,7 +10,7 @@ include('templates/header.php');
   <div class="container-fluid py-5 text-black">
     <h1>Bienvenido Administrador</h1>
     <p>Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-    <button class="btn btn-primary btn-lg" type="button">Example button</button>
+    <button class="btn btn-primary botonos-datatables btn-lg" type="button">Example button</button>
   </div>
 </div>
 
