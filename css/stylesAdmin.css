@@ -134,6 +134,12 @@ img {
   margin: 1rem 0;
 }
 
+/***** Estilos para los label *****/
+
+.form-label {
+  font-weight: 500;
+}
+
 /***** Datatables estilos personalizados *****/
 
 table.dataTable tbody {
@@ -164,6 +170,7 @@ table.dataTable tbody {
 /***** Estilos del modal crear *****/
 
 .form-crear input,
+.form-crear select,
 .form-crear textarea {
     border: 2px solid #ced4da;
     border-radius: 1rem;
@@ -181,6 +188,12 @@ table.dataTable tbody {
     outline: 0;
     height: 6rem;
   }
+
+/***** Estilos de editar *****/
+
+.card-header:first-child {
+  padding: 1rem !important;
+}
 
 /***** Login *****/
 

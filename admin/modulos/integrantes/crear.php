@@ -9,7 +9,7 @@
       <div class="modal-body">
         <form action="../../../servidor/integrantes/agregar_integrantes.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-          <div class="row">
+          <div class="row form-crear">
             <div class="col-sm-6">
               <div class="mb-3">
                 <label for="nombres" class="form-label">Nombres</label>
@@ -72,7 +72,7 @@
             
             <div class="col-12">
               <label for="foto" class="form-label">Subir foto</label>
-              <input type="file" name="foto" id="foto" class="form-control" required>
+              <input type="file" name="foto" id="foto" class="form-control mb-3" required>
               <div class="invalid-feedback">
                 Seleccione un foto
               </div>
@@ -80,8 +80,8 @@
             <br>
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              <button type="button" class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2">Guardar cambios</button>
             </div>
           </div>
         </form>

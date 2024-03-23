@@ -63,7 +63,7 @@ $listarIntegrantes = $Ponencias->obtenerIntegrantes();
     <h5><?php echo $ponencia['titulo'] ?></h5>
   </div>
   <div class="card-body">
-    <form class="row g-3" method="POST" action="../../../servidor/ponencias/editar_ponencias.php">
+    <form class="row g-3 form-crear" method="POST" action="../../../servidor/ponencias/editar_ponencias.php">
 
         <input type="text" name="id" class="form-control" id="id" value="<?php echo $ponencia['id'] ?>" readonly hidden>
 
@@ -108,8 +108,8 @@ $listarIntegrantes = $Ponencias->obtenerIntegrantes();
       </div>
 
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-        <a href="index.php" class="btn btn-danger">Volver</a>
+        <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2">Actualizar</button>
+        <a href="index.php" class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2">Volver</a>
       </div>
 
     </form>

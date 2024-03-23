@@ -76,7 +76,7 @@
 
             <div class="modal-footer">
               <button type="button" id="close" class="btn btn-lg btn-danger btn-login text-uppercase fw-semibold mb-2" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2"" id="enviarFormularioBtn">Guardar cambios</button>
+              <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-semibold mb-2" id="enviarFormularioBtn">Guardar cambios</button>
             </div>
           </div>
         </form>
