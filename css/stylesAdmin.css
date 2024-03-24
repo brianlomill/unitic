@@ -113,6 +113,13 @@ img {
   color: var(--amarillo);
 }
 
+/***** estilos para las cards de index *****/
+
+thead,
+.card-header{
+  background-color: var(--grisClaro);
+}
+
 /* Estilos predeterminados para el botón de pantallas chicas en el navbar */
 
 .navbar-toggler {
@@ -150,6 +157,7 @@ table.dataTable tbody {
 
 .dataTables_filter input {
   padding: 0.1rem !important;
+  margin-bottom: 1rem !important;
 }
 
 /* Cambiar el color del borde del campo de búsqueda cuando está enfocado */
@@ -162,9 +170,13 @@ table.dataTable tbody {
 
 /* boton de numero de paginación */
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
+/* .dataTables_wrapper .dataTables_paginate .paginate_button {
     padding: 0 1rem !important;
-    color: var(--verdeClaro) !important;
+} */
+
+.dataTables_paginate .current{
+  background-color: var(--amarillo) !important;
+  padding: 0 1rem !important;
 }
 
 /***** Estilos del modal crear *****/
