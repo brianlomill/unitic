@@ -94,8 +94,7 @@
           </div>
         </div>
       </section>
-      <?php
-      include '../templates/footer.php';
-      ?>
-
     </main>
+    <?php
+    include '../templates/footer.php';
+    ?>

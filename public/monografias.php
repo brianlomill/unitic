@@ -42,9 +42,9 @@
             <div class="col-md-3">
               <img width="100%" src="../archivos/monografias/img_archivos/<?php echo $monografia['imagen']; ?>"">
             </div>
-            <div class="col-md-8">
+            <div class=" col-md-8">
               <div class="card-block">
-              <a href="../archivos/monografias/<?php echo $monografia['archivo']; ?>" target="_blank">
+                <a href="../archivos/monografias/<?php echo $monografia['archivo']; ?>" target="_blank">
                   <h6 class="card-title h5" style="color:#146C94"><?php echo $monografia['titulo'] ?></h6>
                 </a>
                 <h6 style="color: #19A7CE; font-style: italic;"><?php echo $monografia['programa']; ?></h6>
@@ -62,8 +62,8 @@
           </div>
         </div>
       </div>
-    <?php
-      endforeach; 
-      include '../templates/footer.php';  
-    ?>
   </main>
+<?php
+    endforeach;
+    include '../templates/footer.php';
+?>

@@ -16,7 +16,7 @@
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <!-- HOJA DE ESTILOS -->
-   <link rel="stylesheet" href="../css/stylesPortafolio.css" />
+    <link rel="stylesheet" href="../css/stylesPortafolio.css" />
     <style>
       .card-inactivo {
         filter: grayscale(100%);
@@ -71,11 +71,8 @@
             </div>
           </div>
         </div>
-        </div>
-      <?php
-      endforeach;
-      ?>
     </main>
-    <?php
-    include "../templates/footer.php";
-    ?>
+  <?php
+      endforeach;
+      include "../templates/footer.php";
+  ?>

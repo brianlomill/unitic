@@ -71,9 +71,8 @@
           </div>
         </div>
       </div>
-    <?php
+  </main>
+<?php
     endforeach;
     include '../templates/footer.php';
-    ?>
-
-  </main>
+?>

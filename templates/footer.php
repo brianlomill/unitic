@@ -1,38 +1,32 @@
-<footer class="bg-light text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4 pb-0">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #4267B2;" href="https://www.facebook.com/semillero.unitic.uniminuto" target="_blank" role="button">
-        <i class="fab fa-facebook-f"></i>
-      </a>
+<!-- Site footer -->
+<footer class="site-footer">
+    <div class="container">
+      <ul class="nav justify-content-center pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2">Inicio</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Proyectos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Monografias</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Integrantes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Galeria</a></li>
+      </ul>
+      <hr>
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2023 Todos Los Derechos Reservados
+            <a href="#">UNITIC</a>.
+          </p>
+        </div>
 
-      <!-- Twitter -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #1DA1F2;" href="https://twitter.com/SemilleroUnitic" target="_blank" role="button">
-        <i class="fab fa-twitter"></i>
-      </a>
-
-      <!-- Instagram -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #E1306C;" href="https://www.instagram.com/semillero.untic/" target="_blank" role="button">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <!-- Linkedin -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #c4302b ;" href="https://www.youtube.com/@uniticsemillerouniminuto5397" target="_blank" role="button">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </section>
-    <!-- Section: Social media -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: #0A4D68;">
-    © 2023 Copyright: Semillero Unitic
-  </div>
-  <!-- Copyright -->
-</footer>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a class="instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 <!-- Bootstrap JavaScript Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
 </script>

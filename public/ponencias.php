@@ -49,7 +49,7 @@
             </div>
             <div class="col-md-8">
               <div class="card-block">
-              <a href="../archivos/productos/<?php echo $ponencia['archivo']; ?>" target="_blank">
+                <a href="../archivos/productos/<?php echo $ponencia['archivo']; ?>" target="_blank">
                   <h6 class="card-title h5" style="color:#146C94"><?php echo $ponencia['titulo'] ?></h6>
                 </a>
                 <h6 style="color: #19A7CE; font-style: italic;">
@@ -65,7 +65,7 @@
                 <p class="h6 text-dark">Descripción del evento:</p>
                 <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i><?php echo $ponencia['ciudad']; ?></p>
                 <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>
-                <?php
+                  <?php
                   $fecha = $ponencia['fecha']; // Tu fecha completa aquí
                   $ano = date('Y', strtotime($fecha));
                   echo $ano;
@@ -77,8 +77,8 @@
           </div>
         </div>
       </div>
-    <?php
+  </main>
+<?php
     endforeach;
     include '../templates/footer.php';
-    ?>
-  </main>
+?>
