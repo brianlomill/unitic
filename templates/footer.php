@@ -53,50 +53,49 @@
     }
 
     function validation() {
-        // Mostrar el mensaje de "enviando"
-        var enviandoMensaje = document.createElement('div');
-        enviandoMensaje.className = 'alert alert-info';
-        enviandoMensaje.role = 'alert';
-        enviandoMensaje.innerText = 'Enviando...';
+    // Mostrar el mensaje de "enviando"
+    var enviandoMensaje = document.createElement('div');
+    enviandoMensaje.className = 'alert alert-info';
+    enviandoMensaje.role = 'alert';
+    enviandoMensaje.innerText = 'Enviando...';
 
-        var formulario = document.querySelector('.form');
-        formulario.insertBefore(enviandoMensaje, formulario.firstChild);
+    var formulario = document.querySelector('.form');
+    formulario.insertBefore(enviandoMensaje, formulario.firstChild);
 
-        // Envía el formulario utilizando AJAX
-        var formData = new FormData(formulario);
+    // Envía el formulario utilizando AJAX
+    var formData = new FormData(formulario);
 
-        fetch('servidor/contacto.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            // Ocultar el mensaje de "enviando"
-            enviandoMensaje.style.display = 'none';
+    fetch('servidor/contacto.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json()) // Convertir la respuesta a JSON
+    .then(data => {
+        // Ocultar el mensaje de "enviando"
+        enviandoMensaje.style.display = 'none';
 
-            if (response.ok) {
-                mostrarAlerta('¡El mensaje se ha enviado correctamente!', 'success');
-                formulario.reset(); // Limpiar el formulario si se envió correctamente
-                return true;
-            } else {
-                mostrarAlerta('Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.', 'danger');
-                return false;
-            }
-        })
-        .catch(error => {
-            // Ocultar el mensaje de "enviando"
-            enviandoMensaje.style.display = 'none';
-
-            console.error('Error:', error);
+        if (data.result === 'success') {
+            mostrarAlerta('¡El mensaje se ha enviado correctamente!', 'success');
+            formulario.reset(); // Limpiar el formulario si se envió correctamente
+        } else {
             mostrarAlerta('Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.', 'danger');
-            return false;
-        });
+        }
+    })
+    .catch(error => {
+        // Ocultar el mensaje de "enviando"
+        enviandoMensaje.style.display = 'none';
 
-        // Evitar que el formulario se envíe de forma tradicional
-        return false;
-    }
+        console.error('Error:', error);
+        mostrarAlerta('Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.', 'danger');
+    })
+    .finally(() => {
+        formulario.reset(); // Reiniciar el formulario en cualquier caso
+    });
+
+    // Evitar que el formulario se envíe de forma tradicional
+    return false;
+}
+
 </script>
-
-
 </body>
-
 </html>
