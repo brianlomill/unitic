@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
           <p class="copyright-text">Copyright &copy; 2023 Todos Los Derechos Reservados
-            <a href="#">UNITIC</a>.
+            <a href="#">Semillero UNITIC</a>.
           </p>
         </div>
 

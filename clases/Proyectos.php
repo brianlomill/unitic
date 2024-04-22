@@ -119,10 +119,6 @@ class Proyectos extends Conexion
             $proyectos[] = $row;
         }
 
-        // Cerrar la consulta y la conexión
-        mysqli_stmt_close($query);
-        mysqli_close($conexion);
-
         return $proyectos;
     }
 
@@ -246,5 +242,19 @@ class Proyectos extends Conexion
             // Cerrar la conexión
             mysqli_close($conexion);
         }
+    }
+
+    public function contarProyectos()
+    {
+        $conexion = $this->obtenerConexion();
+        // Consulta para contar cuántos trabajos son de tipo 1
+        $sql_conteo = "SELECT COUNT(*) AS conteo FROM portafolios WHERE tipo_trabajo = 1";
+        $result_conteo = mysqli_query($conexion, $sql_conteo);
+        $row_conteo = mysqli_fetch_assoc($result_conteo);
+        $conteo = $row_conteo['conteo'];
+        
+        mysqli_free_result($result_conteo);
+        
+        return $conteo;
     }
 }

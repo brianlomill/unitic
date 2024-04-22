@@ -89,6 +89,10 @@ img {
 
 /***** navbar - menu de navegación *****/
 
+.navbar {
+  background-color: var(--negro) !important;
+}
+
 .navbar-nav {
   font-size: 1.6rem;
   padding: 0;
@@ -275,7 +279,7 @@ table.dataTable tbody {
 /***** Estilos para el Footer *****/
 
 .site-footer {
-  background-color: #26272b;
+  background-color: var(--negro);
   padding: 2rem 2rem;
   font-size: 1.6rem;
   line-height: 2.4rem;

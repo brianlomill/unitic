@@ -32,18 +32,44 @@
     include('templates/navbar.php');
 
     $url_base = "archivos/integrantes/";
+
+    // ========== Llamado de clases ========== //
     include 'clases/Integrantes.php';
     include 'clases/Proyectos.php';
+    include 'clases/Posters.php';
+    // ========== fin Llamado de clases ========== //
 
+    // ========== Instanciando las clases ========== //
     $proyectos = new Proyectos();
-
+    // obtener los primeros 3 integrantes
     $proyectosList = $proyectos->obtenerPrimerosProyectos();
+    // contar los proyectos existentes en unitic
+    $conteoProyectos = $proyectos->contarProyectos();
 
     // Instancia de la clase Integrantes
     $integrantes = new Integrantes();
-
     // Obtener los primeros 3 integrantes
     $integrantesList = $integrantes->obtenerPrimerosIntegrantes();
+    // contar integrantes activos
+    $conteoIntegrantes = $integrantes->contarIntegrantes();
+
+    $Productos = new Posters();
+    // obtener conteo de los productos
+    $conteoProductos = $Productos->contarPosters();
+    // ========== fin Instanciando las clases ========== //
+
+    // ========== Saber años de funcionamientos ========== //
+    //fecha actual
+    $fecha_actual = new DateTime('now');
+
+    // Fecha de fundación
+    $fecha_fundacion = new DateTime('2010-01-01');
+
+    // Diferencia en años
+    $diferencia = $fecha_actual->diff($fecha_fundacion);
+    $años_en_funcionamiento = $diferencia->y;
+    // ========== fin ========== //
+
 
     ?>
 
@@ -82,25 +108,25 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="d-flex">
-            <h1 class="me-3 text-primary counter-value">99</h1>
+            <h1 class="me-3 text-primary counter-value"><?php echo $conteoIntegrantes; ?></h1>
             <h6 class="text-white mt-1">Estudiantes activos</h6>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="d-flex">
-            <h1 class="me-3 text-primary counter-value">25</h1>
+            <h1 class="me-3 text-primary counter-value"><?php echo $conteoProyectos; ?></h1>
             <h6 class="text-white mt-1">Total de proyectos </h6>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="d-flex">
-            <h1 class="me-3 text-primary counter-value">120</h1>
+            <h1 class="me-3 text-primary counter-value"><?php echo $conteoProductos; ?></h1>
             <h6 class="text-white mt-1">Total de productos</h6>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="d-flex">
-            <h1 class="me-3 text-primary counter-value">5</h1>
+            <h1 class="me-3 text-primary counter-value"><?php echo $años_en_funcionamiento; ?></h1>
             <h6 class="text-white mt-1">Años en funcionamiento</h6>
           </div>
         </div>

@@ -146,6 +146,20 @@ class Posters extends Conexion
         return true;
     }
 
+    public function contarPosters()
+        {
+            $conexion = $this->obtenerConexion();
+            
+            // Consulta para contar cuántos trabajos son del tipo 3
+            $sql_conteo = "SELECT COUNT(*) AS posters FROM portafolios WHERE tipo_trabajo = 3";
+            $result_posters = mysqli_query($conexion, $sql_conteo);
+            $row_posters = mysqli_fetch_assoc($result_posters);
+            $conteo_posters= $row_posters['posters'];
+            mysqli_free_result($result_posters);
+            
+            return $conteo_posters;
+        }
+
 
     public function actualizarIntegrantes($id, $integrantes)
     {

@@ -559,11 +559,10 @@ table.dataTable tbody {
 /***** Estilos para el Footer *****/
 
 .site-footer {
-  background-color: #26272b;
+  background-color: var(--negro);
   padding: 4.5rem 0 2rem;
   font-size: 1.6rem;
   line-height: 2.4rem;
-  color: var(--gris);
 }
 
 .site-footer hr {

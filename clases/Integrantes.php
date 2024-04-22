@@ -140,4 +140,18 @@ class Integrantes extends Conexion
 
         return $integrantes;
     }
+
+    public function contarIntegrantes()
+    {
+        $conexion = $this->obtenerConexion();
+        // Consulta para contar cuántos trabajos son de tipo 1
+        $sql_conteo = "SELECT COUNT(*) AS conteo FROM integrantes WHERE estado = 1";
+        $result_conteo = mysqli_query($conexion, $sql_conteo);
+        $row_conteo = mysqli_fetch_assoc($result_conteo);
+        $conteo = $row_conteo['conteo'];
+        
+        mysqli_free_result($result_conteo);
+        
+        return $conteo;
+    }
 }
