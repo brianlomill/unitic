@@ -224,8 +224,8 @@
             <div class="col-lg-4 col-md-8">
               <div class="team-member">
                 <div class="image rounded">
-                  <img src="archivos/integrantes/<?php echo $foto ?>" class="img-fluid  rounded" alt="img integrante">
-                  <div class="social-icons">
+                <img src="archivos/integrantes/<?php echo $foto ?>" class="img-fluid rounded" alt="img integrante" style="width: 365px; height: 250px;">
+                  <div class="iconos-integrantes">
                     <a class="btn text-white btn-floating m-1" style="background-color: #DB4A39;" href="<?php echo $integrante['email']; ?>" target="_blank" role="button">
                       <i class="bi bi-envelope-at-fill" title="Correo" style="font-size: 1.5rem"></i>
                     </a>
