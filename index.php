@@ -101,7 +101,7 @@
     </div>
   </header> <!-- Fin seccion header -->
 
-  <!-- Seccion barra de proyectos -->
+  <!-- Seccion Barra de Informacion Unitic -->
 
   <div class="container-fluid py-5 bg-success p-2 text-dark bg-opacity-75">
     <div class="container">
@@ -132,7 +132,7 @@
         </div>
       </div>
     </div>
-  </div> <!-- Fin seccion barra de proyectos -->
+  </div> <!-- Fin seccion barra de informacion -->
 
   <!-- Sección: sobre nosotros  -->
 
