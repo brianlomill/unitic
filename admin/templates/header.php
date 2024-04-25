@@ -4,7 +4,7 @@ $url_styles = "http://localhost/unitic/css/";
 $url_img = "http://localhost/unitic/img/";
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags -->
