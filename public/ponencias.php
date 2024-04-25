@@ -1,39 +1,12 @@
-<!doctype html>
-<html lang="en">
+  <?php
+  include('../templates/navbarSecciones.php');
+  include('../clases/Ponencias.php');
 
-<head>
-  <title>Semillero UNITIC</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- FONT FAMILY -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Nunito&family=Ubuntu&display=swap" rel="stylesheet">
-  <!-- BOOTSTRAP ICONS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-  <!-- HOJA DE ESTILOS -->
-  <link rel="stylesheet" type="text/css" href="../css/stylesPortafolio.css">
+  $Ponencias = new Ponencias();
 
-  <!-- FONTAWESOME -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-
-</head>
-
-<body>
-
-  <header>
-
-    <?php
-    include('../templates/navbarSecciones.php');
-    include('../clases/Ponencias.php');
-
-    $Ponencias = new Ponencias();
-
-    $listarPonencias = $Ponencias->obtenerPonencias();
-    $listarIntegrantes = $Ponencias->obtenerIntegrantes();
-    ?>
+  $listarPonencias = $Ponencias->obtenerPonencias();
+  $listarIntegrantes = $Ponencias->obtenerIntegrantes();
+  ?>
 
   </header>
 
@@ -77,8 +50,6 @@
           </div>
         </div>
       </div>
+    <?php endforeach; ?>
   </main>
-<?php
-    endforeach;
-    include '../templates/footer.php';
-?>
+  <?php include '../templates/footer.php'; ?>

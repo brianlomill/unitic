@@ -1,42 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
+  <?php
+  include('../templates/navbarSecciones.php');
+  include('../clases/Proyectos.php');
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Favicon del sitio -->
-  <link rel="icon" href="../img/logo.webp" type="image/x-icon">
-  <title>Semillero UNITIC</title>
-  <!-- FONT FAMILY -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=Nunito&family=Ubuntu&display=swap" rel="stylesheet">
-  <!-- BOOTSTRAP ICONS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-  <!-- HOJA DE ESTILOS -->
-  <link rel="stylesheet" type="text/css" href="../css/stylesPortafolio.css">
-  <!-- FONTAWESOME -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  $proyectos = new Proyectos();
 
-</head>
+  $ListarProyectos = $proyectos->obtenerProyectos();
+  $listarIntegrantes = $proyectos->obtenerIntegrantes();
 
-<body>
-  <header>
-
-    <?php
-    include('../templates/navbarSecciones.php');
-    include('../clases/Proyectos.php');
-
-    $proyectos = new Proyectos();
-
-    $ListarProyectos = $proyectos->obtenerProyectos();
-    $listarIntegrantes = $proyectos->obtenerIntegrantes();
-
-    ?>
+  ?>
 
   </header>
 
@@ -71,8 +42,6 @@
           </div>
         </div>
       </div>
+    <?php endforeach; ?>
   </main>
-<?php
-    endforeach;
-    include '../templates/footer.php';
-?>
+  <?php include '../templates/footer.php'; ?>
