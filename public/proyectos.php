@@ -13,10 +13,10 @@
 
   <main>
 
-    <h5 class="container my-5">PROYECTOS</h5>
+    <h4 class="container my-5">PROYECTOS</h4>
     <?php foreach ($ListarProyectos as $proyecto) : ?>
       <div class="container my-5">
-        <div class="card col-md-12 p-3">
+        <div class="card col-md-12 p-3 sombras">
           <div class="row">
             <div class="col-md-3">
               <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
@@ -26,14 +26,14 @@
             <div class="col-md-8">
               <div class="card-block">
                 <a href="../archivos/proyectos/<?php echo $proyecto['archivo']; ?>" target="_blank">
-                  <h6 class="card-title h5" style="color:#146C94"><?php echo $proyecto['titulo'] ?></h6>
+                  <h6 class="card-title"><?php echo $proyecto['titulo'] ?></h6>
                 </a>
-                <h6 style="color: #19A7CE; font-style: italic;"><?php echo $proyecto['programa'] ?></h6>
-                <p class="h6 text-dark text-opacity-75">"<?php echo $proyecto['fecha'] ?>"</p>
-                <p class="h6 text-dark">Integrantes:</p>
+                <p class="card-subtitulo"><?php echo $proyecto['programa'] ?></p>
+                <p class="card-fuente"><?php echo $proyecto['fecha'] ?></p>
+                <p class="card-integrantes">Integrantes:</p>
                 <?php foreach ($listarIntegrantes as $integrante) {
                   if ($integrante['portafolio_id'] == $proyecto['id']) {
-                    echo '<p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
+                    echo '<p class="card-fuente"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
                   }
                 } ?>
                 </p>

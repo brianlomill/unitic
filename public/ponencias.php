@@ -12,39 +12,29 @@
 
   <main>
 
-    <h5 class="container my-5">PONENCIAS</h5>
+    <h4 class="container my-5">PONENCIAS</h4>
     <?php foreach ($listarPonencias as $ponencia) : ?>
       <div class="container my-5">
-        <div class="card col-md-12 p-3">
+        <div class="card col-md-12 p-3 sombras">
           <div class="row">
             <div class="col-md-3">
               <img width="100%" src="../img/campus.webp">
             </div>
             <div class="col-md-8">
               <div class="card-block">
-                <a href="../archivos/productos/<?php echo $ponencia['archivo']; ?>" target="_blank">
-                  <h6 class="card-title h5" style="color:#146C94"><?php echo $ponencia['titulo'] ?></h6>
+                <a href="../archivos/productos/ponencias/<?php echo $ponencia['archivo']; ?>" target="_blank">
+                  <h6 class="card-title"><?php echo $ponencia['titulo'] ?></h6>
                 </a>
-                <h6 style="color: #19A7CE; font-style: italic;">
-                  <?php echo $ponencia['titulo'] . " - " . $ponencia['ciudad'] . " " . $ponencia['fecha']; ?>
-                </h6>
-                <p class="h6 text-dark text-opacity-75">"<?php echo $ponencia['evento']; ?>"</p>
-                <p class="h6 text-dark">Ponentes:</p>
+                <p class="card-subtitulo">
+                  <?php echo $ponencia['evento']; ?>
+                </p>
+                <p class="card-fuente"><?php echo $ponencia['fecha'] . " - " . $ponencia['ciudad'];; ?></p>
+                <p class="card-integrantes">Ponentes:</p>
                 <?php foreach ($listarIntegrantes as $integrante) {
                   if ($integrante['portafolio_id'] == $ponencia['id']) {
-                    echo '<p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
+                    echo '<p class="card-fuente"><i class="bi bi-check-all"></i>' . $integrante['integrantes'] . '</p>';
                   }
                 } ?>
-                <p class="h6 text-dark">Descripción del evento:</p>
-                <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i><?php echo $ponencia['ciudad']; ?></p>
-                <p class="h6 text-dark text-opacity-75"><i class="bi bi-check-all"></i>
-                  <?php
-                  $fecha = $ponencia['fecha']; // Tu fecha completa aquí
-                  $ano = date('Y', strtotime($fecha));
-                  echo $ano;
-                  ?>
-                </p>
-                </p>
               </div>
             </div>
           </div>
