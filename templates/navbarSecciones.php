@@ -77,7 +77,7 @@
                             <a class="nav-link active text-white" aria-current="page" href="../index.php#contacto">Contactanos</a>
                         </li>
                     </ul>
-                    <a class="btn btn-outline-warning" href="../admin/login.php" role="button">Administrador</a>
+                    <a class="btn btn-outline-warning btn_outlines" href="../admin/login.php" role="button">Administrador</a>
                 </div>
             </div>
         </nav>
