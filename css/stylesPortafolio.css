@@ -152,6 +152,13 @@ p {
   margin: 0;
 }
 
+.card-subtitulos-integrantes{
+  color: var(--negro);
+  font-weight: 600;
+  opacity: 0.99;
+  margin: 0;
+}
+
 
 /**********************  POSTERS ESTILOS **********************/
 
@@ -202,7 +209,7 @@ p {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--azul);
   white-space: nowrap;
   position: relative;
   padding: 1px;
@@ -267,7 +274,7 @@ p {
 }
 
 .media.blog-media:hover .circle {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--amarillo);
 }
 
 .media.blog-media:hover .circle .day,

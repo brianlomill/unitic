@@ -18,7 +18,7 @@
        <div class="row">
          <div class="col-xl-5 col-lg-6 col-md-8">
            <div class="section-title">
-             <h5>POSTERS</h5>
+             <h4>POSTERS</h4>
            </div>
          </div>
        </div>
@@ -28,7 +28,7 @@
          <!-- Aquí comienza el bucle para mostrar los posters -->
          <?php foreach ($listarPosters as $poster) : ?>
            <div class="col-md-6 mb-4">
-             <div class="media blog-media">
+             <div class="media blog-media sombras">
                <a href="../archivos/productos/posters/<?php echo $poster['archivo']; ?>" target="_blank">
                  <img class="d-flex" src="../archivos/productos/posters/<?php echo $poster['imagen']; ?>" alt="poster UNITIC" loading="lazy" style="width: 250px; height: 380px;" width="250" height="380">
                </a>
